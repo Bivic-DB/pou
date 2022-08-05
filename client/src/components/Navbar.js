@@ -17,7 +17,7 @@ function Navbar() {
       
       <div className='rightSide'>
         <Link to='/inicio-sesion'> Iniciar Sesión </Link>
-        <Link to='/registrarse'> Regístrate </Link>
+        <Link to='/Registro'> Regístrate </Link>
       </div>
     </div>
   )
