@@ -1,0 +1,25 @@
+.Navbar{
+background-color: #EC955B;
+width: 100%;
+
+}
+
+.leftSide{
+    background-color: #EC955B;
+     width: 100%; 
+     margin-left: 0%;
+     
+}
+
+#logo1{
+    width: 15%;
+    height: 15%;
+    position: relative;
+    right: 41%;
+}
+
+
+.middle, .rightSide{
+    display: flex;
+
+}
