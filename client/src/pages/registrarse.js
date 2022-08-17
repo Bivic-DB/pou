@@ -3,8 +3,6 @@ import '../styles/Registro.css';
 
 function registrarse(){
 
-    const [CORREO, setCORREO] = useState('');
-
     return(
         <div className='row'>
             <div className='form'>
