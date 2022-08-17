@@ -7,17 +7,23 @@ function Navbar() {
   return (
     <div className='Navbar'>
       <div className='leftSide'>
-        <img src={Logo} id='logo1'/>
+        <img to="/" src={Logo} id='logo1'/>
       </div>
       <div className='middle'>
+
         <Link to="/"> Inicio </Link>
         <Link to="/Servicios"> Servicios </Link>
         <Link to="/contacto"> Contacto </Link>
+
+        <Link className='btnNavbar' to="/"> Inicio </Link>
+        <Link className='btnNavbar' to="/servicio"> Servicios </Link>
+        <Link className='btnNavbar' to="/contacto"> Contacto </Link>
+
       </div>
       
       <div className='rightSide'>
-        <Link to='/inicio-sesion'> Iniciar Sesión </Link>
-        <Link to='/Registro'> Regístrate </Link>
+        <Link className='btnNavbar' to='/inicio-sesion'> Iniciar Sesión </Link>
+        <Link className='btnNavbar' to='/Registro'> Regístrate </Link>
       </div>
     </div>
   )

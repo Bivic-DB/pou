@@ -1,6 +1,5 @@
 import './App.css';
 import Navbar from './components/Navbar';
-import Contact from './components/Contact';
 import Home from './pages/Home';
 import Registro from './pages/registrarse';
 import Servicios from './pages/Servicios';
@@ -18,7 +17,7 @@ function App() {
           <Route path="/Servicios" exact element={<Servicios/>} />
 
         </Routes>
-        <Contact/>
+
       </Router>
     </div>
     
