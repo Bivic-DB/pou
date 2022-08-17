@@ -30,7 +30,7 @@ function Home() {
                 <div class="columna-metas" id="metasizquierda">
                 <img src={Mision} className="ImgInformacion"/>
 
-                    <h3>Meta Específica #1</h3>
+                    <h3>Misión, Visión y Valores</h3>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil modi, 
                     voluptatum ab neque distinctio quia molestiae doloribus </p>
                     <Link to='/' className="btn" > Leer Más </Link>
@@ -38,14 +38,14 @@ function Home() {
             <div class="columna-metas">
             <img src={Servicios} className="ImgInformacion"/>
 
-                 <h3>Meta Específica #2</h3>
+                 <h3>Servicios</h3>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil modi, 
                 voluptatum ab neque distinctio quia molestiae doloribus </p>
                 <Link to='/' className="btn" > Leer Más </Link>
         </div>
         <div class="columna-metas" id="metasderecha">
         <img src={Historia} className="ImgInformacion"/>
-             <h3>Meta Específica #3</h3>
+             <h3>Historia</h3>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil modi, 
             voluptatum ab neque distinctio quia molestiae doloribus </p>
             <Link to='/' className="btn" > Leer Más </Link>
@@ -54,6 +54,9 @@ function Home() {
             </div>
         </div>
     </div>
+     <div className='Slider'>
+     </div>
+
 
      </div>
   )
