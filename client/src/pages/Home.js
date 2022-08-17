@@ -4,6 +4,8 @@ import img from '../assets/Home.svg'
 import Mision from '../assets/Mision.svg'
 import Historia from '../assets/Historia.svg'
 import Servicios from '../assets/Servicios.svg'
+import email from '../assets/email.png'
+import pin from '../assets/pin.png'
 
 import { Link } from 'react-router-dom'
 function Home() {
@@ -12,7 +14,7 @@ function Home() {
        <div className='container'>
         <div className="row">
           <div className="col-2">
-          <h2>Biblioteca Virtual Cedes Don Bosco</h2>
+          <h2 className='h2Home'>Biblioteca Virtual Cedes Don Bosco</h2>
           <div style={{ borderTop: "3px solid #000000 ", marginLeft: 0, marginRight: -15 , marginTop: -26 }}></div>
           <p>Eslogan y texto por decidir</p>
           <Link to='/registrarse' className="btn" > Regístrate </Link>
@@ -57,7 +59,53 @@ function Home() {
      <div className='Slider'>
      </div>
 
-
+     <div className='contact'>
+      <div className='content'>
+        <h2>Contáctanos</h2>
+      </div>
+      <div className='containerContact'>
+          <div className='contactInfo'>
+            <div className='box'>
+              <div className='icon'>
+                <img className='iconContact' src={pin}></img>
+              </div>
+              <div className='text'>
+                <h3>Dirección</h3>
+                <p>Colegio Técnico Don Bosco: Edificio A <br></br> <br></br> Escuela Juan Bosco: Segundo Piso del edificio Principal </p>
+              </div>
+            </div>
+            <div className='box'>
+              <div className='icon'>
+              <img className='iconContact' src={email}></img>
+              </div>
+              <div className='text'>
+                <h3>Email</h3>
+                <p>bibliotecas@cedesdonbosco.ed.cr</p>
+              </div>
+            </div>
+          </div>
+          <div className='contactForm'>
+            <form>
+              <h2>Envía tu mensaje</h2>
+              <div className='inputBox'>
+                  <input type={"text"} name="" required="required"></input>
+                  <span>Nombre Completo</span>
+              </div>
+              <div className='inputBox'>
+                  <input type={"text"} name="" required="required"></input>
+                  <span>E-mail</span>
+              </div>
+              <div className='inputBox'>
+                <textarea required="required"></textarea>
+                  <span>Mensaje</span>
+              </div>
+              <div className='inputBox'>
+                  <input type={"submit"} name="" value={"Enviar"}></input>
+              </div>
+            </form>
+          </div>
+      </div>
+      </div>
      </div>
   )
 }

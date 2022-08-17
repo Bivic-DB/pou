@@ -24,15 +24,18 @@
 }
 
 #logo1{
-    width: 20%;
+   
+    cursor: pointer;
+    width: 35%;
     height: 20%;
     position: relative;
-    right: 39%;
+    right: -4%;
+
 }
 
 
 
-a{
+.btnNavbar{
     font-size: 16px;
     width: 120px;
     padding: 10px;
