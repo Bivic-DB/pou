@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+
+}
+
+.Footer{
+    padding: 40px 0;
+    background-color: #fff; 
+}
+
+
+.Footer a:hover{
+    opacity: 0.9;
+}
+
+.Footer ul{
+    margin-top: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-align: center;
+}
+.Footer ul a{
+    color: inherit;
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.Footer ul li{
+    display: inline-block;
+    padding: 0 15px;
+}
+
+.Footer ul li a:hover{
+opacity: 1;
+}
+
+.Footer .copyright{
+    margin-top: 15px;
+    text-align: center;
+    font-size: 13px;
+    color: #aaa;
+}
