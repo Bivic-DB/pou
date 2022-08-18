@@ -14,10 +14,36 @@ h2{
   margin-bottom: 50px;
   text-align: center;
 }
+
+table{
+
+  border-spacing: 9px;
+}
 th{
+
 color: white;
 width: 400px;
 height: 132px;
 background: #5A5DE2;
 border-radius: 8px;
+box-shadow: #00015249 0px 4px 20px;
+
+}
+
+.servcolegio{
+width: 400px;
+height: 132px;
+background: #FBFFFF;
+border-radius: 8px;
+box-shadow: #00015249 0px 4px 20px;
+
+}
+
+.servescuela{
+  width: 400px;
+height: 132px;
+background: #FBFFFF;
+border-radius: 8px;
+box-shadow: #00015249 0px 4px 20px;
+
 }
