@@ -8,10 +8,10 @@
 text-align: center;
   width: 700px;
   margin: 0 auto;
-  margin-top: 70px;
+  margin-top: 100px;
 }
 h2{
-  margin-bottom: 50px;
+  margin-bottom: 70px;
   text-align: center;
 }
 
@@ -25,7 +25,7 @@ color: white;
 width: 400px;
 height: 132px;
 background: #5A5DE2;
-border-radius: 8px;
+border-radius: 6px;
 box-shadow: #00015249 0px 4px 20px;
 
 }
@@ -34,7 +34,7 @@ box-shadow: #00015249 0px 4px 20px;
 width: 400px;
 height: 132px;
 background: #FBFFFF;
-border-radius: 8px;
+border-radius: 6px;
 box-shadow: #00015249 0px 4px 20px;
 
 }
@@ -43,7 +43,24 @@ box-shadow: #00015249 0px 4px 20px;
   width: 400px;
 height: 132px;
 background: #FBFFFF;
-border-radius: 8px;
+border-radius: 6px;
 box-shadow: #00015249 0px 4px 20px;
+
+}
+
+.cont_imp{
+  transform: translateY(75px);
+  background-color: #91ABEE;
+  width: 700px;
+  height: 200px;
+  margin: 0 auto;
+  border-radius: 20px;
+  padding: 30px;
+  color: white;
+}
+
+.imp1{
+  text-align: left;
+  border-bottom: solid 1px white;
 
 }
