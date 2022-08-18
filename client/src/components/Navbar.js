@@ -18,7 +18,7 @@ function Navbar() {
         <li><Link className='btnNavbar' to="/"> Inicio </Link></li>  
           <li><Link className='btnNavbar' to="/Servicios"> Servicios </Link></li>
           <li><Link className='btnNavbar' to="/contacto"> Contacto </Link></li>
-          <li><Link className='btnNavbar' to='/inicio-sesion'> Iniciar Sesión </Link></li> 
+          <li><Link className='btnNavbar' to='/Iniciar-sesion'> Iniciar Sesión </Link></li> 
        <li><Link className='btnNavbar' to='/Registro'> Regístrate </Link></li> 
         </ul>
         </nav>
