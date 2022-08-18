@@ -60,7 +60,7 @@ function Home() {
      <div className='Slider'>
      </div>
 
-     <div className='contact'>
+     <div id='Contacto' className='contact'>
       <div className='content'>
         <h2>Contáctanos</h2>
       </div>
