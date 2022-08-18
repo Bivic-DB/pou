@@ -15,9 +15,9 @@ function Home() {
         <div className="row">
           <div className="col-2">
           <h2 className='h2Home'>Biblioteca Virtual Cedes Don Bosco</h2>
-          <div style={{ borderTop: "3px solid #000000 ", marginLeft: 0, marginRight: -15 , marginTop: -26 }}></div>
+          <div className='Homebar'></div>
           <p>Eslogan y texto por decidir</p>
-          <Link to='/registrarse' className="btn" > Regístrate </Link>
+          <Link to='/registrarse' id='btnHome' className="btn" > Regístrate </Link>
           </div>
           <div className="col-2">
           <img src={img} className="imgHome"/>
@@ -80,7 +80,7 @@ function Home() {
               </div>
               <div className='text'>
                 <h3>Email</h3>
-                <p>bibliotecas@cedesdonbosco.ed.cr</p>
+                <p>bibliotecas@<br></br>cedesdonbosco.ed.cr</p>
               </div>
             </div>
           </div>
