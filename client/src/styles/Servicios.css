@@ -64,3 +64,28 @@ box-shadow: #00015249 0px 4px 20px;
   border-bottom: solid 1px white;
 
 }
+
+#agregarserv{
+  width: 250px;
+  height: 75px;
+  background-color: #EC955B;
+  border: none;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+#adminserv{
+  width: 250px;
+  height: 75px;
+  background-color: #5A5DE2;
+  margin-left: 20px;
+  border: none;
+  border-radius: 10px;
+}
+
+.btns{
+  transform: translateY(150px);
+  display: flex;
+  width: 500px;
+  margin: 0 auto;
+}

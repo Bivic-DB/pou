@@ -30,6 +30,11 @@ function Servicios(){
        <p>Recuerda que para hacer uso de la mayor parte de estos es importante llevar el carnet.</p>
        </div>
        </div>
+
+       <div class='btns'>
+        <button id='agregarserv'>Agregar servicio</button>
+        <button id='adminserv'>Administrar servicio </button>
+       </div>
        </div>
     
  
