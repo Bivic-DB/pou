@@ -4,26 +4,26 @@
     box-sizing: border-box;
     font-family: 'Lato', sans-serif;
 }
-.Header{
+.Header-home{
 
     background-color: #EC955B;
    margin-bottom: 170px;
 }
-.row{
+.row-header{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-around;
     flex-direction: row-reverse;
 }
-.col-2 h2{
+.col-2-header h2{
     font-size: 30px;
     line-height: 60px;
     margin: 25px 0;
     margin-top: 200px;
 
 }
-.col-2 {
+.col-2-header {
     min-width: 300px;
     align-items: center;
 }
@@ -36,7 +36,7 @@
     margin-inline-end: 0px;
     font-weight: bold;
 }
-p{
+.pHome{
     text-align: left;
     font-size: 16px;
     display: block;
@@ -59,7 +59,7 @@ p{
 .btn:hover{
     background: #36494E;
 }
-.col-2 img {
+.col-2-header img {
     max-width: 80%;
     padding: 50px 0;
     width: auto;

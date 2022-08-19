@@ -7,27 +7,31 @@ import Servicios from '../assets/Servicios.svg'
 import email from '../assets/email.png'
 import pin from '../assets/pin.png'
 
+
 import { Link } from 'react-router-dom'
 function Home() {
   return (
-    <div className='Header'>
-       <div className='container'>
-        <div className="row">
-          <div className="col-2">
+    <div className='Home'>
+
+    <div className='Header-home'>
+       <div className='container-header'>
+        <div className="row-header">
+          <div className="col-2-header">
           <img src={img} className="imgHome"/>
             </div>
-          <div className="col-2">
+          <div className="col-2-header">
           <h2 className='h2Home'>Biblioteca Virtual Cedes Don Bosco</h2>
           <div className='Homebar'></div>
-          <p>Eslogan y texto por decidir</p>
+          <p className='pHome'>Eslogan y texto por decidir</p>
           <Link to='/registrarse' id='btnHome' className="btn" > Regístrate </Link>
           </div>
           
         </div>
        </div>
+    </div>
 
-       <div class="contenedor-metas-grande" id="metas">
-    <div class="metas">
+    <div class="contenedor-metas-grande" id="metas">
+      <div class="metas">
         <div class="contenedor-metas">
             <div class="metas-row">
                 <div class="columna-metas" id="metasizquierda">
@@ -57,8 +61,47 @@ function Home() {
             </div>
         </div>
     </div>
-     <div className='Slider'>
-     </div>
+
+    <div id="carouselExampleCaptions" class="carousel carousel-dark slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src={Mision} class="d-block w-100" alt="..." height="200px" align="left" />
+      <div class="carousel-caption d-none d-md-block">
+        <h5>First slide label</h5>
+        <p>Some representative placeholder content for the first slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src={Historia} class="d-block w-100" alt="..." height="200px"/>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Second slide label</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src={Servicios} class="d-block w-100" alt="..." height="200px"/>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Third slide label</h5>
+        <p>Some representative placeholder content for the third slide.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden"></span>
+  </button>
+</div>
+
+
 
      <div id='Contacto' className='contact'>
       <div className='content'>
@@ -106,9 +149,9 @@ function Home() {
             </form>
           </div>
       </div>
-      </div>
- 
-     </div>
+    </div>
+
+    </div>
   )
 }
 
