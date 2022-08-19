@@ -7,13 +7,13 @@ function Footer() {
     <div className='Footer'>
     <ul className='list'>
         <li>
-            <a href='#'>Inicio</a>
+        <Link className='btnNavbar' to="/"> Inicio </Link>
         </li>
         <li>
-            <a href='/Servicios'>Servicios</a>
+        <Link className='btnNavbar' to="/Servicios"> Servicios </Link>
         </li>
         <li>
-            <a href='#Contacto'>Contacto</a>
+            <a href='/#Contacto'> Contacto</a>
         </li>
     </ul>
     <p className='copyright'>

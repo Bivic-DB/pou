@@ -10,7 +10,7 @@ function Iniciars(){
            <input type="text" name="correo"> Correo electrónico</input>
            <input type="text" name="contrasenna"> Contraseña</input>
            <input type="text" name="confcontrasenna"> Confirmar contraseña</input>
-           <button>Iniciarsesion</button>
+           <button>Iniciar sesion</button>
 
       </div>
     </div>
