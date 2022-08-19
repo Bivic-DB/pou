@@ -6,25 +6,26 @@
 }
 .Header-home{
 
-    background-color: #EC955B;
-   margin-bottom: 170px;
+    background: rgb(245,190,112);
+    background: radial-gradient(circle, rgba(245,190,112,1) 0%, rgba(236,149,91,1) 33%);
+   margin-bottom: 9rem;
 }
 .row-header{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    justify-content: space-around;
     flex-direction: row-reverse;
+    justify-content: space-evenly;
 }
 .col-2-header h2{
     font-size: 30px;
-    line-height: 60px;
+    line-height: 40px;
     margin: 25px 0;
-    margin-top: 200px;
+    margin-top: 8rem;
 
 }
 .col-2-header {
-    min-width: 300px;
+    max-width: 300px;
     align-items: center;
 }
 .h2Home{
@@ -60,10 +61,10 @@
     background: #36494E;
 }
 .col-2-header img {
-    max-width: 80%;
-    padding: 50px 0;
+    max-width: 100%;
+    padding: 5rem 0 0 0;
     width: auto;
-    margin: 30px auto;
+    margin: 2rem auto;
 }
 .container{
     max-width: 1300px;
@@ -90,6 +91,9 @@
     }
     p{
         text-align: center;
+    }
+    .col-2-header{
+        max-width: 80%;
     }
   
 }

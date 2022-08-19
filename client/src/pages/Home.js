@@ -1,9 +1,9 @@
 import React from 'react'
 import '../styles/Home.css';
-import img from '../assets/Home.svg'
-import Mision from '../assets/Mision.svg'
-import Historia from '../assets/Historia.svg'
-import Servicios from '../assets/Servicios.svg'
+import img from '../assets/imgheader.png'
+import Mision from '../assets/mision.png'
+import Historia from '../assets/historia.png'
+import Servicios from '../assets/servicios.png'
 import email from '../assets/email.png'
 import pin from '../assets/pin.png'
 
@@ -22,7 +22,7 @@ function Home() {
           <div className="col-2-header">
           <h2 className='h2Home'>Biblioteca Virtual Cedes Don Bosco</h2>
           <div className='Homebar'></div>
-          <p className='pHome'>Eslogan y texto por decidir</p>
+          <p className='pHome'>Forma parte de generaciones conjuntas de conocimiento</p>
           <Link to='/registrarse' id='btnHome' className="btn" > Regístrate </Link>
           </div>
           
