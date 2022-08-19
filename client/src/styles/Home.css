@@ -4,6 +4,22 @@
     box-sizing: border-box;
     font-family: 'Lato', sans-serif;
 }
+.imgcarrusel{
+    width: 301px;
+    height: 300px;
+    margin-left: 150px;
+}
+.h5carrusel{
+    margin-left: 56%;
+}
+.pcarrusel{
+    margin-left: 58%;
+
+    margin-bottom: 9%;
+}
+.h5carrusel{
+    margin-bottom: 10px;
+}
 .Header-home{
 
     background: rgb(245,190,112);
