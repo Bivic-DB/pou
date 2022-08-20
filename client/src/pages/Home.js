@@ -23,7 +23,7 @@ function Home() {
           <h2 className='h2Home'>Biblioteca Virtual Cedes Don Bosco</h2>
           <div className='Homebar'></div>
           <p className='pHome'>Forma parte de generaciones conjuntas de conocimiento</p>
-          <Link to='/registrarse' id='btnHome' className="btn" > Regístrate </Link>
+          <Link to='/registrarse' id='btnHome'  className="btn1" > Regístrate </Link>
           </div>
           
         </div>
@@ -40,7 +40,7 @@ function Home() {
                     <h3>Misión, Visión y Valores</h3>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil modi, 
                     voluptatum ab neque distinctio quia molestiae doloribus </p>
-                    <Link to='/' className="btn" > Leer Más </Link>
+                    <Link to='/' className="btn1" > Leer Más </Link>
             </div>
             <div class="columna-metas">
             <img src={Servicios} className="ImgInformacion"/>
@@ -48,14 +48,14 @@ function Home() {
                  <h3>Servicios</h3>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil modi, 
                 voluptatum ab neque distinctio quia molestiae doloribus </p>
-                <Link to='/' className="btn" > Leer Más </Link>
+                <Link to='/Servicios' className="btn1" > Leer Más </Link>
         </div>
         <div class="columna-metas" id="metasderecha">
         <img src={Historia} className="ImgInformacion"/>
              <h3>Historia</h3>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil modi, 
             voluptatum ab neque distinctio quia molestiae doloribus </p>
-            <Link to='/' className="btn" > Leer Más </Link>
+            <Link to='/' className="btn1" > Leer Más </Link>
     </div>
               </div>
             </div>
@@ -100,6 +100,54 @@ function Home() {
     <span class="visually-hidden"></span>
   </button>
 </div>
+
+        <div className='container'>
+          <div className='row comentarios justify-content-center'>
+            <div className='col-6'>
+              <h1 className='h1comentarios'>Comentarios</h1>
+              <form action='' className='form_comentarios d-flex justify-content-end flex-wrap'>
+                <input type={"text"} name="" id='' placeholder='Comentario'></input>
+                <button className='btn' type='button'>Comentar</button>
+              </form>
+
+              <div className='media'>
+                <img src={Mision} width="64" height="64" alt="" />
+                <div className='media-body'>
+                  <p className='nombre'>Don Bosco <span>17:36 8/20/2022</span></p>
+                  <p className='comentario'>"Me basta que sean jóvenes para amarlos como a hijos" </p>
+                <div className='botones text-right'>
+                  <a href='#'>Borrar</a>
+                </div>
+                </div>
+              </div>
+
+              <div className='media'>
+                <img src={Servicios} width="64" height="64" alt="" />
+                <div className='media-body'>
+                  <p className='nombre'>Emilio <span>17:36 8/20/2022</span></p>
+                  <p className='comentario'>Faltan 69 días para Expotec</p>
+                <div className='botones text-right'>
+                  <a href='#'>Borrar</a>
+                </div>
+                </div>
+              </div>
+              <div className='media'>
+                <img src={Historia} width="64" height="64" alt="" />
+                <div className='media-body'>
+                  <p className='nombre'>Mario <span>17:36 8/20/2022</span></p>
+                  <p className='comentario'>Chicos, a trabajar en Factura Electrónica</p>
+                <div className='botones text-right'>
+                  <a href='#'>Borrar</a>
+                </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+
+
+	
 
 
 

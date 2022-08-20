@@ -9,19 +9,19 @@ function registrarse(){
                 <h1> Regístrate </h1>
 
                 <label>Correo:</label>
-                <input type="text" name="CORREO"></input>
+                <input className='inputRegistro' type="text" name="CORREO"></input>
                 <label>Nombre:</label>
-                <input type="text" name="NOMBRE"></input>
+                <input className='inputRegistro' type="text" name="NOMBRE"></input>
                 <label>Primer Apellido:</label>
-                <input type="text" name="APELLIDO"></input>
+                <input className='inputRegistro' type="text" name="APELLIDO"></input>
                 <label>Segundo Apellido:</label>
-                <input type="text" name="2APELLIDO"></input>
+                <input className='inputRegistro' type="text" name="2APELLIDO"></input>
                 <label>Contraseña:</label>
-                <input type="text" name="CONTRASENA"></input>
+                <input className='inputRegistro' type="text" name="CONTRASENA"></input>
                 <label>Rol:</label>
-                <input type="text" name="ROL"></input>
+                <input className='inputRegistro' type="text" name="ROL"></input>
 
-                <button>Registrar</button>
+                <button className='btnRegistro'>Registrar</button>
             </div>
         </div>
     )

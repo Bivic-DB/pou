@@ -1,13 +1,10 @@
 *{
     padding: 0;
     margin: 0;
-
     font-family: 'Lato', sans-serif;
 }
 .serv{
-text-align: center;
-  width: 700px;
-  margin: 0 auto;
+ text-align: center;
   margin-top: 150px;
 }
 h2{
@@ -16,11 +13,11 @@ h2{
 }
 
 table{
-
+  flex-basis: 50%;
   border-spacing: 9px;
 }
 th{
-
+font-size: 17px;
 color: white;
 width: 400px;
 height: 132px;
@@ -31,6 +28,7 @@ box-shadow: #00015249 0px 4px 20px;
 }
 
 .servcolegio{
+font-size: 17px;
 width: 400px;
 height: 132px;
 background: #FBFFFF;
@@ -40,6 +38,7 @@ box-shadow: #00015249 0px 4px 20px;
 }
 
 .servescuela{
+  font-size: 17px;
   width: 400px;
 height: 132px;
 background: #FBFFFF;
@@ -89,4 +88,40 @@ box-shadow: #00015249 0px 4px 20px;
   width: 500px;
   margin: 0 auto;
   margin-bottom: 250px;
+}
+.contenedora{
+  max-width: 1080px;
+  margin: auto;
+}
+
+table{
+  align-items: center;
+  border-radius: 4px;
+  padding: 10px;
+  width: 100%;
+  background: #B8B8B8;
+  margin-right: 40px;
+  text-align: center;
+}
+
+td{
+  align-content: center;
+  align-items: center;
+  border-radius: 4px;
+  background:#FFFFFF;
+  padding:10px;
+  /* Otra forma de verse es usando width: 100px; (pueden copiar y pegar en caso de que lo quieran ver C:)*/
+  height: 90px;
+  vertical-align:middle;
+  font-weight:200;
+  font-size:18px;
+  color: #000;
+}
+
+
+@media(max-width:500px){
+  .contenedora{
+      margin-right: 2%;
+  margin-left: 2%;
+  }
 }

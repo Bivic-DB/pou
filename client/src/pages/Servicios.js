@@ -5,10 +5,12 @@ function Servicios(){
  return (
      
      <div>
-    <div class="serv">
-     <h2>Los servicios que brindamos:</h2>
-     
-     <table>
+        <div className='serv'>
+<section id="pasos">
+<div class="contenedora">
+    <div class="contenidos">
+        <h2>Servicios  </h2>
+        <table id="pasosarealizar">
         <tr>
             <th> Biblioteca del colegio</th>
             <th> Biblioteca de la escuela</th>
@@ -18,12 +20,15 @@ function Servicios(){
         <tr><td class="servcolegio"> Préstamo de material didáctico.</td><td class="servescuela"> Préstamo de material didáctico.</td></tr>
         <tr><td class="servcolegio"> Préstamo de computadoras.</td><td class="servescuela"> Préstamo de computadoras.</td></tr>
         <tr><td class="servcolegio"> Préstamo de calculadoras.</td></tr> 
-       </table>
-       </div>
+        </table>
+        </div>
+        </div>
+</section>
+</div>
 
        <div class='cont_imp'>
        <div class='imp1'> 
-       <h3>¡Importante!</h3>
+       <h3 className='h3Servicios'>¡Importante!</h3>
        <p> Para hacer uso de los materiales y todos los servicios que se enlistan arriba, debes asistir a las bibliotecas de manera presencial.</p>
         </div>
        <div class='imp2'> 
@@ -35,6 +40,10 @@ function Servicios(){
         <button id='agregarserv'>Agregar servicio</button>
         <button id='adminserv'>Administrar servicio </button>
        </div>
+
+
+
+
        </div>
     
  
