@@ -79,7 +79,7 @@
 .Header-home{
 
     background: rgb(245,190,112);
-    background: radial-gradient(circle, rgba(245,190,112,1) 0%, rgba(236,149,91,1) 33%);
+    background: radial-gradient(circle, rgba(245,190,112,1) 0%, rgba(236,149,91,1) 10%);
    margin-bottom: 9rem;
 }
 .row-header{
@@ -299,7 +299,7 @@
 }
 .contact{
     position: relative;
-    min-height: 100vh;
+    min-height: 70vh;
     padding: 50px 100px;
     display: flex;
     justify-content: center;
