@@ -18,8 +18,7 @@ function Navbar() {
         <li><Link className='btnNavbar' to="/"> Inicio </Link></li>  
           <li><Link className='btnNavbar' to="/Servicios"> Servicios </Link></li>
           <li><a href='/#Contacto'>Contacto</a></li>
-          <li><Link className='btnNavbar' to='/Inicio'> Iniciar Sesión </Link></li> 
-       <li><Link className='btnNavbar' to='/Registro'> Regístrate </Link></li> 
+          <li><Link className='btnNavbar' to='/Formulario'> Iniciar Sesión </Link></li> 
         </ul>
         </nav>
       </div>
