@@ -1,53 +1,56 @@
-*{
-    padding: 0;
-    margin: 0;
-    font-family: 'Lato', sans-serif;
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
 }
-.serv{
- text-align: center;
+
+.serv {
+  text-align: center;
   margin-top: 150px;
 }
-h2{
+
+.h2Servicios {
   margin-bottom: 70px;
   text-align: center;
 }
 
-table{
+table {
   flex-basis: 50%;
   border-spacing: 9px;
 }
-th{
-font-size: 17px;
-color: white;
-width: 400px;
-height: 132px;
-background: #5A5DE2;
-border-radius: 6px;
-box-shadow: #00015249 0px 4px 20px;
+
+th {
+  font-size: 17px;
+  color: white;
+  width: 400px;
+  height: 132px;
+  background: #5A5DE2;
+  border-radius: 6px;
+  box-shadow: #00015249 0px 4px 20px;
 
 }
 
-.servcolegio{
-font-size: 17px;
-width: 400px;
-height: 132px;
-background: #FBFFFF;
-border-radius: 6px;
-box-shadow: #00015249 0px 4px 20px;
-
-}
-
-.servescuela{
+.servcolegio {
   font-size: 17px;
   width: 400px;
-height: 132px;
-background: #FBFFFF;
-border-radius: 6px;
-box-shadow: #00015249 0px 4px 20px;
+  height: 132px;
+  background: #FBFFFF;
+  border-radius: 6px;
+  box-shadow: #00015249 0px 4px 20px;
 
 }
 
-.cont_imp{
+.servescuela {
+  font-size: 17px;
+  width: 400px;
+  height: 132px;
+  background: #FBFFFF;
+  border-radius: 6px;
+  box-shadow: #00015249 0px 4px 20px;
+
+}
+
+.cont_imp {
   transform: translateY(75px);
   background-color: #91ABEE;
   width: 700px;
@@ -56,15 +59,17 @@ box-shadow: #00015249 0px 4px 20px;
   border-radius: 20px;
   padding: 30px;
   color: white;
+  position: relative;
+
 }
 
-.imp1{
+.imp1 {
   text-align: left;
   border-bottom: solid 1px white;
 
 }
 
-#agregarserv{
+#agregarserv {
   width: 250px;
   height: 75px;
   background-color: #EC955B;
@@ -73,7 +78,7 @@ box-shadow: #00015249 0px 4px 20px;
   margin-right: 20px;
 }
 
-#adminserv{
+#adminserv {
   width: 250px;
   height: 75px;
   background-color: #5A5DE2;
@@ -82,19 +87,20 @@ box-shadow: #00015249 0px 4px 20px;
   border-radius: 10px;
 }
 
-.btns{
+.btns {
   transform: translateY(150px);
   display: flex;
   width: 500px;
   margin: 0 auto;
   margin-bottom: 250px;
 }
-.contenedora{
+
+.contenedora {
   max-width: 1080px;
   margin: auto;
 }
 
-table{
+table {
   align-items: center;
   border-radius: 4px;
   padding: 10px;
@@ -104,24 +110,49 @@ table{
   text-align: center;
 }
 
-td{
+td {
   align-content: center;
   align-items: center;
   border-radius: 4px;
-  background:#FFFFFF;
-  padding:10px;
+  background: #FFFFFF;
+  padding: 10px;
   /* Otra forma de verse es usando width: 100px; (pueden copiar y pegar en caso de que lo quieran ver C:)*/
   height: 90px;
-  vertical-align:middle;
-  font-weight:200;
-  font-size:18px;
+  vertical-align: middle;
+  font-weight: 200;
+  font-size: 18px;
   color: #000;
 }
 
+.btnServicio {
+  color: white;
+}
 
-@media(max-width:500px){
-  .contenedora{
-      margin-right: 2%;
-  margin-left: 2%;
+.btns .btnServicio a {
+  text-decoration: none;
+  color: white;
+}
+
+@media(max-width:720px) {
+  .cont_imp {
+    transform: translateY(75px);
+    background-color: #91ABEE;
+    width: 90%;
+    height: 200px;
+    margin: 0 auto;
+    border-radius: 20px;
+    padding: 30px;
+    color: white;
+    position: relative;
+
   }
+
+  .btns {
+    transform: translateY(150px);
+    display: flex;
+    width: 300px;
+    margin: 0 auto;
+    margin-bottom: 250px;
+  }
+
 }

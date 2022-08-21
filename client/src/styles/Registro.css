@@ -1,16 +1,18 @@
-.Body{
-    background: rgb(245, 245, 245);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.Body {
+	background: rgb(245, 245, 245);
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
 }
-.login-container{
-    padding-top: 8rem;
-    width: 60%;
+
+.login-container {
+	padding-top: 8rem;
+	width: 60%;
 }
-.submit{
-    border-radius: 20px;
+
+.submit {
+	border-radius: 20px;
 	border: 1px solid var(--clr-secondary);
 	background: black;
 	color: white;

@@ -3,29 +3,29 @@ import Axios from 'axios'
 
 function SignupForm() {
 
-    const [NameReg,setNameReg] = useState("");
+    const [NameReg, setNameReg] = useState("");
     const [LastNameReg, setLastNameReg] = useState("");
     const [SecLastNameReg, setSecLastNameReg] = useState("");
     const [EmailReg, setEmailReg] = useState("");
     const [PasswordReg, setPasswordReg] = useState("");
     const [RolReg, setRolReg] = useState("");
 
-    const Registro = () =>{
+    const Registro = () => {
         Axios.post('http://localhost:3001/Formulario', {
-            Name: NameReg, 
-            LastName:LastNameReg, 
-            SecLastName:SecLastNameReg, 
-            Email:EmailReg, 
-            Password:PasswordReg, 
-            Rol:RolReg
-        }).then((response) =>{
-                console.log(response);
-        }) .catch(error => {
+            Name: NameReg,
+            LastName: LastNameReg,
+            SecLastName: SecLastNameReg,
+            Email: EmailReg,
+            Password: PasswordReg,
+            Rol: RolReg
+        }).then((response) => {
+            console.log(response);
+        }).catch(error => {
             console.log(error.response)
         })
     };
 
-    return(
+    return (
         <div className='Form'>
             <h1>Crear cuenta</h1>
 
@@ -53,19 +53,19 @@ function SignupForm() {
             <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="floatingemail" placeholder="name@example.com" name="Correo" onChange={(e) => {
                     setEmailReg(e.target.value);
-                }}/>
+                }} />
                 <label for="floatingemail">Correo Electronico</label>
             </div>
             <div class="form-floating mb-3">
                 <input type="password" class="form-control" id="floatingPassword" placeholder="123" name="Contrasena" onChange={(e) => {
                     setPasswordReg(e.target.value);
-                }}/>
+                }} />
                 <label for="floatingPassword">Contraseña</label>
             </div>
             <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="floatingRol" placeholder="admin" name="Rol" onChange={(e) => {
                     setRolReg(e.target.value);
-                }}/>
+                }} />
                 <label for="floatingPassword">Rol</label>
             </div>
             <div>

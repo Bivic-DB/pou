@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../styles/Registro.css';
 
 const SigninForm = () => {
-    return(
+    return (
         <div>
             SigninForm
         </div>

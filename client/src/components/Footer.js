@@ -5,20 +5,20 @@ import { Link } from 'react-router-dom'
 function Footer() {
   return (
     <div className='Footer'>
-    <ul className='list'>
+      <ul className='list'>
         <li>
-        <Link className='btnNavbar' to="/"> Inicio </Link>
+          <Link className='btnNavbar' to="/"> Inicio </Link>
         </li>
         <li>
-        <Link className='btnNavbar' to="/Servicios"> Servicios </Link>
+          <Link className='btnNavbar' to="/Servicios"> Servicios </Link>
         </li>
         <li>
-            <a href='/#Contacto'> Contacto</a>
+          <a href='/#Contacto'> Contacto</a>
         </li>
-    </ul>
-    <p className='copyright'>
-    © 2022 Cedes Don Bosco
-    </p>
+      </ul>
+      <p className='copyright'>
+        © 2022 Cedes Don Bosco
+      </p>
     </div>
   )
 }
