@@ -3,10 +3,10 @@ const mysql = require('mysql');
 // Database Connection for Development
 
 let connection = mysql.createConnection({
-    host: "35.188.216.37",
+    host: "127.0.0.1",
     user: "root",
     database: "bivicdatabase",
-    password: "pass123"
+    password: ""
   });
   
     connection.connect(function(err) {

@@ -8,6 +8,7 @@ import AdministrarServicio from './pages/AgregarServicio';
 import AdministrarSabias from './pages/AgregarSabiasQue';
 import AdministrarComentarios from './pages/AdministrarComentario';
 import AdministrarNoticia from './pages/AgregarNoticia';
+import AdministrarCuentas from './pages/AdministrarCuentas';
 import Footer from './components/Footer';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
@@ -25,6 +26,7 @@ function App() {
           <Route path="/AgregarSabiasQue" exact element={<AdministrarSabias />} />
           <Route path="/AdministrarComentario" exact element={<AdministrarComentarios />} />
           <Route path="/AgregarNoticia" exact element={<AdministrarNoticia />} />
+          <Route path="/Administrar/Cuentas" exact element={<AdministrarCuentas />} />
         </Routes>
         <Footer />
       </Router>

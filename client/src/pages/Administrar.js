@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import '../styles/Administrar.css';
 
 
@@ -18,7 +19,9 @@ function Administrar() {
                                 <button className='btnServicio2 btnAdministrar1' ><a href='/AgregarNoticia'>Administrar Noticia </a></button>
                             </div>
                             <div className='btns3'>
+                                <Link to="/Administrar/Cuentas">
                                 <button className='btnServicio2 btnAdministrar3' >Administrar Cuentas </button>
+                                </Link>
                                 </div>
                         </div>
                     </div>
