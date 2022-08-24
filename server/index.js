@@ -43,6 +43,7 @@ app.get('/ListaUsuarios', (req, res) => {
 });
 
 app.get('/UsuarioModificar', (req, res) => {
+    
     const Email = req.body.Email
 
     connection.query('SELECT * FROM persona WHERE CORREO = ?', 
