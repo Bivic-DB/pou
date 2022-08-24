@@ -11,6 +11,7 @@ app.use(cors());
 
 app.get('/status', (req, res) => res.send('Working!'));
 
+// Registro de Usuarios
 app.post('/Registro', (req, res) => {
     const Name = req.body.Name
     const LastName = req.body.LastName
@@ -44,6 +45,7 @@ app.get('/ListaUsuarios', (req, res) => {
 
 app.get('/UsuarioModificar', (req, res) => {
     
+    const Password = req.body.Password
     const Email = req.body.Email
 
     connection.query('SELECT * FROM persona WHERE CORREO = ?', 
@@ -61,6 +63,14 @@ app.get('/UsuarioModificar', (req, res) => {
 app.put('/ModificarUsuario', (req, res) => {
     const id = req.body.id
     connection.query("UPDATE persona SET")
+})
+
+// Login de Usuario
+app.post('/Login', (req, res) =>{
+
+    const Password = req.body.Password
+    const Email = req.body.Email
+
 })
 
 // Port 8080 for Google App Engine
