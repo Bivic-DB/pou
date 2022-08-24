@@ -42,9 +42,16 @@ app.get('/ListaUsuarios', (req, res) => {
     })
 });
 
-app.put('/Modificiar', (req, res) => {
+app.get('/UsuarioModificar', (req, res) => {
+
+    
+    connection.query('SELECT FROM PERSONA WHERE CORREO = ?')
+
+});
+
+app.put('/ModificarUsuario', (req, res) => {
     const id = req.body.id
-    connection.query("UPDATE SET persona")
+    connection.query("UPDATE persona SET")
 })
 
 // Port 8080 for Google App Engine
