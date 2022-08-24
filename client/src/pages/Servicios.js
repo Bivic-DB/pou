@@ -10,13 +10,13 @@ function Servicios() {
                     <div class="contenedora">
                         <div class="contenidos">
                             <h2 className='h2Servicios'>Servicios  </h2>
-                            <table id="pasosarealizar">
+                            <table id="pasosarealizar" className='tableservicios'>
                                 <tr>
-                                    <th> Biblioteca del colegio</th>
+                                    <th className='thservicios'> Biblioteca del colegio</th>
                                     <th> Biblioteca de la escuela</th>
                                 </tr>
-                                <tr><td class="servcolegio"> Préstamo de libros en sala y a domicilio.</td> <td class="servescuela">Préstamo de computadoras.</td></tr>
-                                <tr><td class="servcolegio"> Préstamo de vídeos.</td><td class="servescuela">Préstamo de vídeos.</td></tr>
+                                <tr><td className="servcolegio"> Préstamo de libros en sala y a domicilio.</td> <td class="servescuela">Préstamo de computadoras.</td></tr>
+                                <tr><td className="servcolegio"> Préstamo de vídeos.</td><td class="servescuela">Préstamo de vídeos.</td></tr>
                                 <tr><td class="servcolegio"> Préstamo de material didáctico.</td><td class="servescuela"> Préstamo de material didáctico.</td></tr>
                                 <tr><td class="servcolegio"> Préstamo de computadoras.</td><td class="servescuela"> Préstamo de computadoras.</td></tr>
                                 <tr><td class="servcolegio"> Préstamo de calculadoras.</td></tr>

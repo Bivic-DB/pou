@@ -14,12 +14,12 @@
   text-align: center;
 }
 
-table {
+.tableservicios {
   flex-basis: 50%;
   border-spacing: 9px;
 }
 
-th {
+.thservicios {
   font-size: 17px;
   color: white;
   width: 400px;
@@ -100,7 +100,7 @@ th {
   margin: auto;
 }
 
-table {
+.tableservicios {
   align-items: center;
   border-radius: 4px;
   padding: 10px;
@@ -110,7 +110,7 @@ table {
   text-align: center;
 }
 
-td {
+.servcolegio {
   align-content: center;
   align-items: center;
   border-radius: 4px;

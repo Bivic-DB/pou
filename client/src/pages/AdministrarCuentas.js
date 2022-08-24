@@ -18,22 +18,37 @@ function AdministrarCuentas() {
             <div className='container-sm'>
                 <button className="btn btn-outline-warning" onClick={obtenerUsuarios}> Obtener Usuarios </button>
                 
+               <table  className='table table-hover'>
+                    <thead>
+                        <tr>
+                            <th scope="col"> Nombre</th>
+                            <th scope="col"> Apellidos </th>
+                            <th scope="col"> Email </th>
+                            <th scope="col"> Contraseña </th>
+                            <th scope="col"> Rol </th>
+                            <th scope="col"> Modificiar </th>
+                            <th scope="col"> Eliminar </th>
 
-                {/* Mapeo en la lista de usuarios */}
-                {ListaUsuarios.map((val, key) => {
-                    return (
-                        <div className='Usuario'>
-                            <ul className='list-group list-group-horizontal'>
-                                <li className='list-group-item active' aria-current="true">Nombre: {val.NOMBRE}</li>
-                                <li className='list-group-item '> Apellido: {val.APELLIDO}</li>
-                                <li className='list-group-item '> Segundo Apellido: {val.APELLIDODOS}</li>
-                                <li className='list-group-item '> Email: {val.CORREO}</li>
-                                <li className='list-group-item '> Contraseña: {val.CONTRASENA}</li>
-                                <li className='list-group-item '> Rol: {val.ROL}</li>
-                            </ul>
-                        </div>
-                    )
-                })}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {/* Mapeo en la lista de usuarios */}
+                        {ListaUsuarios.map((val, key) => {
+                            return (
+                                <tr>
+                                    <td>{val.NOMBRE}</td>
+                                    <td>{val.APELLIDO} {val.APELLIDODOS}</td>
+                                    <td>{val.CORREO}</td>
+                                    <td>{val.CONTRASENA}</td>
+                                    <td>{val.ROL}</td>
+                                    <td><button className='btn btn-outline-primary'>Modificiar</button></td>
+                                    <td><button className='btn btn-danger'>Eliminar</button></td>
+                                </tr>
+                            )  
+                        })}
+                    </tbody>
+                </table> 
+                
             </div>
         </div>
     )

@@ -23,7 +23,7 @@ function Home() {
               <h2 className='h2Home'>Biblioteca Virtual Cedes Don Bosco</h2>
               <div className='Homebar'></div>
               <p className='pHome'>Forma parte de generaciones conjuntas de conocimiento</p>
-              <Link to='/registrarse' id='btnHome' className="btn1" > Regístrate </Link>
+              <Link to='/Formulario' id='btnHome' className="btn1" > Regístrate </Link>
             </div>
 
           </div>
