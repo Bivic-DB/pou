@@ -6,7 +6,7 @@ import '../styles/FormsAdministrar.css';
 function AdministrarCuentas() {
 
     const [ListaUsuarios, setListaUsuarios] = useState([]);
-    const [AdminCorreo, setAdminCorreo] = useState("");
+    const [Usuario, setUsuario] = useState([]);
 
     const obtenerUsuarios = () => {
         Axios.get('http://localhost:3001/ListaUsuarios').then((response) => {
@@ -14,10 +14,16 @@ function AdministrarCuentas() {
         })
     };
 
-    const ModificarUsuario = (id) => {
-        Axios.put('http://localhost:3001/ModificarUsuario', 
-
-        )
+    const BuscarUsuario = (id) => {
+        console.log(id)
+        Axios.get('http://localhost:3001/UsuarioModificar', 
+            {
+                Email: id,
+            }
+        ).then((response) =>{
+            setUsuario(response.data);
+            console.log(Usuario);
+        })
     };
     return (
         <div className='AdministradorCuentas'>
@@ -47,7 +53,7 @@ function AdministrarCuentas() {
                                     <td>{val.CORREO}</td>
                                     <td>{val.CONTRASENA}</td>
                                     <td>{val.ROL}</td>
-                                    <td><button className='btn btn-outline-primary' data-bs-toggle="offcanvas" data-bs-target="" aria-controls='' >Modificar</button></td>
+                                    <td><a className='btn btn-outline-primary' data-bs-toggle="offcanvas" data-bs-target="#offcanvasPlantilla" aria-controls='offcanvasPlantilla' role="button" onClick={() => {BuscarUsuario(val.CORREO)}}>Modificar</a></td>
                                     <td><button className='btn btn-danger'>Eliminar</button></td>
                                 </tr>
                             )
@@ -62,7 +68,11 @@ function AdministrarCuentas() {
                         <h5 className='offcanvas-title' id="ModificarUsuario">Modificar Usuario</h5>
                         <button className='btn-close' data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
-                    
+                    {Usuario.map((val,key) => {
+                        return (
+                            <div></div>
+                        )
+                    })}
                 </div>
 
             </div>

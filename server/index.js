@@ -43,10 +43,18 @@ app.get('/ListaUsuarios', (req, res) => {
 });
 
 app.get('/UsuarioModificar', (req, res) => {
+    const Email = req.body.Email
 
-    
-    connection.query('SELECT FROM PERSONA WHERE CORREO = ?')
-
+    connection.query('SELECT * FROM persona WHERE CORREO = ?', 
+    [Email], (err, result) => {
+        if(err){
+            console.log(err)
+        }
+        else{
+            res.send("Seleccionado")
+        }
+    }
+    );
 });
 
 app.put('/ModificarUsuario', (req, res) => {
