@@ -37,6 +37,7 @@ function SignupForm() {
                 }}
                 />
                 <label for="floatingName">Nombre</label>
+                
             </div>
             {/* Input Primer Apellido */}
             <div class="form-floating mb-3">
@@ -49,7 +50,7 @@ function SignupForm() {
             </div>
             {/* Input Segundo Apellido */}
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingLN2" placeholder="Cordero" name="2Apellido"  onChange={
+                <input type="text" class="form-control" id="floatingLN2" placeholder="Cordero" name="Apellidodos"  onChange={
                     (event) => { 
                         setSecLastNameReg(event.target.value)
                 }}
