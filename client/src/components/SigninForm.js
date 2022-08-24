@@ -3,7 +3,7 @@ import '../styles/Registro.css';
 
 const SigninForm = () => {
     return (
-        <div>
+        <div className='Form'>
             SigninForm
         </div>
     )
