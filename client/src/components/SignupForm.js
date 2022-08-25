@@ -31,7 +31,7 @@ function SignupForm() {
 
             {/* Input Nombre */}
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingName" placeholder="Juan" name="Nombre" onChange={
+                <input className='inputRegister' type="text" class="form-control" id="floatingName" placeholder="Juan" name="Nombre" onChange={
                     (event) => { 
                         setNameReg(event.target.value)
                 }}
