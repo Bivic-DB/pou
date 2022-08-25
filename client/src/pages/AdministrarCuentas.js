@@ -36,7 +36,6 @@ function AdministrarCuentas() {
                             <th scope="col"> Nombre</th>
                             <th scope="col"> Apellidos </th>
                             <th scope="col"> Email </th>
-                            <th scope="col"> Contraseña </th>
                             <th scope="col"> Rol </th>
                             <th scope="col"> Modificar </th>
                             <th scope="col"> Eliminar </th>
@@ -51,7 +50,6 @@ function AdministrarCuentas() {
                                     <td>{val.NOMBRE}</td>
                                     <td>{val.APELLIDO} {val.APELLIDODOS}</td>
                                     <td>{val.CORREO}</td>
-                                    <td>{val.CONTRASENA}</td>
                                     <td>{val.ROL}</td>
                                     <td><a className='btn btn-outline-primary' data-bs-toggle="offcanvas" data-bs-target="#offcanvasPlantilla" aria-controls='offcanvasPlantilla' role="button" onClick={() => {BuscarUsuario(val.CORREO)}}>Modificar</a></td>
                                     <td><button className='btn btn-danger'>Eliminar</button></td>

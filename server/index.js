@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const cors = require("cors");
 
 const bcrypt = require('bcrypt');
+const { response } = require('express');
 const saltRounds = 10
 
 app.use(express.json());
@@ -84,7 +85,7 @@ app.post('/Login', (req, res) => {
 
     connection.query(
         "SELECT * FROM persona WHERE CORREO=?",
-        username,
+        Email,
         (err, result) => {
 
             if (err) {
@@ -92,9 +93,17 @@ app.post('/Login', (req, res) => {
             }
 
             if (result.length > 0) {
-                res.send(result);
-            } else {
+                console.log(result[0])
+            bcrypt.compare(Password, result[0].CONTRASENA, (err,response) =>{
+                if(response){
+                    res.send(result);
+                }
+                else {
                 res.send({ message: "Correo o contraseña incorrectos." })
+                }
+            });
+            } else{
+                res.send({message: "Usuario inexistente"})
             }
         }
     )
