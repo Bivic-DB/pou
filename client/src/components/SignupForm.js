@@ -11,83 +11,113 @@ function SignupForm() {
     const [PasswordReg, setPasswordReg] = useState("");
     const [RolReg, setRolReg] = useState("");
 
-    const agregarRegistro = () =>{
+    const agregarRegistro = () => {
         Axios.post('http://localhost:3001/Registro', {
             // Objeto con las propiedades que queremos enviar
             Name: NameReg,
-            LastName : LastNameReg,
-            SecLastName : SecLastNameReg,
-            Email : EmailReg,
-            Password : PasswordReg,
-            Rol : RolReg,
-        }).then( () => {
+            LastName: LastNameReg,
+            SecLastName: SecLastNameReg,
+            Email: EmailReg,
+            Password: PasswordReg,
+            Rol: RolReg,
+        }).then(() => {
             console.log("success");
         })
     };
+    const signUpButton = document.getElementById('signUp');
+    const signInButton = document.getElementById('signIn');
+    const container = document.getElementById('container');
+    
+    signUpButton.addEventListener('click', () => {
+        container.classList.add("right-panel-active");
+    });
+    
+    signInButton.addEventListener('click', () => {
+        container.classList.remove("right-panel-active");
+    });
 
+    const buttonclicked = () => {
+        btn
+    }
     return (
         <div className='Form'>
             <h1>Crear cuenta</h1>
 
-            {/* Input Nombre */}
-            <div class="form-floating mb-3">
-                <input className='inputRegister' type="text" class="form-control" id="floatingName" placeholder="Juan" name="Nombre" onChange={
-                    (event) => { 
-                        setNameReg(event.target.value)
-                }}
-                />
-                <label for="floatingName">Nombre</label>
-                
+
+
+
+            <div class="form-container sign-up-container">
+                <form action="#">
+                    <h1>Create Account</h1>
+                    {/* Input Nombre */}
+                    <div class="form-floating mb-3">
+                        <input className='inputRegister' type="text" class="form-control" id="floatingName" placeholder="Juan" name="Nombre" onChange={
+                            (event) => {
+                                setNameReg(event.target.value)
+                            }}
+                        />
+                        <label for="floatingName">Nombre</label>
+
+                    </div>
+                    {/* Input Primer Apellido */}
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingLN1" placeholder="Paolo" name="PApellido" onChange={
+                            (event) => {
+                                setLastNameReg(event.target.value)
+                            }}
+                        />
+                        <label for="floatingLN1">Primer Apellido</label>
+                    </div>
+                    {/* Input Segundo Apellido */}
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingLN2" placeholder="Cordero" name="Apellidodos" onChange={
+                            (event) => {
+                                setSecLastNameReg(event.target.value)
+                            }}
+                        />
+                        <label for="floatingLN2">Segundo Apellido</label>
+                    </div>
+                    {/* Input Correo Electronico */}
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingemail" placeholder="name@example.com" name="Correo" onChange={
+                            (event) => {
+                                setEmailReg(event.target.value)
+                            }}
+                        />
+                        <label for="floatingemail">Correo Electronico</label>
+                    </div>
+                    {/* Input Contraseña */}
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="123" name="Contrasena" onChange={
+                            (event) => {
+                                setPasswordReg(event.target.value)
+                            }}
+                        />
+                        <label for="floatingPassword">Contraseña</label>
+                    </div>
+                    {/* Input Rol */}
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingRol" placeholder="admin" name="Rol" onChange={
+                            (event) => {
+                                setRolReg(event.target.value)
+                            }}
+                        />
+                        <label for="floatingPassword">Rol</label>
+                    </div>
+                    <div>
+                        <button onClick={agregarRegistro} className='submit'>Registrar</button>
+                    </div>
+                    <button>Sign Up</button>
+                </form>
             </div>
-            {/* Input Primer Apellido */}
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingLN1" placeholder="Paolo" name="PApellido"  onChange={
-                    (event) => { 
-                        setLastNameReg(event.target.value)
-                }}
-                />
-                <label for="floatingLN1">Primer Apellido</label>
-            </div>
-            {/* Input Segundo Apellido */}
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingLN2" placeholder="Cordero" name="Apellidodos"  onChange={
-                    (event) => { 
-                        setSecLastNameReg(event.target.value)
-                }}
-                />
-                <label for="floatingLN2">Segundo Apellido</label>
-            </div>
-            {/* Input Correo Electronico */}
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingemail" placeholder="name@example.com" name="Correo"  onChange={
-                    (event) => { 
-                        setEmailReg(event.target.value)
-                }} 
-                />
-                <label for="floatingemail">Correo Electronico</label>
-            </div>
-            {/* Input Contraseña */}
-            <div class="form-floating mb-3">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="123" name="Contrasena"  onChange={
-                    (event) => { 
-                        setPasswordReg(event.target.value)
-                }}
-                />
-                <label for="floatingPassword">Contraseña</label>
-            </div>
-            {/* Input Rol */}
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingRol" placeholder="admin" name="Rol"  onChange={
-                    (event) => { 
-                        setRolReg(event.target.value)
-                }} 
-                />
-                <label for="floatingPassword">Rol</label>
-            </div>
-            <div>
-                <button onClick={agregarRegistro} className='submit'>Registrar</button>
-            </div>
+
         </div>
+
+
+
+
+
+
     );
 };
 
