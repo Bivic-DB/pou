@@ -6,14 +6,21 @@ const SigninForm = () => {
     const [Emaillog, setEmaillog] = useState("");
     const [Passwordlog, setPasswordlog] = useState("");
     
+    const [loginStatus, setloginStatus] = useState("");
+
     const IniciarSes = () =>{
         Axios.post('http://localhost:3001/Login', {
             // Objeto con las propiedades que queremos enviar
             Email: Emaillog,
             Password : Passwordlog,
             
-        }).then( () => {
-            console.log("success");
+        }).then((response) => {
+            if (response.data.message){
+                setloginStatus(response.data.message);
+            }
+            else {
+                setloginStatus(response.data[0].CORREO);
+            }
         })
     };
 
@@ -21,7 +28,7 @@ const SigninForm = () => {
         <div className='Form'>
             {/* Input Correo */}
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingEmail" placeholder="Example@example.com" name="Email" onChange={
+                <input type="text" class="form-control" id="floatingEmailLogin" placeholder="Example@example.com" name="Email" onChange={
                     (event) => { 
                         setEmaillog(event.target.value)
                 }}/>
@@ -29,7 +36,7 @@ const SigninForm = () => {
             </div>
             {/* Input Contraseña */}
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingEmail" placeholder="Example@example.com" name="Email" onChange={
+                <input type="text" class="form-control" id="floatingPassWordLogin" placeholder="Example@example.com" name="Email" onChange={
                     (event) => { 
                         setPasswordlog(event.target.value)
                 }}/>
@@ -37,6 +44,7 @@ const SigninForm = () => {
             </div>
             <div>
                 <button onClick={IniciarSes} className='submit'>Iniciar</button>
+                <h1>{loginStatus}</h1>
             </div>
         </div>
     )

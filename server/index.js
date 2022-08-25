@@ -71,6 +71,23 @@ app.post('/Login', (req, res) =>{
     const Password = req.body.Password
     const Email = req.body.Email
 
+    connection.query(
+        "SELECT * FROM persona WHERE CORREO=? AND CONTRASENA=?",
+        [Email, Password],
+        (err, result) => {
+
+            if(err) {
+                res.send({err: err})
+            }
+
+            if(result.length > 0){
+                res.send(result);
+            } else{
+                res.send({ message: "Correo o contraseña incorrectos."})
+            }
+        }
+    )
+
 })
 
 // Port 8080 for Google App Engine
