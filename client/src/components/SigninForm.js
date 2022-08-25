@@ -36,7 +36,7 @@ const SigninForm = () => {
             </div>
             {/* Input Contraseña */}
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingPassWordLogin" placeholder="Example@example.com" name="Email" onChange={
+                <input type="password" class="form-control" id="floatingPassWordLogin" placeholder="Example@example.com" name="Email" onChange={
                     (event) => { 
                         setPasswordlog(event.target.value)
                 }}/>

@@ -5,6 +5,9 @@ const connection = require('./database');
 const bodyParser = require('body-parser');
 const cors = require("cors");
 
+const bcrypt = require('bcrypt');
+const saltRounds = 10
+
 app.use(express.json());
 // liberia que permite conectar la api
 app.use(cors());
@@ -20,17 +23,25 @@ app.post('/Registro', (req, res) => {
     const Password = req.body.Password
     const Rol = req.body.Rol
 
-    connection.query('INSERT INTO persona (CORREO, NOMBRE, APELLIDO, APELLIDODOS, CONTRASENA, ROL) VALUES (?, ?, ?, ?, ?, ?)',
-        [Email, Name, LastName, SecLastName, Password, Rol], (err, result) => {
-            if (err) {
-                console.log(err)
-            }
-            else {
-                res.send("Registrado")
-            }
+    bcrypt.hash(Password, saltRounds, (err, hash) => {
+
+        if(err){
+            console.log(err)
         }
-    );
-});
+
+        connection.query('INSERT INTO persona (CORREO, NOMBRE, APELLIDO, APELLIDODOS, CONTRASENA, ROL) VALUES (?, ?, ?, ?, ?, ?)',
+            [Email, Name, LastName, SecLastName, hash, Rol], (err, result) => {
+                if (err) {
+                    console.log(err)
+                }
+                else {
+                    res.send("¡Completado!")
+                }
+            }
+        );
+    });
+})
+
 
 app.get('/ListaUsuarios', (req, res) => {
 
@@ -44,19 +55,19 @@ app.get('/ListaUsuarios', (req, res) => {
 });
 
 app.get('/UsuarioModificar', (req, res) => {
-    
+
     const Password = req.body.Password
     const Email = req.body.Email
 
-    connection.query('SELECT * FROM persona WHERE CORREO = ?', 
-    [Email], (err, result) => {
-        if(err){
-            console.log(err)
+    connection.query('SELECT * FROM persona WHERE CORREO = ?',
+        [Email], (err, result) => {
+            if (err) {
+                console.log(err)
+            }
+            else {
+                res.send("Seleccionado")
+            }
         }
-        else{
-            res.send("Seleccionado")
-        }
-    }
     );
 });
 
@@ -66,24 +77,24 @@ app.put('/ModificarUsuario', (req, res) => {
 })
 
 // Login de Usuario
-app.post('/Login', (req, res) =>{
+app.post('/Login', (req, res) => {
 
     const Password = req.body.Password
     const Email = req.body.Email
 
     connection.query(
-        "SELECT * FROM persona WHERE CORREO=? AND CONTRASENA=?",
-        [Email, Password],
+        "SELECT * FROM persona WHERE CORREO=?",
+        username,
         (err, result) => {
 
-            if(err) {
-                res.send({err: err})
+            if (err) {
+                res.send({ err: err })
             }
 
-            if(result.length > 0){
+            if (result.length > 0) {
                 res.send(result);
-            } else{
-                res.send({ message: "Correo o contraseña incorrectos."})
+            } else {
+                res.send({ message: "Correo o contraseña incorrectos." })
             }
         }
     )
