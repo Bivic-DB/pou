@@ -13,7 +13,7 @@ function Servicios() {
                             <table id="pasosarealizar" className='tableservicios'>
                                 <tr>
                                     <th className='thservicios'> Biblioteca del colegio</th>
-                                    <th> Biblioteca de la escuela</th>
+                                    <th className='thservicios'> Biblioteca de la escuela</th>
                                 </tr>
                                 <tr><td className="servcolegio"> Préstamo de libros en sala y a domicilio.</td> <td class="servescuela">Préstamo de computadoras.</td></tr>
                                 <tr><td className="servcolegio"> Préstamo de vídeos.</td><td class="servescuela">Préstamo de vídeos.</td></tr>
