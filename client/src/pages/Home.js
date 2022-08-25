@@ -74,26 +74,26 @@ function Home() {
           <div class="carousel-item active">
             <img src={Carrusel} class="d-block w-100" alt="..." height="200px" className='imgcarrusel' />
             <div class="carousel-caption d-none d-md-block">
-              <h5 className='h5carrusel'>First slide label</h5>
+              <h5 className='h5carrusel'>Sabiás Qué</h5>
               <p className='pcarrusel'>Some representative placeholder content for the first slide.</p>
-              <Link className='btn2' to="/Noticia"> Noticia </Link>
+              <Link className='btn2' to="/Noticia"> Conoce Más </Link>
             </div>
           </div>
           <div class="carousel-item">
             <img src={Carrusel1} class="d-block w-100" alt="..." height="200px" className='imgcarrusel' />
             <div class="carousel-caption d-none d-md-block">
-              <h5 className='h5carrusel'>Second slide label</h5>
+              <h5 className='h5carrusel'>Noticia</h5>
               <p className='pcarrusel'>Some representative placeholder content for the second slide.</p>
-              <Link className='btn2' to="/Noticia"> Noticia </Link>
+              <Link className='btn2' to="/Noticia"> Conoce Más </Link>
 
             </div>
           </div>
           <div class="carousel-item">
             <img src={Carrusel2} class="d-block w-100" alt="..." height="200px" className='imgcarrusel' />
             <div class="carousel-caption d-none d-md-block">
-              <h5 className='h5carrusel'>Third slide label</h5>
+              <h5 className='h5carrusel'>Noticia</h5>
               <p className='pcarrusel'>Some representative placeholder content for the third slide.</p>
-              <Link className='btn2' to="/Noticia"> Noticia </Link>
+              <Link className='btn2' to="/Noticia"> Conoce Más </Link>
 
             </div>
           </div>
