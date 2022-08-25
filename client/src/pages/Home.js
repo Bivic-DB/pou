@@ -6,6 +6,9 @@ import Historia from '../assets/historia.png'
 import Servicios from '../assets/servicios.png'
 import email from '../assets/email.png'
 import pin from '../assets/pin.png'
+import Carrusel from '../assets/carrusel.jpg'
+import Carrusel1 from '../assets/carrusel1.jpg'
+import Carrusel2 from '../assets/carrusel2.jpg'
 
 
 import { Link } from 'react-router-dom'
@@ -29,6 +32,7 @@ function Home() {
           </div>
         </div>
       </div>
+      <div className='divisor'></div>
 
       <div class="contenedor-metas-grande" id="metas">
         <div class="metas">
@@ -38,29 +42,27 @@ function Home() {
                 <img src={Mision} className="ImgInformacion" />
 
                 <h3>Misión, Visión y Valores</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil modi,
-                  voluptatum ab neque distinctio quia molestiae doloribus </p>
+                <p> Conoce un poco del proyecto</p>
                 <Link to='/' className="btn1" > Leer Más </Link>
               </div>
               <div class="columna-metas">
                 <img src={Servicios} className="ImgInformacion" />
 
                 <h3>Servicios</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil modi,
-                  voluptatum ab neque distinctio quia molestiae doloribus </p>
+                <p> Revisa el contenido que ofrecemos en las bibliotecas </p>
                 <Link to='/Servicios' className="btn1" > Leer Más </Link>
               </div>
               <div class="columna-metas" id="metasderecha">
                 <img src={Historia} className="ImgInformacion" />
                 <h3>Historia</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil modi,
-                  voluptatum ab neque distinctio quia molestiae doloribus </p>
+                <p> Echa un vistazo el como empezamos </p>
                 <Link to='/' className="btn1" > Leer Más </Link>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <div className='divisor'></div>
 
       <div id="carouselExampleCaptions" class="carousel carousel-dark slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
@@ -70,24 +72,29 @@ function Home() {
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src={Mision} class="d-block w-100" alt="..." height="200px" className='imgcarrusel' />
+            <img src={Carrusel} class="d-block w-100" alt="..." height="200px" className='imgcarrusel' />
             <div class="carousel-caption d-none d-md-block">
               <h5 className='h5carrusel'>First slide label</h5>
               <p className='pcarrusel'>Some representative placeholder content for the first slide.</p>
+              <Link className='btn2' to="/Noticia"> Noticia </Link>
             </div>
           </div>
           <div class="carousel-item">
-            <img src={Historia} class="d-block w-100" alt="..." height="200px" className='imgcarrusel' />
+            <img src={Carrusel1} class="d-block w-100" alt="..." height="200px" className='imgcarrusel' />
             <div class="carousel-caption d-none d-md-block">
               <h5 className='h5carrusel'>Second slide label</h5>
               <p className='pcarrusel'>Some representative placeholder content for the second slide.</p>
+              <Link className='btn2' to="/Noticia"> Noticia </Link>
+
             </div>
           </div>
           <div class="carousel-item">
-            <img src={Servicios} class="d-block w-100" alt="..." height="200px" className='imgcarrusel' />
+            <img src={Carrusel2} class="d-block w-100" alt="..." height="200px" className='imgcarrusel' />
             <div class="carousel-caption d-none d-md-block">
               <h5 className='h5carrusel'>Third slide label</h5>
               <p className='pcarrusel'>Some representative placeholder content for the third slide.</p>
+              <Link className='btn2' to="/Noticia"> Noticia </Link>
+
             </div>
           </div>
         </div>
@@ -100,6 +107,7 @@ function Home() {
           <span class="visually-hidden"></span>
         </button>
       </div>
+      <div className='divisor'></div>
 
       <div className='container'>
         <div className='row comentarios justify-content-center'>
@@ -150,6 +158,7 @@ function Home() {
 
 
 
+      <div className='divisor'></div>
 
       <div id='Contacto' className='contact'>
         <div className='content'>

@@ -4,6 +4,32 @@
     box-sizing: border-box;
     font-family: 'Lato', sans-serif;
 }
+.btn2{
+    margin-left: 57%;
+    transition: background 0.5s;
+    background-color: #5A5DE2;
+    text-decoration: none;
+    color: #fff;
+    padding: 15px;
+    border-radius: 30px;
+
+}
+.btn2:hover{
+    background: #36494E;
+}
+.btn1 {
+    text-decoration: none;
+    display: inline-block;
+    background-color: #5A5DE2;
+    color: #fff;
+    padding: 15px;
+    margin: 0px;
+    border-radius: 30px;
+    transition: background 0.5s;
+}
+.divisor{
+    margin-top: 11rem;
+}
 
 .h5carrusel {
     margin-left: 57%;
@@ -23,7 +49,7 @@
 }
 
 .imgcarrusel {
-    width: 400px;
+    width: 30%;
     height: 370px;
     margin-left: 17%;
 }
@@ -38,8 +64,8 @@
 
 @media (max-width: 1130px) {
     .imgcarrusel {
-        width: 300px;
-        height: 290px;
+        width: 32%;
+        height: 5%;
         margin-left: 12%;
     }
 
@@ -95,7 +121,6 @@
 
     background: rgb(245, 190, 112);
     background: radial-gradient(circle, rgba(245, 190, 112, 1) 0%, rgba(236, 149, 91, 1) 10%);
-    margin-bottom: 9rem;
 }
 
 .row-header {
@@ -538,6 +563,7 @@
 }
 
 .form_comentarios input {
+    margin-top: 20px;
     width: 100%;
     height: 84px;
     max-width: 100%;
