@@ -8,9 +8,6 @@ const SigninForm = () => {
     
     const [loginStatus, setloginStatus] = useState("");
 
-    Axios.defaults.withCredentials = true;
-
-
     const IniciarSes = () =>{
         Axios.post('http://localhost:3001/Login', {
             // Objeto con las propiedades que queremos enviar
@@ -22,7 +19,7 @@ const SigninForm = () => {
                 setloginStatus(response.data.message);
             }
             else {
-                setloginStatus(response.data[0].CORREO);
+                setloginStatus("Usuario: " + response.data[0].NOMBRE);
             }
         })
     };
@@ -49,7 +46,7 @@ const SigninForm = () => {
             </div>
             <div>
                 <button onClick={IniciarSes} className='submit'>Iniciar</button>
-                <h1>{loginStatus}</h1>
+                <h3>{loginStatus}</h3>
             </div>
 
             

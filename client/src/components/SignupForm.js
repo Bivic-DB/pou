@@ -10,6 +10,7 @@ function SignupForm() {
     const [EmailReg, setEmailReg] = useState("");
     const [PasswordReg, setPasswordReg] = useState("");
     const [RolReg, setRolReg] = useState("");
+    const [registerStatus, setregisterStatus] = useState("");
 
     const agregarRegistro = () =>{
         Axios.post('http://localhost:3001/Registro', {
@@ -19,9 +20,9 @@ function SignupForm() {
             SecLastName : SecLastNameReg,
             Email : EmailReg,
             Password : PasswordReg,
-            Rol : RolReg,
+            Rol : "2",
         }).then( () => {
-            console.log("success");
+            setregisterStatus("Usuario Registrado");
         })
     };
 
@@ -76,16 +77,17 @@ function SignupForm() {
                 <label for="floatingPassword">Contraseña</label>
             </div>
             {/* Input Rol */}
-            <div class="form-floating mb-3">
+            {/*<div class="form-floating mb-3">
                 <input type="text" class="form-control" id="floatingRol" placeholder="admin" name="Rol"  onChange={
                     (event) => { 
                         setRolReg(event.target.value)
                 }} 
                 />
                 <label for="floatingPassword">Rol</label>
-            </div>
+            </div>*/}
             <div>
                 <button onClick={agregarRegistro} className='submit'>Registrar</button>
+                <h4>{registerStatus}</h4>
             </div>
         </div>
     );

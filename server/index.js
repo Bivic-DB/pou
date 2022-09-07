@@ -3,7 +3,6 @@ const express = require('express');
 const app = express();
 const connection = require('./database');
 const bodyParser = require('body-parser');
-const cors = require("cors");
 
 const bcrypt = require('bcrypt');
 const { response } = require('express');
@@ -11,7 +10,9 @@ const saltRounds = 10
 
 app.use(express.json());
 // liberia que permite conectar la api
-app.use(cors());
+var cors = require('cors')
+
+app.use(cors()) //
 
 app.get('/status', (req, res) => res.send('Working!'));
 

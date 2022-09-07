@@ -122,8 +122,8 @@ body{
 
 .Header-home {
 
-    background: rgb(245, 190, 112);
-    background: radial-gradient(circle, rgba(245, 190, 112, 1) 0%, rgba(236, 149, 91, 1) 10%);
+    background: #EC955B;
+    
 }
 
 .row-header {
@@ -221,7 +221,12 @@ body{
     .col-2-header {
         max-width: 80%;
     }
-
+    .col-2-header h2{
+        margin-top: 0px;
+    }
+    .row-header{
+        padding-bottom: 40px;
+    }
 }
 
 
@@ -290,7 +295,7 @@ body{
 }
 
 .metas .columna-metas {
-    background-color: white;
+    background-color: #f2f2f2;
     text-align: center;
     padding: 50px 20px;
     cursor: pointer;
@@ -526,9 +531,8 @@ body{
         width: 100%;
     }
 
-    .nameEmail {
-        font-size: 10px;
-    }
+    /*.nameEmail {
+    }*/
 
     .btn {
         margin: 30px auto;
@@ -562,7 +566,7 @@ body{
 }
 
 .h1comentarios {
-    margin-top: 150px;
+    margin-top: 0px;
 }
 
 .form_comentarios input {
@@ -576,7 +580,8 @@ body{
     padding: 10px;
     font-family: 'Lato', sans-serif;
     line-height: 30px;
-    border: 1px solid #5A5DE2;
+    background-color: #d8d8d8;
+    border: none;
     margin-bottom: 20px;
     border-radius: 20px;
 }
