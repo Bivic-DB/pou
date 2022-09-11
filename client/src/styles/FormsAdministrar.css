@@ -6,17 +6,20 @@
     margin-top: 100px;
     text-align: center;
     background: #5A5DE2;
-    padding: 10px;
+    padding: 15px;
     color: white;
-
+    border-radius: 7px;
 }
 
 form{
+    margin-top: 30px;
     border: solid 2px #91ABEE;
+    border-radius:7px;
+    padding: 20px;
 }
 .h2AgregarServicios{
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
     text-align: left;
 
 }
@@ -28,10 +31,10 @@ form{
     min-height: 84px;
     max-height: 360px;
     padding: 10px;
-    border-radius: 20px;
+    border-radius: 10px;
     font-family: 'Lato', sans-serif;
+    border: none;
     line-height: 30px;
-    border: 4px solid #91ABEE;
     background-color: #91abee10;
     margin-bottom: 20px;
 }
