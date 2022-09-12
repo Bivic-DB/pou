@@ -63,26 +63,38 @@ app.get('/ListaUsuarios', (req, res) => {
 });
 
 // Modificar usuarios
-app.get('/UsuarioModificar', (req, res) => {
+// Buscar el usuario
+app.get('/UsuarioModificar/:id', (req, res) => {
 
-    const Password = req.body.Password
-    const Email = req.body.Email
+    const id = req.params.id;
 
-    connection.query('SELECT * FROM persona WHERE CORREO = ?',
-        [Email], (err, result) => {
+    console.log(id);
+    connection.query('SELECT * FROM persona WHERE CORREO = ?', id, (err, result) => {
             if (err) {
                 console.log(err)
             }
             else {
-                res.send("Seleccionado")
+                res.send(result)
             }
         }
     );
 });
 
+// cambiar informacion
 app.put('/ModificarUsuario', (req, res) => {
-    const id = req.body.id
-    connection.query("UPDATE persona SET")
+    const Correo = req.body.Email
+    const Nombre = req.body.NNombre
+    const Apellido = req.body.NApellido
+    const Apellidodos = req.body.NSApellido
+    const Rol = NRol
+
+    connection.query("UPDATE persona SET NOMBRE = ?, APELLIDO = ?, APELLIDODOS = ?, ROL = ? WHERE CORREO = ? ", [Nombre, Apellido, Apellidodos, Rol, Correo], (err, result) => {
+        if(err){
+            console.log(err)
+        } else{
+            res.send(result)
+        }
+    })
 })
 
 // Eliminar usuarios

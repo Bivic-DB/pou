@@ -8,6 +8,10 @@ function AdministrarCuentas() {
     // Variables para guardar información
     const [ListaUsuarios, setListaUsuarios] = useState([]);
     const [Usuario, setUsuario] = useState([]);
+    const [NuevoNombre, setNuevoNombre] = useState("");
+    const [NuevoApellido, setNuevoApellido] = useState("");
+    const [NuevoSegApellido, setNuevoSegApellido] = useState("");
+    const [NuevoRol, setNuevoRol] = useState("");
 
     // Funcion para obtener usuarios cada que se refresque la página
     useEffect(() => {
@@ -40,17 +44,42 @@ function AdministrarCuentas() {
         })
     };
 
-    //
+    // Busca el usuario para mostrarlo en el offcanvas
     const BuscarUsuario = (id) => {
-        console.log(id)
-        Axios.get('http://localhost:3001/UsuarioModificar', 
-            {
-                Email: id,
-            }
+        console.log(id);
+        Axios.get(`http://localhost:3001/UsuarioModificar/${id}`, 
         ).then((response) =>{
             setUsuario(response.data);
             console.log(Usuario);
         })
+    };
+
+    // Cambiar la informacion del usuario
+    const ActualizarUsuario = (id) =>{
+        Swal.fire({
+            title: '¿Estas seguro de actualizar este usuario?',
+            text: "La información actualizada no se podrá recuperar",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Actualizar'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire(
+                'Actualizado',
+                'El usuario a sido actualizado correctamente',
+                'success'
+              );
+              Axios.put('http://localhost:3001/ModificarUsuario', {
+                NNombre: NuevoNombre,
+                NApellido: NuevoApellido,
+                NSApellido: NuevoSegApellido,
+                Email: id,
+                NRol: NuevoRol,
+              })
+            }
+          })
     };
     return (
         <div className='AdministradorCuentas'>
@@ -62,7 +91,7 @@ function AdministrarCuentas() {
                         <tr>
                             <th scope="col"> Nombre</th>
                             <th scope="col"> Apellidos </th>
-                            <th scope="col"> Email </th>
+                            <th scope="col"> Correo </th>
                             <th scope="col"> Rol </th>
                             <th scope="col"> Modificar </th>
                             <th scope="col"> Eliminar </th>
@@ -96,7 +125,49 @@ function AdministrarCuentas() {
                     {/* Cuerpo del apartado */}
                     {Usuario.map((val,key) => {
                         return (
-                            <div></div>
+                            <div className='offcanvas-body'>
+                                <div className='container-sm'>
+                                    <div className='form-floating mb-3'> 
+                                        <input type="text" className='form-control' id="nombre" placeholder='123' value={val.NOMBRE} onChange={
+                                            (event) => {
+                                                setNuevoNombre(event.target.value)
+                                            }}></input>
+                                        <label for="nombre">Nombre </label>
+                                    </div>
+                                    <div className='form-floating mb-3'> 
+                                        <input type="text" className='form-control' id="Apellido" placeholder='123' value={val.APELLIDO} onChange={
+                                            (event) => {
+                                                setNuevoApellido(event.target.value)
+                                            }}></input>
+                                        <label for="Apellido">Apellido </label>
+                                    </div>    
+                                    <div className='form-floating mb-3'> 
+                                        <input type="text" className='form-control' id="apellido2" placeholder='123' value={val.APELLIDODOS} onChange={
+                                            (event) => {
+                                                setNuevoSegApellido(event.target.value)
+                                            }}></input>
+                                        <label for="apellido2">Segundo Apellido</label>
+                                    </div>    
+                                    <div className='form-floating mb-3'> 
+                                        <input type="text" className='form-control' id="correo" placeholder='123' value={val.CORREO} disabled></input>
+                                        <label for="correo">Correo </label>
+                                    </div>      
+                                    <div className='form-floating'>
+                                        <select className='form-select' id="floatingSelect" aria-label="floating label select example" onChange={(e)=>{
+                                            const SelectedRol = e.target.value;
+                                            setNuevoRol(SelectedRol);
+                                        }}>
+                                            <option selected disabled>Seleccionar</option>
+                                            <option value="1"> Administrador </option>
+                                            <option value="2"> Estudiante/Profesor </option>
+                                            <option value="3"> Invitado </option>
+                                        </select>
+                                        <label for="floatingSelect">Rol del usuario</label>
+                                    </div>  
+                                    <br></br>
+                                    <button className='btn btn-outline-primary'  onClick={() => {ActualizarUsuario(val.CORREO)}}>Actualizar Usuario</button>
+                                </div>
+                            </div>
                         )
                     })}
                 </div>
