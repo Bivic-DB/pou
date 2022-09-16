@@ -6,9 +6,6 @@ import Historia from '../assets/historia.png'
 import Servicios from '../assets/servicios.png'
 import email from '../assets/email.png'
 import pin from '../assets/pin.png'
-import Carrusel from '../assets/carrusel.jpg'
-import Carrusel1 from '../assets/carrusel1.jpg'
-import Carrusel2 from '../assets/carrusel2.jpg'
 
 
 import { Link } from 'react-router-dom'
@@ -72,7 +69,7 @@ function Home() {
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src={Carrusel} class="d-block w-100" alt="..." height="200px" className='imgcarrusel' />
+            {/*<img src={Carrusel} class="d-block w-100" alt="..." height="200px" className='imgcarrusel' />*/}
             <div class="carousel-caption d-none d-md-block">
               <h5 className='h5carrusel'>Sabiás Qué</h5>
               <p className='pcarrusel'>Some representative placeholder content for the first slide.</p>
@@ -80,7 +77,7 @@ function Home() {
             </div>
           </div>
           <div class="carousel-item">
-            <img src={Carrusel1} class="d-block w-100" alt="..." height="200px" className='imgcarrusel' />
+            {/*<img src={Carrusel1} class="d-block w-100" alt="..." height="200px" className='imgcarrusel' />*/}
             <div class="carousel-caption d-none d-md-block">
               <h5 className='h5carrusel'>Noticia</h5>
               <p className='pcarrusel'>Some representative placeholder content for the second slide.</p>
@@ -89,7 +86,7 @@ function Home() {
             </div>
           </div>
           <div class="carousel-item">
-            <img src={Carrusel2} class="d-block w-100" alt="..." height="200px" className='imgcarrusel' />
+            {/*<img src={Carrusel2} class="d-block w-100" alt="..." height="200px" className='imgcarrusel' />*/}
             <div class="carousel-caption d-none d-md-block">
               <h5 className='h5carrusel'>Noticia</h5>
               <p className='pcarrusel'>Some representative placeholder content for the third slide.</p>
