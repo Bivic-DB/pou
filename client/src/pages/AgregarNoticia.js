@@ -31,7 +31,7 @@ function AgregarNoticia() {
 </div>
 
 <button class="btn-offcanvas" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-Agregar noticia
+Agregar
 </button>
         </div>
 
