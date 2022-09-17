@@ -5,6 +5,7 @@
     background: #5A5DE2;
     padding: 15px;
     color: white;
+    font-family: 'Lato', sans-serif;
 }
 
 form{
@@ -12,6 +13,7 @@ form{
     border: solid 2px #91ABEE;
     border-radius:7px;
     padding: 10px;
+    padding-top: 15px;
 }
 .h2AgregarServicios{
     margin-bottom: 30px;
@@ -20,10 +22,10 @@ form{
 }
 .form_comentarios2 input {
     width: 100%;
-    height: 84px;
+    height: 50px;
     max-width: 100%;
     min-width: 100%;
-    min-height: 84px;
+    min-height: 60px;
     max-height: 360px;
     padding: 10px;
     border-radius: 10px;
@@ -32,6 +34,7 @@ form{
     line-height: 30px;
     background-color: #91abee30;
     margin-bottom: 20px;
+    margin-top: 10px;
 }
 
 .form_comentarios2 .btn {
@@ -59,4 +62,5 @@ form{
 
 .btn-offcanvas{
     margin-top: 100px;
+    font-family: 'Lato', sans-serif;
 }
