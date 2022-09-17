@@ -13,7 +13,7 @@ function SignupForm() {
     const [registerStatus, setregisterStatus] = useState("");
 
     const agregarRegistro = () =>{
-        Axios.post('http://localhost:3001/Registro', {
+        Axios.post('https://bivic-db-deploy.herokuapp.com/Registro', {
             // Objeto con las propiedades que queremos enviar
             Name: NameReg,
             LastName : LastNameReg,
