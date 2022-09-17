@@ -15,7 +15,7 @@ function AdministrarCuentas() {
 
     // Funcion para obtener usuarios cada que se refresque la página
     useEffect(() => {
-        Axios.get('http://localhost:3001/ListaUsuarios').then((response) => {
+        Axios.get('https://bivic-db-deploy.herokuapp.com/ListaUsuarios').then((response) => {
             setListaUsuarios(response.data);
         });
     }, []);
@@ -39,7 +39,7 @@ function AdministrarCuentas() {
                     'success'
                 );
                 
-                Axios.delete(`http://localhost:3001/UsuariosEliminar/${id}`,)
+                Axios.delete(`https://bivic-db-deploy.herokuapp.com/UsuariosEliminar/${id}`,)
             }
         })
     };
@@ -47,7 +47,7 @@ function AdministrarCuentas() {
     // Busca el usuario para mostrarlo en el offcanvas
     const BuscarUsuario = (id) => {
         console.log(id);
-        Axios.get(`http://localhost:3001/UsuarioModificar/${id}`, 
+        Axios.get(`https://bivic-db-deploy.herokuapp.com/UsuarioModificar/${id}`, 
         ).then((response) =>{
             setUsuario(response.data);
             console.log(Usuario);
@@ -71,7 +71,7 @@ function AdministrarCuentas() {
                 'El usuario a sido actualizado correctamente',
                 'success'
               );
-              Axios.put('http://localhost:3001/ModificarUsuario', {
+              Axios.put('https://bivic-db-deploy.herokuapp.com/ModificarUsuario', {
                 NNombre: NuevoNombre,
                 NApellido: NuevoApellido,
                 NSApellido: NuevoSegApellido,
