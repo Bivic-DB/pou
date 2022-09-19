@@ -8,7 +8,7 @@ function AdministrarComentario() {
         <div>
             <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
   <div class="offcanvas-header">
-    <h3 class="offcanvas-title" id="offcanvasExampleLabel">Agregar Noticia</h3>
+    <h3 class="offcanvas-title" id="offcanvasExampleLabel">Administrar comentario</h3>
     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body">
@@ -32,6 +32,7 @@ Agregar
 </button>
 <div className='container-sm'>
 <h1> Administrador de comentarios</h1>
+
                 <br/>
                 <table className='table table-hover'>
                     <thead>

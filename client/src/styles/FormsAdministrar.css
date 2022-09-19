@@ -16,7 +16,6 @@ form{
     padding-top: 15px;
 }
 .h2AgregarServicios{
-    margin-bottom: 30px;
     text-align: left;
 
 }
@@ -63,4 +62,15 @@ form{
 .btn-offcanvas{
     margin-top: 100px;
     font-family: 'Lato', sans-serif;
+    background: #5A5DE2;
+    font-family: 'Lato', sans-serif;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    padding: 10px;
+}
+
+
+.container{
+    margin-top: -40px;
 }
