@@ -29,6 +29,33 @@ function agregarserv() {
 <button class="btn-offcanvas" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
 Agregar
 </button>
+<div className='container-sm'>
+<h1> Administrador de Servicios</h1>
+                <br/>
+                <table className='table table-hover'>
+                    <thead>
+                        <tr>
+                            <th scope="col"> Nombre</th>
+                            <th scope="col"> Número </th>
+                            <th scope="col"> Ubicación </th>
+                            <th scope="col"> Modificar </th>
+                            <th scope="col"> Eliminar </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a className='btn btn-outline-primary' data-bs-toggle="offcanvas" data-bs-target="#offcanvasPlantilla" aria-controls='offcanvasPlantilla' role="button">Modificar</a></td>
+                                    <td><button className='btn btn-danger'>Eliminar</button></td>
+                                </tr>
+                           
+                    </tbody>
+                </table>
+                </div>
         </div>
 
 
