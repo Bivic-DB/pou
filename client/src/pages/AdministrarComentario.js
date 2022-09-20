@@ -27,12 +27,14 @@ function AdministrarComentario() {
   </div>
 </div>
 
-<button class="btn-offcanvas" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-Agregar
-</button>
-<div className='container-sm'>
-<h1> Administrador de comentarios</h1>
 
+<div className='container-sm'>
+<span>
+<h1> Administrador de comentarios</h1>
+<button class="btn-offcanvas" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
++
+</button>
+</span>
                 <br/>
                 <table className='table table-hover'>
                     <thead>

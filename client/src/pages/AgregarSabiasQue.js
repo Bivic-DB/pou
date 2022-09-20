@@ -28,11 +28,14 @@ function AgregarSabiasQue() {
   </div>
 </div>
 
-<button class="btn-offcanvas" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-Agregar
-</button>
+
 <div className='container-sm'>
-<h1> Administrador de Sabías Qué</h1>
+<span>
+<h1> Administrador de Sabias Qué</h1>
+<button class="btn-offcanvas" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
++
+</button>
+</span>
                 <br/>
                 <table className='table table-hover'>
                     <thead>

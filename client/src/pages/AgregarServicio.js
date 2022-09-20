@@ -26,11 +26,14 @@ function agregarserv() {
   </div>
 </div>
 
-<button class="btn-offcanvas" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-Agregar
-</button>
+
 <div className='container-sm'>
-<h1> Administrador de Servicios</h1>
+<span>
+<h1> Administrador de servicios</h1>
+<button class="btn-offcanvas" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
++
+</button>
+</span>
                 <br/>
                 <table className='table table-hover'>
                     <thead>
