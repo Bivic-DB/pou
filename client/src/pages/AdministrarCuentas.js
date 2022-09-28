@@ -102,13 +102,13 @@ function AdministrarCuentas() {
                         {/* Mapeo en la lista de usuarios */}
                         {ListaUsuarios.map((val, key) => {
                             return (
-                                <tr>
-                                    <td>{val.NOMBRE}</td>
-                                    <td>{val.APELLIDO} {val.APELLIDODOS}</td>
-                                    <td>{val.CORREO}</td>
-                                    <td>{val.ROL}</td>
-                                    <td><a className='btn btn-outline-primary' data-bs-toggle="offcanvas" data-bs-target="#offcanvasPlantilla" aria-controls='offcanvasPlantilla' role="button" onClick={() => {BuscarUsuario(val.CORREO)}}>Modificar</a></td>
-                                    <td><button className='btn btn-danger' onClick={() => {eliminaUsuario(val.CORREO)}}>Eliminar</button></td>
+                                <tr key={"tabla " + val.NOMBRE}>
+                                    <td key={val.NOMBRE}>{val.NOMBRE}</td>
+                                    <td key={val.APELLIDO}>{val.APELLIDO} {val.APELLIDODOS}</td>
+                                    <td key={val.CORREO}>{val.CORREO}</td>
+                                    <td key={val.ROL}>{val.ROL}</td>
+                                    <td key={"Modificar_" + val.CORREO}><a className='btn btn-outline-primary' data-bs-toggle="offcanvas" data-bs-target="#offcanvasPlantilla" aria-controls='offcanvasPlantilla' role="button" onClick={() => {BuscarUsuario(val.CORREO)}}>Modificar</a></td>
+                                    <td key={"Eliminar " + val.CORREO}><button className='btn btn-danger' onClick={() => {eliminaUsuario(val.CORREO)}}>Eliminar</button></td>
                                 </tr>
                             )
                         })}
