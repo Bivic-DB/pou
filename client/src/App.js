@@ -1,7 +1,8 @@
 import './App.css';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
-import Registro from './pages/registrarse';
+import Registro from './pages/Registro';
+import Inicio from './pages/InicioS';
 import Servicios from './pages/Servicios';
 import Administrar from './pages/Administrar';
 import AdministrarServicio from './pages/AgregarServicio';
@@ -19,7 +20,8 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" exact element={<Home />} />
-          <Route path="/Formulario" exact element={<Registro />} />
+          <Route path="/Inicio" exact element={<Inicio />} />
+          <Route path="/Registro" exact element={<Registro />} />
           <Route path="/Servicios" exact element={<Servicios />} />
           <Route path="/Administrar" exact element={<Administrar />} />
           <Route path="/AgregarServicio" exact element={<AdministrarServicio />} />

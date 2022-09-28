@@ -1,21 +1,27 @@
-.Body {
-	background: rgb(245, 245, 245);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
+.FormR{
+    max-width: 700px;
+    min-width: 300px;
+    max-height: 700px;
+    width: 50%;
+    height: 60%;
+    margin: 160px auto;
+    background-color: #FFFFFF;
+    border-radius: 25px;
 }
-
-.login-container {
-	padding-top: 8rem;
-	width: 60%;
-	margin-bottom: 20%;
-	display: inline-flex;
-	margin-top: 2%;
+#HeaderTitleR{
+    text-align: center;
+    font-family: 'open sans', sans-serif;
+    padding: 2rem 0;
+    margin: 0;
+    font-size: 2rem;
 }
-.sign-in-container{
-	margin-left: 20%;
-	margin-top: 10%;
+.OrgR{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.mb-3{
+    width: 70%!important;
 }
 .submit {
 	border-radius: 20px;

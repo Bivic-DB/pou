@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 // axios ayuda a poder requerir la información a alguna API ya sea pública o privada
 import Axios from 'axios';
+import '../styles/Registro.css';
 
 function SignupForm() {
 
@@ -27,9 +28,11 @@ function SignupForm() {
     };
 
     return (
-        <div className='Form'>
-            <h1>Crear cuenta</h1>
+        <div className='Contenedor-Registro'>
+            <div className='FormR'>
+            <h1 id='HeaderTitleR'>Crear cuenta</h1>
 
+            <div className='OrgR'>
             {/* Input Nombre */}
             <div className="form-floating mb-3">
                 <input type="text" className="form-control" id="floatingName" placeholder="Juan" name="Nombre" onChange={
@@ -88,6 +91,8 @@ function SignupForm() {
             <div>
                 <button onClick={agregarRegistro} className='submit'>Registrar</button>
                 <h4>{registerStatus}</h4>
+            </div>
+            </div>
             </div>
         </div>
     );
