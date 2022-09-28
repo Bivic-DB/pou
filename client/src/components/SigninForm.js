@@ -29,20 +29,20 @@ const SigninForm = () => {
             <h1>Iniciar Sesión</h1>
 
             {/* Input Correo */}
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingEmailLogin" placeholder="Example@example.com" name="Email" onChange={
+            <div className="form-floating mb-3">
+                <input type="text" className="form-control" id="floatingEmailLogin" placeholder="Example@example.com" name="Email" onChange={
                     (event) => { 
                         setEmaillog(event.target.value)
                 }}/>
-                <label for="floatingName">Correo Electronico</label>
+                <label htmlFor="floatingName">Correo Electronico</label>
             </div>
             {/* Input Contraseña */}
-            <div class="form-floating mb-3">
-                <input type="password" class="form-control" id="floatingPassWordLogin" placeholder="Example@example.com" name="Email" onChange={
+            <div className="form-floating mb-3">
+                <input type="password" className="form-control" id="floatingPassWordLogin" placeholder="Example@example.com" name="Email" onChange={
                     (event) => { 
                         setPasswordlog(event.target.value)
                 }}/>
-                <label for="floatingName">Contraseña</label>
+                <label htmlFor="floatingName">Contraseña</label>
             </div>
             <div>
                 <button onClick={IniciarSes} className='submit'>Iniciar</button>

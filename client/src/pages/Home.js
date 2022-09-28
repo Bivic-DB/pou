@@ -31,25 +31,25 @@ function Home() {
       </div>
       <div className='divisor'></div>
 
-      <div class="contenedor-metas-grande" id="metas">
-        <div class="metas">
-          <div class="contenedor-metas">
-            <div class="metas-row">
-              <div class="columna-metas" id="metasizquierda">
+      <div className="contenedor-metas-grande" id="metas">
+        <div className="metas">
+          <div className="contenedor-metas">
+            <div className="metas-row">
+              <div className="columna-metas" id="metasizquierda">
                 <img src={Mision} className="ImgInformacion" />
 
                 <h3>Misión, Visión y Valores</h3>
                 <p> Conoce un poco del proyecto</p>
                 <Link to='/' className="btn1" > Leer Más </Link>
               </div>
-              <div class="columna-metas">
+              <div className="columna-metas">
                 <img src={Servicios} className="ImgInformacion" />
 
                 <h3>Servicios</h3>
                 <p> Revisa el contenido que ofrecemos en las bibliotecas </p>
                 <Link to='/Servicios' className="btn1" > Leer Más </Link>
               </div>
-              <div class="columna-metas" id="metasderecha">
+              <div className="columna-metas" id="metasderecha">
                 <img src={Historia} className="ImgInformacion" />
                 <h3>Historia</h3>
                 <p> Echa un vistazo el como empezamos </p>
@@ -61,33 +61,33 @@ function Home() {
       </div>
       <div className='divisor'></div>
 
-      <div id="carouselExampleCaptions" class="carousel carousel-dark slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <div id="carouselExampleCaptions" className="carousel carousel-dark slide" data-bs-ride="carousel">
+        <div className="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
           <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            {/*<img src={Carrusel} class="d-block w-100" alt="..." height="200px" className='imgcarrusel' />*/}
-            <div class="carousel-caption d-none d-md-block">
+        <div className="carousel-inner">
+          <div className="carousel-item active">
+            {/*<img src={Carrusel} className="d-block w-100" alt="..." height="200px" className='imgcarrusel' />*/}
+            <div className="carousel-caption d-none d-md-block">
               <h5 className='h5carrusel'>Sabiás Qué</h5>
               <p className='pcarrusel'>Some representative placeholder content for the first slide.</p>
               <Link className='btn2' to="/Noticia"> Conoce Más </Link>
             </div>
           </div>
-          <div class="carousel-item">
-            {/*<img src={Carrusel1} class="d-block w-100" alt="..." height="200px" className='imgcarrusel' />*/}
-            <div class="carousel-caption d-none d-md-block">
+          <div className="carousel-item">
+            {/*<img src={Carrusel1} className="d-block w-100" alt="..." height="200px" className='imgcarrusel' />*/}
+            <div className="carousel-caption d-none d-md-block">
               <h5 className='h5carrusel'>Noticia</h5>
               <p className='pcarrusel'>Some representative placeholder content for the second slide.</p>
               <Link className='btn2' to="/Noticia"> Conoce Más </Link>
 
             </div>
           </div>
-          <div class="carousel-item">
-            {/*<img src={Carrusel2} class="d-block w-100" alt="..." height="200px" className='imgcarrusel' />*/}
-            <div class="carousel-caption d-none d-md-block">
+          <div className="carousel-item">
+            {/*<img src={Carrusel2} className="d-block w-100" alt="..." height="200px" className='imgcarrusel' />*/}
+            <div className="carousel-caption d-none d-md-block">
               <h5 className='h5carrusel'>Noticia</h5>
               <p className='pcarrusel'>Some representative placeholder content for the third slide.</p>
               <Link className='btn2' to="/Noticia"> Conoce Más </Link>
@@ -95,13 +95,13 @@ function Home() {
             </div>
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden"></span>
+        <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span className="visually-hidden"></span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden"></span>
+        <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span className="carousel-control-next-icon" aria-hidden="true"></span>
+          <span className="visually-hidden"></span>
         </button>
       </div>
       <div className='divisor'></div>

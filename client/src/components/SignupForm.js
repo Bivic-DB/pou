@@ -31,59 +31,59 @@ function SignupForm() {
             <h1>Crear cuenta</h1>
 
             {/* Input Nombre */}
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingName" placeholder="Juan" name="Nombre" onChange={
+            <div className="form-floating mb-3">
+                <input type="text" className="form-control" id="floatingName" placeholder="Juan" name="Nombre" onChange={
                     (event) => { 
                         setNameReg(event.target.value)
                 }}
                 />
-                <label for="floatingName">Nombre</label>
+                <label htmlFor="floatingName">Nombre</label>
                 
             </div>
             {/* Input Primer Apellido */}
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingLN1" placeholder="Paolo" name="PApellido"  onChange={
+            <div className="form-floating mb-3">
+                <input type="text" className="form-control" id="floatingLN1" placeholder="Paolo" name="PApellido"  onChange={
                     (event) => { 
                         setLastNameReg(event.target.value)
                 }}
                 />
-                <label for="floatingLN1">Primer Apellido</label>
+                <label htmlFor="floatingLN1">Primer Apellido</label>
             </div>
             {/* Input Segundo Apellido */}
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingLN2" placeholder="Cordero" name="Apellidodos"  onChange={
+            <div className="form-floating mb-3">
+                <input type="text" className="form-control" id="floatingLN2" placeholder="Cordero" name="Apellidodos"  onChange={
                     (event) => { 
                         setSecLastNameReg(event.target.value)
                 }}
                 />
-                <label for="floatingLN2">Segundo Apellido</label>
+                <label htmlFor="floatingLN2">Segundo Apellido</label>
             </div>
             {/* Input Correo Electronico */}
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingemail" placeholder="name@example.com" name="Correo"  onChange={
+            <div className="form-floating mb-3">
+                <input type="text" className="form-control" id="floatingemail" placeholder="name@example.com" name="Correo"  onChange={
                     (event) => { 
                         setEmailReg(event.target.value)
                 }} 
                 />
-                <label for="floatingemail">Correo Electronico</label>
+                <label htmlFor="floatingemail">Correo Electronico</label>
             </div>
             {/* Input Contraseña */}
-            <div class="form-floating mb-3">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="123" name="Contrasena"  onChange={
+            <div className="form-floating mb-3">
+                <input type="password" className="form-control" id="floatingPassword" placeholder="123" name="Contrasena"  onChange={
                     (event) => { 
                         setPasswordReg(event.target.value)
                 }}
                 />
-                <label for="floatingPassword">Contraseña</label>
+                <label htmlFor="floatingPassword">Contraseña</label>
             </div>
             {/* Input Rol */}
-            {/*<div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingRol" placeholder="admin" name="Rol"  onChange={
+            {/*<div className="form-floating mb-3">
+                <input type="text" className="form-control" id="floatingRol" placeholder="admin" name="Rol"  onChange={
                     (event) => { 
                         setRolReg(event.target.value)
                 }} 
                 />
-                <label for="floatingPassword">Rol</label>
+                <label htmlFor="floatingPassword">Rol</label>
             </div>*/}
             <div>
                 <button onClick={agregarRegistro} className='submit'>Registrar</button>

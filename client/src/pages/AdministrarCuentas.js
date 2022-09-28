@@ -132,25 +132,25 @@ function AdministrarCuentas() {
                                             (event) => {
                                                 setNuevoNombre(event.target.value)
                                             }}></input>
-                                        <label for="nombre">Nombre </label>
+                                        <label htmlFor="nombre">Nombre </label>
                                     </div>
                                     <div className='form-floating mb-3'> 
                                         <input type="text" className='form-control' id="Apellido" placeholder='123' value={val.APELLIDO} onChange={
                                             (event) => {
                                                 setNuevoApellido(event.target.value)
                                             }}></input>
-                                        <label for="Apellido">Apellido </label>
+                                        <label htmlFor="Apellido">Apellido </label>
                                     </div>    
                                     <div className='form-floating mb-3'> 
                                         <input type="text" className='form-control' id="apellido2" placeholder='123' value={val.APELLIDODOS} onChange={
                                             (event) => {
                                                 setNuevoSegApellido(event.target.value)
                                             }}></input>
-                                        <label for="apellido2">Segundo Apellido</label>
+                                        <label htmlFor="apellido2">Segundo Apellido</label>
                                     </div>    
                                     <div className='form-floating mb-3'> 
                                         <input type="text" className='form-control' id="correo" placeholder='123' value={val.CORREO} disabled></input>
-                                        <label for="correo">Correo </label>
+                                        <label htmlFor="correo">Correo </label>
                                     </div>      
                                     <div className='form-floating'>
                                         <select className='form-select' id="floatingSelect" aria-label="floating label select example" onChange={(e)=>{
@@ -162,7 +162,7 @@ function AdministrarCuentas() {
                                             <option value="2"> Estudiante/Profesor </option>
                                             <option value="3"> Invitado </option>
                                         </select>
-                                        <label for="floatingSelect">Rol del usuario</label>
+                                        <label htmlFor="floatingSelect">Rol del usuario</label>
                                     </div>  
                                     <br></br>
                                     <button className='btn btn-outline-primary'  onClick={() => {ActualizarUsuario(val.CORREO)}}>Actualizar Usuario</button>

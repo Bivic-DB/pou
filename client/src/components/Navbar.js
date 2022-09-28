@@ -11,7 +11,7 @@ function Navbar() {
         <nav>
           <img to="/" src={Logo} id='logo1' />
           <input type={"checkbox"} id="menuBtn"></input>
-          <label for="menuBtn" className='barIcon'>
+          <label htmlFor="menuBtn" className='barIcon'>
             <img className='menuIcon' src={Menu}></img>
           </label>
           <ul className='ulNav'>
