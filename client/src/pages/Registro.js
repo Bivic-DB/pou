@@ -2,100 +2,162 @@ import React, { useState, useEffect } from 'react';
 // axios ayuda a poder requerir la información a alguna API ya sea pública o privada
 import Axios from 'axios';
 import '../styles/Registro.css';
-import {useFormik} from "formik";
 
 function SignupForm() {
 
-    const [NameReg, setNameReg] = useState("");
-    const [LastNameReg, setLastNameReg] = useState("");
-    const [SecLastNameReg, setSecLastNameReg] = useState("");
-    const [EmailReg, setEmailReg] = useState("");
-    const [PasswordReg, setPasswordReg] = useState("");
+    const initialValues = { NameReg: "", LastNameReg: "", SecLastNameReg: "", EmailReg: "", PasswordReg: "" };
+    const [formValues, setFormValues] = useState(initialValues);
+    const [formErrors, setFormErrors] = useState({});
+    const [isSubmit, setIsSubmit] = useState(false);
+
+    const handleChange = (e) => {
+        const { name, value} = e.target;
+        setFormValues({ ...formValues, [name]:value });
+    };
+
     const [RolReg, setRolReg] = useState("");
     const [registerStatus, setregisterStatus] = useState("");
 
-    const formik = useFormik({
-        initialValues: {
-            Name: "",
-            LastName: "",
-            SecLastName: "",
-            Email: "",
-            Password: "",
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setFormErrors(validate(formValues));
+        setIsSubmit(true);
+        agregarRegistro(formValues);
+    };
 
-        },
-    });
-    const agregarRegistro = () =>{
-        if (/@est.cedesdonbosco.ed.cr\s*$/.test(EmailReg) || /@cedesdonbosco.ed.cr\s*$/.test(EmailReg)) {
-            setRolReg("2");
-         } 
-         else { 
-            setRolReg("3"); 
+    useEffect(() => {
+        if(Object.keys(formErrors).length === 0 && isSubmit){
         }
-        Axios.post('https://bivic-db-deploy.herokuapp.com/Registro', {
-            // Objeto con las propiedades que queremos enviar
-            Name: NameReg,
-            LastName : LastNameReg,
-            SecLastName : SecLastNameReg,
-            Email : EmailReg,
-            Password : PasswordReg,
-            Rol : RolReg,
-            Status : "Activo",
-        }).then( () => {
-            setregisterStatus("Usuario Registrado");
-        })
+    }, [formErrors]);
+
+    const validate = (values) => {
+        const errors = {};
+        const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+        if(!values.NameReg){
+            errors.NameReg = "Se requiere un nombre";
+        }
+        if(!values.LastNameReg){
+            errors.LastNameReg = "Se requiere un apellido";
+        }
+        if(!values.SecLastNameReg){
+            errors.SecLastNameReg = "Se requiere un segundo apellido";
+        }
+        if(!values.EmailReg){
+            errors.EmailReg = "Se requiere un correo";
+        } else if (!regex.test(values.EmailReg)){
+            errors.EmailReg = "Formato no válido";
+        }
+        if(!values.PasswordReg){
+            errors.PasswordReg = "Se requiere una contraseña";
+        } else if(values.PasswordReg.length < 4 ){
+            errors.PasswordReg = "Contraseña demasiado corta";
+        } else if(values.PasswordReg.length > 15){
+            errors.PasswordReg = "Contraseña demasiado larga";
+        }
+        return errors;
+    };
+    const agregarRegistro = (values) => {
+        if (/@est.cedesdonbosco.ed.cr\s*$/.test(values.EmailReg) || /@cedesdonbosco.ed.cr\s*$/.test(values.EmailReg)) {
+            setRolReg("2");
+            console.log(RolReg);
+        } else {
+            setRolReg("3");
+            console.log(RolReg);
+        }
+            Axios.post('https://bivic-db-deploy.herokuapp.com/Registro', {
+                // Objeto con las propiedades que queremos enviar
+                Name: values.NameReg,
+                LastName: values.LastNameReg,
+                SecLastName: values.SecLastNameReg,
+                Email: values.EmailReg,
+                Password: values.PasswordReg,
+                Rol: RolReg,
+            }).then(() => {
+                setregisterStatus("Usuario Registrado");
+            })
+        
+        
     };
 
     return (
         <div className='Contenedor-Registro'>
             <div className='FormR'>
-            <h1 id='HeaderTitleR'>Crear cuenta</h1>
+                <h1 id='HeaderTitleR'>Crear cuenta</h1>
 
-            <div className='OrgR'>
-            {/* Input Nombre */}
-            <div className="form-floating mb-3">
-                <input type="text" className="form-control" id="floatingName" placeholder="Juan" name="Name" value={formik.value.Name} onChange={formik.handleChange}
-                />
-                <label htmlFor="floatingName">Nombre</label>
-                
-            </div>
-            {/* Input Primer Apellido */}
-            <div className="form-floating mb-3">
-                <input type="text" className="form-control" id="floatingLN1" placeholder="Paolo" name="LastName"  value={formik.value.LastName} onChange={formik.handleChange}
-                />
-                <label htmlFor="floatingLN1">Primer Apellido</label>
-            </div>
-            {/* Input Segundo Apellido */}
-            <div className="form-floating mb-3">
-                <input type="text" className="form-control" id="floatingLN2" placeholder="Cordero" name="SecLastName"  value={formik.value.SecLastName} onChange={formik.handleChange}
-                />
-                <label htmlFor="floatingLN2">Segundo Apellido</label>
-            </div>
-            {/* Input Correo Electronico */}
-            <div className="form-floating mb-3">
-                <input type="text" className="form-control" id="floatingemail" placeholder="name@example.com" name="Email"  value={formik.value.Email} onChange={formik.handleChange}
-                />
-                <label htmlFor="floatingemail">Correo Electronico</label>
-            </div>
-            {/* Input Contraseña */}
-            <div className="form-floating mb-3">
-                <input type="password" className="form-control" id="floatingPassword" placeholder="123" name="Password"  value={formik.value.Password} onChange={formik.handleChange}
-                />
-                <label htmlFor="floatingPassword">Contraseña</label>
-            </div>
-            {/* Input Rol */}
-            {/*<div className="form-floating mb-3">
-                <input type="text" className="form-control" id="floatingRol" placeholder="admin" name="Rol"  onChange={
-                    (event) => { 
-                        setRolReg(event.target.value)
-                }} 
-                />
-                <label htmlFor="floatingPassword">Rol</label>
-            </div>*/}
-            <div>
-                <button onClick={agregarRegistro} className='submit'>Registrar</button>
-                <h4>{registerStatus}</h4>
-            </div>
-            </div>
+                <div className='OrgR'>
+                    <form>
+                    {/* Input Nombre */}
+                    <div className="">
+                        <label htmlFor="floatingName" className='form-label'>Nombre</label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            id="floatingName"
+                            name="NameReg"
+                            onChange={handleChange}
+                            value={formValues.NameReg}
+                        />
+                        <p className='errors'>{formErrors.NameReg}</p>
+                    </div>
+                    {/* Input Primer Apellido */}
+                    <div className="">
+                    <label htmlFor="floatingLN1" className='form-label'>Primer Apellido</label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            id="floatingLN1"
+                            name="LastNameReg"
+                            value={formValues.LastNameReg}
+                            onChange={handleChange}
+                        />
+                        <p className='errors'>{formErrors.LastNameReg}</p>
+                    </div>
+                    {/* Input Segundo Apellido */}
+                    <div className="">
+                    <label htmlFor="floatingLN2" className='form-label'>Segundo Apellido</label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            id="floatingLN2"
+                            name="SecLastNameReg"
+                            value={formValues.SecLastNameReg}
+                            onChange={handleChange}/>
+                            
+                            <p className='errors'>{formErrors.SecLastNameReg}</p>
+                        
+                    </div>
+                    {/* Input Correo Electronico */}
+                    <div className="">
+                    <label htmlFor="floatingemail" className='form-label' >Correo Electronico</label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            id="floatingemail"
+                            name="EmailReg"
+                            value={formValues.EmailReg}
+                            onChange={handleChange}
+                        />
+                        <p className='errors'>{formErrors.EmailReg}</p>
+                    </div>
+                    {/* Input Contraseña */}
+                    <div className="">
+                    <label htmlFor="floatingPassword" className='form-label'>Contraseña</label>
+                        <input
+                            type="password"
+                            className="form-control"
+                            id="floatingPassword"
+                            name="PasswordReg"
+                            value={formValues.PasswordReg}
+                            onChange={handleChange}
+                        />
+                        <p className='errors'>{formErrors.PasswordReg}</p>
+                    </div>
+                    <div>
+                        <button className='submit' onClick={handleSubmit}>Registrar</button>
+                        <h4>{registerStatus}</h4>
+                    </div>
+                    </form>
+                </div>
             </div>
         </div>
     );
