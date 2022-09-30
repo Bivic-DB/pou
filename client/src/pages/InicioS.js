@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/Inicio.css';
 import Axios from 'axios';
+
+
 const SigninForm = () => {
 
     const [Emaillog, setEmaillog] = useState("");
@@ -34,6 +36,7 @@ const SigninForm = () => {
 
     return (
         <div className='Contenedor-Inicio'>
+            <div className='todo'>
             <div className='FormS'>
                 <h1 id="HeaderTitle" >Iniciar Sesión</h1>
 
@@ -59,6 +62,11 @@ const SigninForm = () => {
                         <h3>{loginStatus}</h3>
                     </div>
                 </div>
+            </div>
+
+            <div className='fotocaja'>
+                  
+            </div>
             </div>
         </div>
     )
