@@ -30,7 +30,7 @@ function SignupForm() {
             setIsSubmit(true);
             agregarRegistro(formValues);
         }else{
-            console.log("no funca gente")
+            console.log("Validación Incompleta")
         }
         
     };
@@ -193,3 +193,7 @@ function SignupForm() {
 };
 
 export default SignupForm;
+
+// $2b$10$w51mXPEuyIZbO
+// $2b$10$oIg9wciQ2UGgM
+// $2b$10$vK7VUM/5VrpAS
