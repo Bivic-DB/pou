@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react';
 // axios ayuda a poder requerir la información a alguna API ya sea pública o privada
 import Axios from 'axios';
 import '../styles/Registro.css';
+import Swal from 'sweetalert2';
+import {Routes, Route, useNavigate} from 'react-router-dom';
+
+let err_quantity = 0;
 
 function SignupForm() {
 
@@ -9,6 +13,7 @@ function SignupForm() {
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
         const { name, value} = e.target;
@@ -21,8 +26,13 @@ function SignupForm() {
     const handleSubmit = (e) => {
         e.preventDefault();
         setFormErrors(validate(formValues));
-        setIsSubmit(true);
-        agregarRegistro(formValues);
+        if(err_quantity==0){
+            setIsSubmit(true);
+            agregarRegistro(formValues);
+        }else{
+            console.log("no funca gente")
+        }
+        
     };
 
     useEffect(() => {
@@ -31,27 +41,36 @@ function SignupForm() {
     }, [formErrors]);
 
     const validate = (values) => {
+        err_quantity = 0
         const errors = {};
         const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
         if(!values.NameReg){
             errors.NameReg = "Se requiere un nombre";
+            err_quantity++;
         }
         if(!values.LastNameReg){
             errors.LastNameReg = "Se requiere un apellido";
+            err_quantity++;
         }
         if(!values.SecLastNameReg){
             errors.SecLastNameReg = "Se requiere un segundo apellido";
+            err_quantity++;
         }
         if(!values.EmailReg){
             errors.EmailReg = "Se requiere un correo";
+            err_quantity++;
         } else if (!regex.test(values.EmailReg)){
             errors.EmailReg = "Formato no válido";
+            err_quantity++;
         }
         if(!values.PasswordReg){
+            err_quantity++;
             errors.PasswordReg = "Se requiere una contraseña";
         } else if(values.PasswordReg.length < 4 ){
+            err_quantity++;
             errors.PasswordReg = "Contraseña demasiado corta";
         } else if(values.PasswordReg.length > 15){
+            err_quantity++;
             errors.PasswordReg = "Contraseña demasiado larga";
         }
         return errors;
@@ -59,22 +78,31 @@ function SignupForm() {
     const agregarRegistro = (values) => {
         if (/@est.cedesdonbosco.ed.cr\s*$/.test(values.EmailReg) || /@cedesdonbosco.ed.cr\s*$/.test(values.EmailReg)) {
             setRolReg("2");
+            
             console.log(RolReg);
         } else {
             setRolReg("3");
             console.log(RolReg);
         }
-            Axios.post('https://bivic-db-deploy.herokuapp.com/Registro', {
-                // Objeto con las propiedades que queremos enviar
-                Name: values.NameReg,
-                LastName: values.LastNameReg,
-                SecLastName: values.SecLastNameReg,
-                Email: values.EmailReg,
-                Password: values.PasswordReg,
-                Rol: RolReg,
-            }).then(() => {
-                setregisterStatus("Usuario Registrado");
-            })
+        Axios.post('https://bivic-db-deploy.herokuapp.com/Registro', {
+            // Objeto con las propiedades que queremos enviar
+            Name: values.NameReg,
+            LastName: values.LastNameReg,
+            SecLastName: values.SecLastNameReg,
+            Email: values.EmailReg,
+            Password: values.PasswordReg,
+            Rol: RolReg,
+        }).then(() => {
+            //setregisterStatus("Usuario Registrado");
+            Swal.fire(
+                'Aviso',
+                'El usuario se ha registrado correctamente',
+                'success'
+            ).then(function() {
+                navigate('/Inicio');
+            });
+        })
+        
         
         
     };
