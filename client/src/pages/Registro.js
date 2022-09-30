@@ -20,7 +20,7 @@ function SignupForm() {
         setFormValues({ ...formValues, [name]:value });
     };
 
-    const [RolReg, setRolReg] = useState("");
+    let [RolReg, setRolReg] = useState("");
     const [registerStatus, setregisterStatus] = useState("");
 
     const handleSubmit = (e) => {
@@ -77,11 +77,12 @@ function SignupForm() {
     };
     const agregarRegistro = (values) => {
         if (/@est.cedesdonbosco.ed.cr\s*$/.test(values.EmailReg) || /@cedesdonbosco.ed.cr\s*$/.test(values.EmailReg)) {
-            setRolReg("2");
-            
+            //setRolReg("2");
+            RolReg = "2"
             console.log(RolReg);
         } else {
-            setRolReg("3");
+            //setRolReg("3");
+            RolReg = "3"
             console.log(RolReg);
         }
         Axios.post('https://bivic-db-deploy.herokuapp.com/Registro', {
