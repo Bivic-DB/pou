@@ -12,6 +12,7 @@
     text-align: center;
     font-family: 'open sans', sans-serif;
     padding: 2rem 0;
+    padding-bottom: 0;
     margin: 0;
     font-size: 2rem;
 }
@@ -45,4 +46,8 @@
 }
 .form-control{
 	width: 100%;
+}
+.errors{
+    font-size: 13px;
+    color: red;
 }
