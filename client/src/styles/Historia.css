@@ -1,0 +1,69 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+.Cont1{
+    margin-top: 150px;
+    
+}
+
+.Hist1{
+ text-align: center;
+ margin-bottom: 50px;
+font-size: 3rem;
+}
+
+.Fecha{
+  font-weight: bold;
+  color: #5A5DE2;
+}
+.crono ul li {
+    list-style-type: none;
+    position: relative;
+    width: 6px;
+    margin: 0 auto;
+    padding-top: 50px;
+    background: #5A5DE2;
+    text-align: justify;
+   
+  }
+   
+  .crono ul li::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: inherit;
+    background-color: #91ABEE;
+  }
+
+  .crono ul li div {
+    position: relative;
+    bottom: 0;
+    width: 400px;
+    padding: 15px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    
+  }
+   
+ 
+
+  .crono ul li:nth-child(odd) div {
+    left: 45px;
+  }
+   
+  
+
+  .crono ul li:nth-child(even) div {
+    left: -439px;
+  }
+   
+ 
