@@ -15,7 +15,7 @@
 
 .contimg{
     width: 50%;
-    background-color: #91ABEE;
+    background-color: #EC955B;
     border-bottom-right-radius: 15px;
     border-top-right-radius: 15px;
 }
@@ -45,5 +45,5 @@
 }
 
 .form-control{
-background-color: aliceblue;
+background-color: #91abee30;
 }
