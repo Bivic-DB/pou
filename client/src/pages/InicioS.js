@@ -46,7 +46,7 @@ const SigninForm = () => {
                             (event) => {
                                 setEmaillog(event.target.value)
                             }} />
-                        <label htmlFor="floatingName">Correo Electronico</label>
+                        <label htmlFor="floatingName"> Correo Electronico</label>
                     </div>
                     {/* Input Contraseña */}
                     <div className="form-floating mb-3">
