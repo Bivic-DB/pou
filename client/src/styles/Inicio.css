@@ -1,14 +1,24 @@
-.FormS{
-    max-width: 700px;
-    min-width: 300px;
-    max-height: 700px;
-    width: 50%;
-    height: 60%;
+.Cont2{
     margin: 200px auto;
+    display: flex;
+    justify-content: space-between;
+   width: 850px;
+   height: 350px;
+  
+}
+.FormS{
+    width: 50%;
     background-color: #FFFFFF;
-    border-radius: 25px;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
 }
 
+.contimg{
+    width: 50%;
+    background-color: #91ABEE;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+}
 #HeaderTitle{
     text-align: center;
     font-family: 'open sans', sans-serif;
@@ -17,10 +27,23 @@
     font-size: 2rem;
 }
 .Org{
+     width: 50%;
+     margin: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 .mb-3{
     width: 70%!important;
+}
+
+.img1{
+    margin-left: 20%;
+    margin-top: 15%;
+    width: 60%;
+    height: 60%;
+}
+
+.form-control{
+background-color: aliceblue;
 }
