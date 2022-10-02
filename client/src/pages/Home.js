@@ -53,7 +53,7 @@ function Home() {
                 <img src={Historia} className="ImgInformacion" />
                 <h3>Historia</h3>
                 <p> Echa un vistazo el como empezamos </p>
-                <Link to='/' className="btn1" > Leer Más </Link>
+                <Link to='/Historia' className="btn1" > Leer Más </Link>
               </div>
             </div>
           </div>
