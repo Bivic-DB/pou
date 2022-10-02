@@ -12,6 +12,7 @@ function AdministrarCuentas() {
     const [NuevoApellido, setNuevoApellido] = useState("");
     const [NuevoSegApellido, setNuevoSegApellido] = useState("");
     const [NuevoRol, setNuevoRol] = useState("");
+    let autoincrement = 0;
 
     // Funcion para obtener usuarios cada que se refresque la página
     useEffect(() => {
@@ -102,13 +103,13 @@ function AdministrarCuentas() {
                         {/* Mapeo en la lista de usuarios */}
                         {ListaUsuarios.map((val, key) => {
                             return (
-                                <tr key={"tabla " + val.NOMBRE}>
-                                    <td key={val.NOMBRE}>{val.NOMBRE}</td>
-                                    <td key={val.APELLIDO}>{val.APELLIDO} {val.APELLIDODOS}</td>
-                                    <td key={val.CORREO}>{val.CORREO}</td>
-                                    <td key={val.ROL}>{val.ROL}</td>
-                                    <td key={"Modificar_" + val.CORREO}><a className='btn btn-outline-primary' data-bs-toggle="offcanvas" data-bs-target="#offcanvasPlantilla" aria-controls='offcanvasPlantilla' role="button" onClick={() => {BuscarUsuario(val.CORREO)}}>Modificar</a></td>
-                                    <td key={"Eliminar " + val.CORREO}><button className='btn btn-danger' onClick={() => {eliminaUsuario(val.CORREO)}}>Eliminar</button></td>
+                                <tr key={autoincrement++}>
+                                    <td key={autoincrement++}>{val.nombre}</td>
+                                    <td key={autoincrement++}>{val.apellido} {val.segundoapellido}</td>
+                                    <td key={autoincrement++}>{val.correo}</td>
+                                    <td key={autoincrement++}>{val.rol}</td>
+                                    <td key={autoincrement++}><a className='btn btn-outline-primary' data-bs-toggle="offcanvas" data-bs-target="#offcanvasPlantilla" aria-controls='offcanvasPlantilla' role="button" onClick={() => {BuscarUsuario(val.correo)}}>Modificar</a></td>
+                                    <td key={autoincrement++}><button className='btn btn-danger' onClick={() => {eliminaUsuario(val.correo)}}>Eliminar</button></td>
                                 </tr>
                             )
                         })}
