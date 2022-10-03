@@ -1,9 +1,11 @@
 .Cont2{
     margin: 200px auto;
+    margin: 150px;
+    margin-bottom: 100px;
     display: flex;
     justify-content: space-between;
    width: 850px;
-   height: 350px;
+   height: 370px;
   
 }
 .FormS{
@@ -58,6 +60,33 @@ border: none;
 }
 
 
+.registrolink{   
+    width: 300px;
+    margin: auto;
+    display: flex;
+font-size: 15px;
+}
+
+#reg1, #reg2{
+    width: 250px;
+    text-align: center;
+  
+}
+
+#reg1{
+    color: #5A5DE2;
+}
+
+#reg2{
+    margin-left: -65px;
+    color: black;
+}
+
+.submit{
+    margin-top: 10px;
+}
+
+
 @media screen and (max-width: 768px){
     .Cont2{
         width: 450px;
@@ -91,6 +120,30 @@ border: none;
 
     .Org{
         width: 77%;
+    }
+
+    .submit{
+        width: 50%;
+        height: 30px;
+        font-size: 10px;
+        margin-top:-5px;
+        
+    }
+
+    .registrolink{   
+        width: 200px;
+        margin: auto;
+        display: flex;
+    font-size: 11px;
+    }
+
+    #reg1{
+        color: #5A5DE2;
+    }
+    
+    #reg2{
+        margin-left: -35px;
+        color: black;
     }
 
     

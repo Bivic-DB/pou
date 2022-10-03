@@ -3,6 +3,7 @@ import '../styles/Inicio.css';
 import Axios from 'axios';
 import img1 from '../assets/6736811.png';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom'
 
 const SigninForm = () => {
 
@@ -68,6 +69,11 @@ const SigninForm = () => {
                             }} />
                         <label htmlFor="floatingName">Contraseña</label>
                     </div>
+                   
+                    <div>
+                    <Link to='/Registro' className="registrolink"><p id='reg1'>¿No tienes una cuenta?</p><p id='reg2'> Regístrate</p></Link>
+                    </div>
+                
                     <div>
                         <button onClick={IniciarSes} className='submit'>Iniciar</button>
                         <h3>{loginStatus}</h3>
