@@ -9,11 +9,10 @@ const SigninForm = () => {
 
     const [Emaillog, setEmaillog] = useState("");
     const [Passwordlog, setPasswordlog] = useState("");
-
     const [loginStatus, setloginStatus] = useState("");
 
+    Axios.defaults.withCredentials = true;
     
-
     const IniciarSes = () => {
         Axios.post('https://bivic-db-deploy.herokuapp.com/Login', {
             // Objeto con las propiedades que queremos enviar
@@ -41,8 +40,9 @@ const SigninForm = () => {
 
     useEffect(()=> {
         Axios.get('https://bivic-db-deploy.herokuapp.com/Login').then((response) => {
-            console.log(response);
-            setloginStatus(response.data.user[0].correo);
+            if (response.data.loggedIn == true){
+                setloginStatus(response.data.user[0].correo);
+            }
         })
     }, []);
 
@@ -75,8 +75,9 @@ const SigninForm = () => {
                     </div>
                 
                     <div>
+                        <p>{loginStatus}</p>
                         <button onClick={IniciarSes} className='submit'>Iniciar</button>
-                        <h3>{loginStatus}</h3>
+                        
                     </div>
                 </div>
             </div>
