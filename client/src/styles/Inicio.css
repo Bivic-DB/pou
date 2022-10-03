@@ -58,3 +58,65 @@ border: none;
 }
 
 
+@media screen and (max-width: 768px){
+    .Cont2{
+        width: 450px;
+        height: 300px;
+        margin: 150px auto;
+    }
+
+    .form-control::input{
+        width: 166px;
+        height: 10px;
+        }
+        .form-control{
+            width: 170px; 
+        }
+
+    .img1{
+            width: 75%;
+            margin-left: 15%;
+        }
+
+    #HeaderTitle{
+            font-size: 1.5rem;
+            padding: 1.5rem 0;
+        }
+
+
+        .mb-3{
+    font-size: 0.8rem;
+ 
+}
+
+    .Org{
+        width: 77%;
+    }
+
+    
+}
+
+@media screen and (max-width: 500px){
+    .Cont2{
+        width: 370px;
+        height: 290px;
+        margin: 150px auto;
+        margin-bottom: 50px;
+    }
+
+    .form-control::input{
+        width: 166px;
+        height: 10px;
+
+        }
+        .form-control{
+            width: 130px; 
+            height: 10px;
+        }
+        
+        .img1{
+            margin-top: 40%;
+            width: 75%;
+    height: 40%;
+        }
+}
