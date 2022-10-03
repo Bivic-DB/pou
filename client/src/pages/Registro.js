@@ -95,11 +95,10 @@ function SignupForm() {
             Rol: RolReg,
         }).then(() => {
             //setregisterStatus("Usuario Registrado");
-            Swal.fire(
-                'Aviso',
-                'El usuario se ha registrado correctamente',
-                'success'
-            ).then(function() {
+            Swal.fire({
+                title:'El usuario se ha registrado correctamente',
+                icon: 'success',
+            }).then(function() {
                 navigate('/Inicio');
             });
         })
