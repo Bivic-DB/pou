@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect , useNavigate, navigate} from 'react';
 import '../styles/Inicio.css';
 import Axios from 'axios';
 import img1 from '../assets/6736811.png';
+import Swal from 'sweetalert2';
+
 const SigninForm = () => {
 
     const [Emaillog, setEmaillog] = useState("");
@@ -9,7 +11,7 @@ const SigninForm = () => {
 
     const [loginStatus, setloginStatus] = useState("");
 
-    Axios.defaults.withCredentials = true;
+    
 
     const IniciarSes = () => {
         Axios.post('https://bivic-db-deploy.herokuapp.com/Login', {
@@ -18,18 +20,28 @@ const SigninForm = () => {
             Password: Passwordlog,
 
         }).then((response) => {
+            console.log(response);
             if (response.data.message) {
                 setloginStatus(response.data.message);
             }
             else {
-                setloginStatus("Usuario: " + response.data[0].NOMBRE);
+                setloginStatus("Usuario: " + response.data[0].nombre);
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Se ha ingresado correctamente',
+                    showConfirmButton: false,
+                    timer: 1500,
+                }).then(function() {
+                    navigate('/');
+                });
             }
         })
     };
 
     useEffect(()=> {
         Axios.get('https://bivic-db-deploy.herokuapp.com/Login').then((response) => {
-            setloginStatus(response.data.user[0].Email);
+            console.log(response);
+            setloginStatus(response.data.user[0].correo);
         })
     }, []);
 
