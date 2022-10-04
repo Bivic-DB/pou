@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 import '../styles/Registro.css';
 import Swal from 'sweetalert2';
+import img1R from '../assets/imgrrr.png'
+import { Link } from 'react-router-dom'
 import {Routes, Route, useNavigate} from 'react-router-dom';
 
 let err_quantity = 0;
@@ -109,14 +111,15 @@ function SignupForm() {
 
     return (
         <div className='Contenedor-Registro'>
+          
+            <div className='Cont2R'>
             <div className='FormR'>
                 <h1 id='HeaderTitleR'>Crear cuenta</h1>
 
                 <div className='OrgR'>
                     <form>
                     {/* Input Nombre */}
-                    <div className="">
-                        <label htmlFor="floatingName" className='form-label'>Nombre</label>
+                    <div className="form-floating mb-3">
                         <input
                             type="text"
                             className="form-control"
@@ -126,10 +129,10 @@ function SignupForm() {
                             value={formValues.NameReg}
                         />
                         <p className='errors'>{formErrors.NameReg}</p>
+                        <label htmlFor="floatingName">Nombre</label>
                     </div>
                     {/* Input Primer Apellido */}
-                    <div className="">
-                    <label htmlFor="floatingLN1" className='form-label'>Primer Apellido</label>
+                    <div className="form-floating mb-3">
                         <input
                             type="text"
                             className="form-control"
@@ -139,10 +142,11 @@ function SignupForm() {
                             onChange={handleChange}
                         />
                         <p className='errors'>{formErrors.LastNameReg}</p>
+                        <label htmlFor="floatingName">Primer Apellido</label>
                     </div>
                     {/* Input Segundo Apellido */}
-                    <div className="">
-                    <label htmlFor="floatingLN2" className='form-label'>Segundo Apellido</label>
+                    <div className="form-floating mb-3">
+                   
                         <input
                             type="text"
                             className="form-control"
@@ -152,11 +156,11 @@ function SignupForm() {
                             onChange={handleChange}/>
                             
                             <p className='errors'>{formErrors.SecLastNameReg}</p>
-                        
+                            <label htmlFor="floatingName">Segundo Apellido</label>
                     </div>
                     {/* Input Correo Electronico */}
-                    <div className="">
-                    <label htmlFor="floatingemail" className='form-label' >Correo Electronico</label>
+                    <div className="form-floating mb-3">
+                    
                         <input
                             type="text"
                             className="form-control"
@@ -166,10 +170,11 @@ function SignupForm() {
                             onChange={handleChange}
                         />
                         <p className='errors'>{formErrors.EmailReg}</p>
+                        <label htmlFor="floatingName">Correo Electrónico</label>
                     </div>
                     {/* Input Contraseña */}
-                    <div className="">
-                    <label htmlFor="floatingPassword" className='form-label'>Contraseña</label>
+                    <div className="form-floating mb-3">
+                    
                         <input
                             type="password"
                             className="form-control"
@@ -179,7 +184,13 @@ function SignupForm() {
                             onChange={handleChange}
                         />
                         <p className='errors'>{formErrors.PasswordReg}</p>
+                        <label htmlFor="floatingName">Contraseña</label>
                     </div>
+
+                    <div>
+                    <Link to='/Inicio' className="registrolinkR"><p id='reg1R'>¿Ya estás registrado?</p><p id='reg2R'> Inicia sesión</p></Link>
+                    </div>
+
                     <div>
                         <button className='submit' onClick={handleSubmit}>Registrar</button>
                         <h4>{registerStatus}</h4>
@@ -187,6 +198,12 @@ function SignupForm() {
                     </form>
                 </div>
             </div>
+
+            <div className='imgRR'>
+            <img  src={img1R}  className='img1R'></img>
+            </div>
+            
+        </div>
         </div>
     );
 };

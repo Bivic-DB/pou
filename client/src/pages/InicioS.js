@@ -3,7 +3,7 @@ import '../styles/Inicio.css';
 import Axios from 'axios';
 import img1 from '../assets/6736811.png';
 import Swal from 'sweetalert2';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 const SigninForm = () => {
 
@@ -80,12 +80,14 @@ const SigninForm = () => {
                         
                     </div>
                 </div>
+                
             </div>
-
             <div className='contimg'> 
              <img  src={img1}  className='img1'></img>
             </div>
             </div>
+
+            
         </div>
     )
 }

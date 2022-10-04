@@ -119,11 +119,11 @@ font-size: 15px;
     }
 
     .submit{
-        width: 50%;
-        height: 30px;
+    
         font-size: 8px;
         margin-top:-5px;
-       
+       height: auto;
+       word-wrap: break-word;
     }
 
     .registrolink{   
@@ -131,6 +131,7 @@ font-size: 15px;
         margin: auto;
         display: flex;
     font-size: 11px;
+    margin-bottom: -18px;
     }
 
     #reg1{
@@ -167,5 +168,30 @@ font-size: 15px;
             margin-top: 40%;
             width: 75%;
     height: 40%;
+        }
+
+        .submit{
+            font-size: 7px;
+            margin-top:-5px;
+           height: 30px;
+           word-wrap: break-word;
+         
+        }
+    
+        .registrolink{   
+            width: 170px;
+            margin: auto;
+            display: flex;
+        font-size: 9px;
+        margin-bottom: -18px;
+        }
+    
+        #reg1{
+            color: #5A5DE2;
+        }
+        
+        #reg2{
+            margin-left: -35px;
+            color: black;
         }
 }
