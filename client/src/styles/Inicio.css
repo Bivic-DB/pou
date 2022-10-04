@@ -62,7 +62,6 @@ border: none;
 
 .registrolink{   
     width: 300px;
-    margin: auto;
     display: flex;
 font-size: 15px;
 }
@@ -82,15 +81,12 @@ font-size: 15px;
     color: black;
 }
 
-.submit{
-    margin-top: 10px;
-}
 
 
 @media screen and (max-width: 768px){
     .Cont2{
         width: 450px;
-        height: 300px;
+        height: 310px;
         margin: 150px auto;
     }
 
@@ -103,7 +99,7 @@ font-size: 15px;
         }
 
     .img1{
-            width: 75%;
+            width: 76%;
             margin-left: 15%;
         }
 
@@ -125,9 +121,9 @@ font-size: 15px;
     .submit{
         width: 50%;
         height: 30px;
-        font-size: 10px;
+        font-size: 8px;
         margin-top:-5px;
-        
+       
     }
 
     .registrolink{   
