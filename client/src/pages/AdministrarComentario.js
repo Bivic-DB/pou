@@ -6,26 +6,61 @@ function AdministrarComentario() {
     return (
 
         <div>
-            <div className='container'>
-                <div className='row comentarios2 justify-content-center'>
-                    <div className='col-6'>
-                        <h1 className='h1comentarios2'>Administrar Comentarios</h1>
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title" id="offcanvasExampleLabel">Administrar comentario</h3>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+  <div className='container'>
                         <form action='' className='form_comentarios2 d-flex  flex-wrap'>
-                            <h2 className='h2AgregarServicios'>#N comentario</h2>
                             <input type={"number"} name="" id='' placeholder='#N comentario'></input>
-                            <h2 className='h2AgregarServicios'>Autor</h2>
+                            <h4 className='h4AgregarServicios'>Autor</h4>
                             <input type={"text"} name="" id='' placeholder='Autor'></input>
-                            <h2 className='h2AgregarServicios'>Fecha</h2>
+                            <h4 className='h4AgregarServicios'>Fecha</h4>
                             <input type={"date"} name="" id='' placeholder='Fecha'></input>
-                            <h2 className='h2AgregarServicios'>Texto</h2>
+                            <h4 className='h4AgregarServicios'>Texto</h4>
                             <input type={"text"} name="" id='' placeholder='Texto'></input>
                             <button className='btn' type='button'>Agregar</button>
                         </form>
-                    </div>
-                </div>
             </div>
-        </div>
+  </div>
+</div>
 
+<div className='container-sm'>
+<span>
+<h1 id='formsh1'> Administrador de comentarios</h1>
+
+<button class="btn-offcanvas" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
++
+</button>
+</span>
+                <br/>
+                <table className='table table-hover'>
+                    <thead>
+                        <tr>
+                            <th scope="col"> Autor</th>
+                            <th scope="col"> Fecha </th>
+                            <th scope="col"> Texto </th>
+                            <th scope="col"> Modificar </th>
+                            <th scope="col"> Eliminar </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a className='btn btn-outline-primary' data-bs-toggle="offcanvas" data-bs-target="#offcanvasPlantilla" aria-controls='offcanvasPlantilla' role="button">Modificar</a></td>
+                                    <td><button className='btn btn-danger'>Eliminar</button></td>
+                                </tr>
+                           
+                    </tbody>
+                </table>
+        </div>
+        </div>
 
 
     )

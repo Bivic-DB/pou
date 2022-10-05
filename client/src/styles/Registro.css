@@ -1,12 +1,21 @@
+.Cont2R{
+    margin: 200px auto;
+    margin: 150px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+  
+}
 .FormR{
     max-width: 700px;
     min-width: 300px;
-    max-height: 700px;
+    max-height: 800px;
     width: 50%;
     height: 60%;
-    margin: 160px auto;
     background-color: #FFFFFF;
-    border-radius: 25px;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+    text-align: center;
 }
 #HeaderTitleR{
     text-align: center;
@@ -15,14 +24,21 @@
     padding-bottom: 0;
     margin: 0;
     font-size: 2rem;
+    margin-bottom: 20px;
 }
 .OrgR{
+    padding: 1px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: auto;
+    text-align: center;
 }
 .mb-3{
     width: 70%!important;
+    font-family: 'open sans', sans-serif;
+    color: #91ABEE;
+
 }
 .submit {
 	border-radius: 20px;
@@ -35,6 +51,8 @@
 	letter-spacing: 1px;
 	text-transform: uppercase;
 	transition: transform 80ms ease-in;
+    margin: auto;
+    margin-bottom: 20px;
 }
 
 .submit:active {
@@ -46,8 +64,61 @@
 }
 .form-control{
 	width: 100%;
+ 
 }
 .errors{
     font-size: 13px;
     color: red;
+}
+
+.img1R{
+    margin-top: 20%;
+    margin-left: 12%;
+    width: 75%;
+    height: 55%;
+}
+
+.imgRR{
+    width: 50%;
+    background-color: #EC955B;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.registrolinkR{   
+    width: 300px;
+    display: flex;
+font-size: 15px;
+}
+
+#reg1R, #reg2R{
+    width: 250px;
+    text-align: center;
+  
+}
+
+#reg1R{
+    color: #5A5DE2;
+}
+
+#reg2R{
+    margin-left: -65px;
+    color: black;
+}
+@media screen and (max-width: 768px){
+
+    .registrolink{   
+    font-size: 11px;
+    margin-bottom: -18px;
+    }
+
+    #reg1{
+        color: #5A5DE2;
+    }
+    
+    #reg2{
+        margin-left: -35px;
+        color: black;
+    }
+
 }

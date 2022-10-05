@@ -1,17 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect , useNavigate, navigate} from 'react';
 import '../styles/Inicio.css';
 import Axios from 'axios';
+import img1 from '../assets/6736811.png';
+import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 
 const SigninForm = () => {
 
     const [Emaillog, setEmaillog] = useState("");
     const [Passwordlog, setPasswordlog] = useState("");
-
     const [loginStatus, setloginStatus] = useState("");
 
     Axios.defaults.withCredentials = true;
-
+    
     const IniciarSes = () => {
         Axios.post('https://bivic-db-deploy.herokuapp.com/Login', {
             // Objeto con las propiedades que queremos enviar
@@ -19,24 +21,39 @@ const SigninForm = () => {
             Password: Passwordlog,
 
         }).then((response) => {
+            console.log(response);
             if (response.data.message) {
                 setloginStatus(response.data.message);
             }
             else {
-                setloginStatus("Usuario: " + response.data[0].NOMBRE);
+                setloginStatus("Usuario: " + response.data[0].nombre);
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Se ha ingresado correctamente',
+                    showConfirmButton: false,
+                    timer: 1500,
+                }).then(function() {
+                    navigate('/');
+                });
             }
         })
     };
 
     useEffect(()=> {
         Axios.get('https://bivic-db-deploy.herokuapp.com/Login').then((response) => {
-            setloginStatus(response.data.user[0].Email);
+            if (response.data.loggedIn == true){
+                setloginStatus(response.data.user[0].correo);
+            }
         })
     }, []);
 
     return (
         <div className='Contenedor-Inicio'>
+
             <div className='todo'>
+
+            <div className='Cont2'>
+
             <div className='FormS'>
                 <h1 id="HeaderTitle" >Iniciar Sesión</h1>
 
@@ -47,7 +64,7 @@ const SigninForm = () => {
                             (event) => {
                                 setEmaillog(event.target.value)
                             }} />
-                        <label htmlFor="floatingName">Correo Electronico</label>
+                        <label htmlFor="floatingName"> Correo Electronico</label>
                     </div>
                     {/* Input Contraseña */}
                     <div className="form-floating mb-3">
@@ -57,17 +74,32 @@ const SigninForm = () => {
                             }} />
                         <label htmlFor="floatingName">Contraseña</label>
                     </div>
+                   
                     <div>
+                    <Link to='/Registro' className="registrolink"><p id='reg1'>¿No tienes una cuenta?</p><p id='reg2'> Regístrate</p></Link>
+                    </div>
+                
+                    <div>
+                        <p>{loginStatus}</p>
                         <button onClick={IniciarSes} className='submit'>Iniciar</button>
-                        <h3>{loginStatus}</h3>
+                        
                     </div>
                 </div>
+                
             </div>
+
 
             <div className='fotocaja'>
                   
             </div>
             </div>
+
+            <div className='contimg'> 
+             <img  src={img1}  className='img1'></img>
+            </div>
+            </div>
+
+
         </div>
     )
 }

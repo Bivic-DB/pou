@@ -1,14 +1,26 @@
-.FormS{
-    max-width: 700px;
-    min-width: 300px;
-    max-height: 700px;
-    width: 50%;
-    height: 60%;
+.Cont2{
     margin: 200px auto;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: space-between;
+   width: 850px;
+   height: 370px;
+  
+}
+.FormS{
+    width: 50%;
     background-color: #FFFFFF;
-    border-radius: 25px;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+    text-align: center;
 }
 
+.contimg{
+    width: 50%;
+    background-color: #EC955B;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+}
 #HeaderTitle{
     text-align: center;
     font-family: 'open sans', sans-serif;
@@ -17,10 +29,168 @@
     font-size: 2rem;
 }
 .Org{
+     width: 65%;
+     margin: auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    padding: 1px;
 }
 .mb-3{
     width: 70%!important;
+    font-family: 'open sans', sans-serif;
+    color: #91ABEE;
+   text-align: left;
+
+}
+
+.img1{
+    margin-left: 20%;
+    margin-top: 15%;
+    width: 60%;
+    height: 60%;
+}
+
+.form-control{
+background-color: #63729830;
+width: 275px;
+height: 30px;
+border: none;
+
+}
+
+
+.registrolink{   
+    width: 300px;
+    display: flex;
+font-size: 15px;
+}
+
+#reg1, #reg2{
+    width: 250px;
+    text-align: center;
+  
+}
+
+#reg1{
+    color: #5A5DE2;
+}
+
+#reg2{
+    margin-left: -65px;
+    color: black;
+}
+
+
+
+@media screen and (max-width: 768px){
+    .Cont2{
+        width: 450px;
+        height: 310px;
+        margin: 150px auto;
+    }
+
+    .form-control::input{
+        width: 166px;
+        height: 10px;
+        }
+        .form-control{
+            width: 170px; 
+        }
+
+    .img1{
+            width: 76%;
+            margin-left: 15%;
+        }
+
+    #HeaderTitle{
+            font-size: 1.5rem;
+            padding: 1.5rem 0;
+        }
+
+
+        .mb-3{
+    font-size: 0.8rem;
+ 
+}
+
+    .Org{
+        width: 77%;
+    }
+
+    .submit{
+    
+        font-size: 8px;
+        margin-top:-5px;
+       height: auto;
+       word-wrap: break-word;
+    }
+
+    .registrolink{   
+        width: 200px;
+        margin: auto;
+        display: flex;
+    font-size: 11px;
+    margin-bottom: -18px;
+    }
+
+    #reg1{
+        color: #5A5DE2;
+    }
+    
+    #reg2{
+        margin-left: -35px;
+        color: black;
+    }
+
+    
+}
+
+@media screen and (max-width: 500px){
+    .Cont2{
+        width: 370px;
+        height: 290px;
+        margin: 150px auto;
+        margin-bottom: 50px;
+    }
+
+    .form-control::input{
+        width: 166px;
+        height: 10px;
+
+        }
+        .form-control{
+            width: 130px; 
+            height: 10px;
+        }
+        
+        .img1{
+            margin-top: 40%;
+            width: 75%;
+    height: 40%;
+        }
+
+        .submit{
+            font-size: 7px;
+            margin-top:-5px;
+           height: 30px;
+           word-wrap: break-word;
+         
+        }
+    
+        .registrolink{   
+            width: 170px;
+            margin: auto;
+            display: flex;
+        font-size: 9px;
+        margin-bottom: -18px;
+        }
+    
+        #reg1{
+            color: #5A5DE2;
+        }
+        
+        #reg2{
+            margin-left: -35px;
+            color: black;
+        }
 }
