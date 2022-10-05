@@ -5,6 +5,7 @@ import img1 from '../assets/6736811.png';
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
 
+
 const SigninForm = () => {
 
     const [Emaillog, setEmaillog] = useState("");
@@ -48,7 +49,11 @@ const SigninForm = () => {
 
     return (
         <div className='Contenedor-Inicio'>
+
+            <div className='todo'>
+
             <div className='Cont2'>
+
             <div className='FormS'>
                 <h1 id="HeaderTitle" >Iniciar Sesión</h1>
 
@@ -82,12 +87,19 @@ const SigninForm = () => {
                 </div>
                 
             </div>
+
+
+            <div className='fotocaja'>
+                  
+            </div>
+            </div>
+
             <div className='contimg'> 
              <img  src={img1}  className='img1'></img>
             </div>
             </div>
 
-            
+
         </div>
     )
 }
