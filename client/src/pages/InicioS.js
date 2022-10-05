@@ -86,17 +86,19 @@ const SigninForm = () => {
                     </div>
                 </div>
                 
-            </div>
-
-
-            <div className='fotocaja'>
-                  
-            </div>
+                
             </div>
 
             <div className='contimg'> 
              <img  src={img1}  className='img1'></img>
             </div>
+            
+            <div className='fotocaja'>
+                  
+            </div>
+            </div>
+
+            
             </div>
 
 
