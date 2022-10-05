@@ -13,6 +13,7 @@ import AdministrarCuentas from './pages/AdministrarCuentas';
 import Historia from "./pages/Historia";
 import Footer from './components/Footer';
 import Axios from 'axios';
+import MisionValor from './pages/Misionvalor.js';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
           <Route path="/AgregarNoticia" exact element={<AdministrarNoticia />} />
           <Route path="/Administrar/Cuentas" exact element={<AdministrarCuentas />} />
           <Route path="/Historia" exact element={<Historia />} />
+          <Route path="/Misionvalor" exact element={<MisionValor/>} />
         </Routes>
         <Footer />
       </Router>

@@ -1,0 +1,31 @@
+#contM{
+    margin: 150px auto;
+    width: 70%;
+}
+
+.contS{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+
+.imguno{
+    height: 35%;
+    width: 35%;
+    
+}
+
+.text{
+   width: 50%;
+   border-radius: 10px;
+   padding: 20px;
+   box-shadow: 0px 0px 5px 8px #9697c279 ;
+   align-content: center;
+}
+
+.text1{
+    margin-bottom: 30px;
+    font-weight: bold;
+    color: #5A5DE2;
+}
+

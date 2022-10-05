@@ -40,7 +40,7 @@ function Home() {
 
                 <h3>Misión, Visión y Valores</h3>
                 <p> Conoce un poco del proyecto</p>
-                <Link to='/' className="btn1" > Leer Más </Link>
+                <Link to='/Misionvalor' className="btn1" > Leer Más </Link>
               </div>
               <div className="columna-metas">
                 <img src={Servicios} className="ImgInformacion" />
