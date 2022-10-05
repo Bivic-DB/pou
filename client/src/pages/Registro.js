@@ -119,7 +119,7 @@ function SignupForm() {
                 <div className='OrgR'>
                     <form>
                     {/* Input Nombre */}
-                    <div className="form-floating mb-3">
+                    <div className="form-floating mb-3-registro">
                         <input
                             type="text"
                             className="form-control"
@@ -133,7 +133,7 @@ function SignupForm() {
                         <label htmlFor="floatingName">Nombre</label>
                     </div>
                     {/* Input Primer Apellido */}
-                    <div className="form-floating mb-3">
+                    <div className="form-floating mb-3-registro">
                         <input
                             type="text"
                             className="form-control"
@@ -147,7 +147,7 @@ function SignupForm() {
                         <label htmlFor="floatingLN1">Primer Apellido</label>
                     </div>
                     {/* Input Segundo Apellido */}
-                    <div className="form-floating mb-3">
+                    <div className="form-floating mb-3-registro">
                    
                         <input
                             type="text"
@@ -162,7 +162,7 @@ function SignupForm() {
                             <label htmlFor="floatingName">Segundo Apellido</label>
                     </div>
                     {/* Input Correo Electronico */}
-                    <div className="form-floating mb-3">
+                    <div className="form-floating mb-3-registro">
                     
                         <input
                             type="text"
@@ -177,7 +177,7 @@ function SignupForm() {
                         <label htmlFor="floatingName">Correo Electrónico</label>
                     </div>
                     {/* Input Contraseña */}
-                    <div className="form-floating mb-3">
+                    <div className="form-floating mb-3-registro">
                     
                         <input
                             type="password"

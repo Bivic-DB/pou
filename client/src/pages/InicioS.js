@@ -54,7 +54,7 @@ const SigninForm = () => {
 
                 <div className='Org'>
                     {/* Input Correo */}
-                    <div className="form-floating mb-3">
+                    <div className="form-floating mb-3-inicio">
                         <input type="text" className="form-control" id="floatingEmailLogin" placeholder="Example@example.com" name="Email" onChange={
                             (event) => {
                                 setEmaillog(event.target.value)
@@ -62,7 +62,7 @@ const SigninForm = () => {
                         <label htmlFor="floatingName"> Correo Electronico</label>
                     </div>
                     {/* Input Contraseña */}
-                    <div className="form-floating mb-3">
+                    <div className="form-floating mb-3-inicio">
                         <input type="password" className="form-control" id="floatingPassWordLogin" placeholder="Example@example.com" name="Email" onChange={
                             (event) => {
                                 setPasswordlog(event.target.value)

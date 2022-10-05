@@ -112,7 +112,7 @@ function Home() {
             <h1 className='h1comentarios'>Comentarios</h1>
             <form action='' className='form_comentarios d-flex justify-content-end flex-wrap'>
               <input type={"text"} name="" id='' placeholder='Comentario'></input>
-              <button className='btn' type='button'>Comentar</button>
+              <button className='btn4' type='button'>Comentar</button>
             </form>
 
             <div className='media'>

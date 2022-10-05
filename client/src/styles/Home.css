@@ -533,7 +533,7 @@ body{
     /*.nameEmail {
     }*/
 
-    .btn {
+    .btn4 {
         margin: 30px auto;
     }
 
@@ -585,7 +585,7 @@ body{
     border-radius: 20px;
 }
 
-.form_comentarios .btn {
+.form_comentarios .btn4 {
     background: #5A5DE2;
     font-family: 'Lato', sans-serif;
     border-radius: 0;
@@ -595,7 +595,7 @@ body{
     border-radius: 20px;
 }
 
-.form_comentarios .btn:hover {
+.form_comentarios .btn4:hover {
     box-shadow: 0px 0px 9px rgba(0, 0, 0, .35);
 }
 
