@@ -1,6 +1,5 @@
 .Cont2{
     margin: 200px auto;
-    margin: 150px;
     margin-bottom: 100px;
     display: flex;
     justify-content: space-between;
@@ -52,7 +51,7 @@
 }
 
 .form-control{
-background-color: #91abee30;
+background-color: #63729830;
 width: 275px;
 height: 30px;
 border: none;

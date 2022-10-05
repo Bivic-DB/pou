@@ -126,6 +126,7 @@ function SignupForm() {
                             id="floatingName"
                             name="NameReg"
                             onChange={handleChange}
+                            placeholder="123"
                             value={formValues.NameReg}
                         />
                         <p className='errors'>{formErrors.NameReg}</p>
@@ -139,10 +140,11 @@ function SignupForm() {
                             id="floatingLN1"
                             name="LastNameReg"
                             value={formValues.LastNameReg}
+                            placeholder="123"
                             onChange={handleChange}
                         />
                         <p className='errors'>{formErrors.LastNameReg}</p>
-                        <label htmlFor="floatingName">Primer Apellido</label>
+                        <label htmlFor="floatingLN1">Primer Apellido</label>
                     </div>
                     {/* Input Segundo Apellido */}
                     <div className="form-floating mb-3">
@@ -153,6 +155,7 @@ function SignupForm() {
                             id="floatingLN2"
                             name="SecLastNameReg"
                             value={formValues.SecLastNameReg}
+                            placeholder="123"
                             onChange={handleChange}/>
                             
                             <p className='errors'>{formErrors.SecLastNameReg}</p>
@@ -167,6 +170,7 @@ function SignupForm() {
                             id="floatingemail"
                             name="EmailReg"
                             value={formValues.EmailReg}
+                            placeholder="123"
                             onChange={handleChange}
                         />
                         <p className='errors'>{formErrors.EmailReg}</p>
@@ -181,6 +185,7 @@ function SignupForm() {
                             id="floatingPassword"
                             name="PasswordReg"
                             value={formValues.PasswordReg}
+                            placeholder="123"
                             onChange={handleChange}
                         />
                         <p className='errors'>{formErrors.PasswordReg}</p>
