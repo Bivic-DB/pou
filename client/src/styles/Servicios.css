@@ -4,71 +4,6 @@
   font-family: 'Lato', sans-serif;
 }
 
-.serv {
-  text-align: center;
-  margin-top: 150px;
-}
-
-.h2Servicios {
-  margin-bottom: 70px;
-  text-align: center;
-}
-
-.tableservicios {
-  flex-basis: 50%;
-  border-spacing: 9px;
-}
-
-.thservicios {
-  font-size: 17px;
-  color: white;
-  width: 400px;
-  height: 132px;
-  background: #5A5DE2;
-  border-radius: 6px;
-  box-shadow: #00015249 0px 4px 20px;
-
-}
-
-.servcolegio {
-  font-size: 17px;
-  width: 400px;
-  height: 132px;
-  background: #FBFFFF;
-  border-radius: 6px;
-  box-shadow: #00015249 0px 4px 20px;
-
-}
-
-.servescuela {
-  font-size: 17px;
-  width: 400px;
-  height: 132px;
-  background: #FBFFFF;
-  border-radius: 6px;
-  box-shadow: #00015249 0px 4px 20px;
-
-}
-
-.cont_imp {
-  transform: translateY(75px);
-  background-color: #91ABEE;
-  width: 700px;
-  height: 200px;
-  margin: 0 auto;
-  border-radius: 20px;
-  padding: 30px;
-  color: white;
-  position: relative;
-
-}
-
-.imp1 {
-  text-align: left;
-  border-bottom: solid 1px white;
-
-}
-
 #agregarserv {
   width: 250px;
   height: 75px;
@@ -86,44 +21,6 @@
   border: none;
   border-radius: 10px;
 }
-
-.btns {
-  transform: translateY(150px);
-  display: flex;
-  width: 500px;
-  margin: 0 auto;
-  margin-bottom: 250px;
-}
-
-.contenedora {
-  max-width: 1080px;
-  margin: auto;
-}
-
-.tableservicios {
-  align-items: center;
-  border-radius: 4px;
-  padding: 10px;
-  width: 100%;
-  background: #B8B8B8;
-  margin-right: 40px;
-  text-align: center;
-}
-
-.servcolegio {
-  align-content: center;
-  align-items: center;
-  border-radius: 4px;
-  background: #FFFFFF;
-  padding: 10px;
-  /* Otra forma de verse es usando width: 100px; (pueden copiar y pegar en caso de que lo quieran ver C:)*/
-  height: 90px;
-  vertical-align: middle;
-  font-weight: 200;
-  font-size: 18px;
-  color: #000;
-}
-
 .btnServicio {
   color: white;
 }
@@ -131,6 +28,63 @@
 .btns .btnServicio a {
   text-decoration: none;
   color: white;
+}
+
+.btn-servicio{
+  float: left;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.btns {
+  display: flex;
+  width: 500px;
+  margin: 0 auto;
+}
+.col-6{
+  margin-top: 50px;
+}
+.h3-servicios{
+  font-size: 30px;
+}
+.flecha{
+  size: 50px;
+  width: 20px;
+  color: white;
+}
+.btn-primary{
+  background-color: #ffffff;
+  border-color: #ffffff;
+}
+.btn-primary:hover{
+  background-color: #5A5DE2;
+  border-color: #5A5DE2;
+}
+.h3-colegio{
+  margin-top: 25px;
+}
+.carousel-escuela{
+  margin-top: -200px;
+
+}
+.colegioLibro{
+ display: block;
+ float: right;
+ width: 11%;
+ height: 10%;
+ margin-top: -40px;
+}
+.card-title{
+  margin-top: 20px;
+}
+.card-body{
+  margin-bottom: 20px;
+}
+.p-servicio{
+  margin-bottom: 20px;
+}
+
+.col-md-4{
+  margin-top: 60px;
 }
 
 @media(max-width:720px) {
@@ -145,6 +99,10 @@
     color: white;
     position: relative;
 
+    
+  }
+  .carousel-escuela{
+    margin-top: 0px;
   }
 
   .btns {
@@ -154,5 +112,4 @@
     margin: 0 auto;
     margin-bottom: 250px;
   }
-
 }
