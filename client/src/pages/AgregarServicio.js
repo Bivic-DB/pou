@@ -135,8 +135,10 @@ function Agregarserv() {
                     'Eliminado',
                     'Servicio elimado de manera correcta',
                     'success',
-                );
-                window.location.reload();
+                ).then(function() {
+                    window.location.reload();
+                });
+                
             }
         })
     };
