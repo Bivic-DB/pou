@@ -1,40 +1,49 @@
 import React from "react";
 import '../styles/Misionvalor.css';
-import imguno from '../assets/6736811.png';
+import imguno from '../assets/imgMVV1.png';
+import imgdos from '../assets/imgMVV3.png';
+import imgtres from '../assets/imgMVV2.png';
 
 function Misionvalor(){
    return(
   <div id="contM">
 
        <div className="contS">
-        <div className="text">
+        <div className="textMM">
            <h2 className="text1">Misión</h2>
-           <p className="text2">Somos una Comunidad Educativo-Pastoral comprometida con una educación integral, incluyente e innovadora, de niños y jóvenes, preferentemente de los que tienen menos oportunidades. Lo hacemos desde el carisma educativo de San Juan Bosco, mediante la formación para el trabajo, con el fin de que en la Iglesia y en la sociedad sean agentes de cambio como honrados ciudadanos y buenos cristianos. </p>
+           <p className="text2">Proveer espacios virtuales accesibles para promocionar y brindar servicios de las bibliotecas</p>
            </div>
            <img  src={imguno}  className='imguno'></img>
        </div>
 
        <div className="contS">
-       <img  src={imguno}  className='imguno'></img>
-       <div className="text">
+       <img  src={imgtres}  className='imguno'></img>
+       <div className="textMM">
            <h2 className="text1">Visión</h2>
-           <p className="text2">Somos una Comunidad Educativo-Pastoral comprometida con una educación integral, incluyente e innovadora, de niños y jóvenes, preferentemente de los que tienen menos oportunidades. Lo hacemos desde el carisma educativo de San Juan Bosco, mediante la formación para el trabajo, con el fin de que en la Iglesia y en la sociedad sean agentes de cambio como honrados ciudadanos y buenos cristianos. </p>
+           <p className="text2">Fomentar la interacción de la comunidad de CEDES Don Bosco hacia las bibliotecas dentro de la institución</p>
            </div>
 
        </div>
 
        <div className="contS">
-       <div className="text">
+       <div className="textMM textu">
            <h2 className="text1">Valores</h2>
+          <div className="ulM">
            <ul>
-            <li>Creatividad</li>
-            <li>Comunicación</li>
-            <li>Responsabilidad</li>
+            <li>Afabilidad</li>
+            <li>Comodidad</li>
+            <li>Conocimiento</li>
+            </ul>
+            <ul>
+            <li>Eficacia</li>
+            <li>Simpatía</li>
+            <li>Originalidad</li>
            </ul>
+          
             </div>
-           <img  src={imguno}  className='imguno'></img>
        </div>
-
+       <img  src={imgdos}  className='imgdos'></img>
+       </div>
   </div>
    )
 

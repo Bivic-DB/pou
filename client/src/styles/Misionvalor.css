@@ -10,22 +10,90 @@
 }
 
 .imguno{
-    height: 35%;
-    width: 35%;
+    height: 40%;
+    width: 40%;
+    
+}
+.imgdos{
+    height: 30%;
+    width: 30%;
     
 }
 
-.text{
-   width: 50%;
+
+
+.textMM{
+   width: 45%;
+   height: 50%;
    border-radius: 10px;
-   padding: 20px;
-   box-shadow: 0px 0px 5px 8px #9697c279 ;
+   padding: 30px;
+   background-color: #FFF;
+   box-shadow: 0px 0px 8px 8px #c6c6df34 ;
    align-content: center;
+   margin: auto;
 }
 
 .text1{
+    text-align: center;
     margin-bottom: 30px;
     font-weight: bold;
     color: #5A5DE2;
 }
 
+.text2{
+    text-align: justify;
+}
+
+.ulM{
+    display: flex;
+
+}
+
+ul{
+   margin: auto;
+}
+
+li{
+    margin-right: 10px;
+}
+
+.textu{
+    margin-left: 9%;
+}
+
+
+@media screen and (max-width: 768px) {
+   
+
+    .contS{
+        display: grid;
+        height: 700px;
+        margin-bottom: 0;
+    }
+ .ulM{
+    display: grid;
+
+ }
+    
+.textMM{
+    width: 80%;
+    height: 65%;
+    margin: auto;
+ }
+
+ .textu{
+    width: 100%;
+    margin: auto;
+    margin-left: 25%;
+ }  
+
+ .imguno, .imgdos{
+    height: 70%;
+    width: 70%;
+    margin: auto;
+ }
+
+ .imgdos{
+    margin-left: 30%;
+ }
+}
