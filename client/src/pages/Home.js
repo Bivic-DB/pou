@@ -6,6 +6,10 @@ import Historia from '../assets/historia.png'
 import Servicios from '../assets/servicios.png'
 import email from '../assets/email.png'
 import pin from '../assets/pin.png'
+import ajedrez from '../assets/Ajedrez.jpg'
+import semana from '../assets/libro.png'
+import libreria from '../assets/biblioteca.jpg'
+
 
 
 import { Link } from 'react-router-dom'
@@ -69,27 +73,27 @@ function Home() {
         </div>
         <div className="carousel-inner">
           <div className="carousel-item active">
-            {/*<img src={Carrusel} className="d-block w-100" alt="..." height="200px" className='imgcarrusel' />*/}
+            <img src={ajedrez} className="d-block w-100 imgcarrusel" alt="..." height="200px"  />
             <div className="carousel-caption d-none d-md-block">
-              <h5 className='h5carrusel'>Sabiás Qué</h5>
-              <p className='pcarrusel'>Some representative placeholder content for the first slide.</p>
+              <h5 className='h5carrusel'>Torneo de Ajedrez</h5>
+              <p className='pcarrusel'>La próxima semana tendremos torneos de ajedrez.</p>
               <Link className='btn2' to="/Noticia"> Conoce Más </Link>
             </div>
           </div>
           <div className="carousel-item">
-            {/*<img src={Carrusel1} className="d-block w-100" alt="..." height="200px" className='imgcarrusel' />*/}
+            <img src={semana} className="d-block w-100 imgcarrusel" alt="..." height="200px"  />
             <div className="carousel-caption d-none d-md-block">
-              <h5 className='h5carrusel'>Noticia</h5>
-              <p className='pcarrusel'>Some representative placeholder content for the second slide.</p>
+              <h5 className='h5carrusel'>Semana del Libro</h5>
+              <p className='pcarrusel'>Celebra con nosotros la semana del libro.</p>
               <Link className='btn2' to="/Noticia"> Conoce Más </Link>
 
             </div>
           </div>
           <div className="carousel-item">
-            {/*<img src={Carrusel2} className="d-block w-100" alt="..." height="200px" className='imgcarrusel' />*/}
+            <img src={libreria} className="d-block w-100 imgcarrusel" alt="..." height="200px" />
             <div className="carousel-caption d-none d-md-block">
-              <h5 className='h5carrusel'>Noticia</h5>
-              <p className='pcarrusel'>Some representative placeholder content for the third slide.</p>
+              <h5 className='h5carrusel'>Visítanos</h5>
+              <p className='pcarrusel'>Visitanos para empaparte de información.</p>
               <Link className='btn2' to="/Noticia"> Conoce Más </Link>
 
             </div>

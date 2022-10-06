@@ -43,7 +43,7 @@ body{
 }
 
 .imgcarrusel {
-    width: 30%;
+    width: 30%!important;
     height: 370px;
     margin-left: 14%;
 }
