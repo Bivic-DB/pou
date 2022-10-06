@@ -1,9 +1,9 @@
-import React, { useState, useEffect , useNavigate, navigate} from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/Inicio.css';
 import Axios from 'axios';
 import img1 from '../assets/6736811.png';
 import Swal from 'sweetalert2';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const SigninForm = () => {
 
@@ -12,7 +12,8 @@ const SigninForm = () => {
     const [loginStatus, setloginStatus] = useState("");
 
     Axios.defaults.withCredentials = true;
-    
+    const navigate = useNavigate();
+
     const IniciarSes = () => {
         Axios.post('https://bivic-db-deploy.herokuapp.com/Login', {
             // Objeto con las propiedades que queremos enviar
@@ -32,6 +33,8 @@ const SigninForm = () => {
                     showConfirmButton: false,
                     timer: 1500,
                 }).then(function() {
+                    
+                    window.location.reload();
                     navigate('/');
                 });
             }
@@ -41,7 +44,6 @@ const SigninForm = () => {
     useEffect(()=> {
         Axios.get('https://bivic-db-deploy.herokuapp.com/Login').then((response) => {
             if (response.data.loggedIn == true){
-                setloginStatus(response.data.user[0].correo);
             }
         })
     }, []);
@@ -59,19 +61,18 @@ const SigninForm = () => {
                             (event) => {
                                 setEmaillog(event.target.value)
                             }} />
-                        <p className='space'></p>
                         <label htmlFor="floatingName"> Correo Electronico</label>
                     </div>
+                    <br></br>
                     {/* Input Contraseña */}
                     <div className="form-floating mb-3-inicio">
                         <input type="password" className="form-control" id="floatingPassWordLogin" placeholder="Example@example.com" name="Email" onChange={
                             (event) => {
                                 setPasswordlog(event.target.value)
                             }} />
-                        <p className='space'></p>
                         <label htmlFor="floatingName">Contraseña</label>
                     </div>
-                   
+                   <br></br>
                     <div>
                     <Link to='/Registro' className="registrolink"><p id='reg1'>¿No tienes una cuenta?</p><p id='reg2'> Regístrate</p></Link>
                     </div>

@@ -34,13 +34,17 @@ function AdministrarCuentas() {
             confirmButtonText: 'Sí, eliminar'
         }).then((result) =>{
             if(result.isConfirmed){
+                Axios.delete(`https://bivic-db-deploy.herokuapp.com/UsuariosEliminar/${id}`).then((response)=>{
+                    setListaUsuarios(ListaUsuarios.filter((val) => {
+                        return val.id != id
+                    }))
+                })
                 Swal.fire(
                     'Eliminado',
                     'Usuario elimado de manera correcta',
                     'success'
                 );
                 
-                Axios.delete(`https://bivic-db-deploy.herokuapp.com/UsuariosEliminar/${id}`,)
             }
         })
     };
