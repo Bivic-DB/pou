@@ -4,7 +4,9 @@
     margin-bottom: 50px;
     display: flex;
     justify-content: space-between;
-  
+    width: 77%;
+    height: 80%;
+    margin-left: 10%;
 }
 .FormR{
     max-width: 700px;
@@ -25,6 +27,8 @@
     margin: 0;
     font-size: 2rem;
     margin-bottom: 20px;
+    padding-top: 17%;
+    margin-left: 15%;
 }
 .OrgR{
     padding: 1px;
@@ -33,6 +37,7 @@
     align-items: center;
     margin: auto;
     text-align: center;
+    margin-left: 17%;
 }
 .mb-3-registro{
     width: 100%!important;
@@ -110,6 +115,9 @@ font-size: 15px;
         margin-top: 24px;
         margin-bottom: 20px;
     }
+    #HeaderTitleR{
+        margin-left: 0%;
+    }
     .Cont2R{
         width: 300px;
         height: 290px;
@@ -132,5 +140,8 @@ font-size: 15px;
     }
     .imgRR{
         display: none;
+    }
+    .OrgR{
+        margin-left: 0%;
     }
 }
