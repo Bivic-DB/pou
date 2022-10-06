@@ -20,16 +20,7 @@ body{
 .btn2:hover{
     background: #36494E;
 }
-.btn1 {
-    text-decoration: none;
-    display: inline-block;
-    background-color: #5A5DE2;
-    color: #fff;
-    padding: 15px;
-    margin: 0px;
-    border-radius: 30px;
-    transition: background 0.5s;
-}
+
 .divisor{
     margin-top: 11rem;
 }
@@ -172,14 +163,16 @@ body{
     display: inline-block;
     background-color: #5A5DE2;
     color: #fff;
-    padding: 15px;
+    padding: 15px 30px;
     margin: 0px;
     border-radius: 30px;
     transition: background 0.5s;
 }
 
 .btn1:hover {
-    background: #36494E;
+    
+    background: #91ABEE;
+    color: #5A5DE2;
 }
 
 .col-2-header img {

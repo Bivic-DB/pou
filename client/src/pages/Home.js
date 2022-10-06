@@ -106,7 +106,7 @@ function Home() {
       </div>
       <div className='divisor'></div>
 
-      <div className='container'>
+      {/* <div className='container'>
         <div className='row comentarios justify-content-center'>
           <div className='col-6'>
             <h1 className='h1comentarios'>Comentarios</h1>
@@ -149,7 +149,7 @@ function Home() {
 
           </div>
         </div>
-      </div>
+      </div> */}
 
 
 
