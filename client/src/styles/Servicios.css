@@ -63,7 +63,7 @@
   margin-top: 25px;
 }
 .carousel-escuela{
-  margin-top: -200px;
+  margin-top: -150px;
 
 }
 .colegioLibro{
@@ -85,6 +85,9 @@
 
 .col-md-4{
   margin-top: 60px;
+}
+.section-servicios{
+  margin-top: 8%;
 }
 
 @media(max-width:720px) {

@@ -13,7 +13,7 @@ function Servicios() {
     return (
 
         <div>
-         <section class="pt-5 pb-5">
+         <section class="pt-5 pb-5 section-servicios">
     <div class="container">
         <div class="row">
             <div class="col-6">
@@ -38,8 +38,8 @@ function Servicios() {
                                     <div class="card">
                                     
                                         <div class="card-body">
-                                            <h4 class="card-title">Libros</h4> <img src={iconoServicio} className="colegioLibro" />
-                                            <p class="card-text">Préstamo de libros en digital y físico.</p>
+                                            <h4 class="card-title">Préstamo de libros</h4> <img src={iconoServicio} className="colegioLibro" />
+                                            <p class="card-text"></p>
 
                                         </div>
 
@@ -48,8 +48,8 @@ function Servicios() {
                                 <div class="col-md-4 mb-3">
                                     <div class="card">
                                         <div class="card-body">
-                                            <h4 class="card-title">Material Didáctico</h4> <img src={iconoServicio} className="colegioLibro" />
-                                            <p  class="card-text p-servicio">Préstamo de material didáctico</p>
+                                            <h4 class="card-title">Préstamo de Material Didáctico</h4> <img src={iconoServicio} className="colegioLibro" />
+                                            <p  class="card-text p-servicio"></p>
 
                                         </div>
                                     </div>
@@ -58,7 +58,7 @@ function Servicios() {
                                     <div class="card">
                                         <div class="card-body">
                                             <h4 class="card-title">Préstamo de computadoras</h4> <img src={iconoServicio} className="colegioLibro" />
-                                            <p class="card-text">Préstamo de computadoras para realización de trabajos o búsqueda de información.</p>
+                                            <p class="card-text"></p>
 
                                         </div>
                                     </div>
@@ -73,7 +73,7 @@ function Servicios() {
                                     <div class="card">
                                         <div class="card-body">
                                             <h4 class="card-title">Préstamo de Videos</h4><img src={iconoServicio} className="colegioLibro" />
-                                            <p class="card-text">Préstamo de Videos informativos</p>
+                                            <p class="card-text"></p>
 
                                         </div>
 
@@ -83,7 +83,7 @@ function Servicios() {
                                     <div class="card">
                                         <div class="card-body">
                                             <h4 class="card-title">Préstamo de calculadoras</h4><img src={iconoServicio} className="colegioLibro" />
-                                            <p class="card-text">Préstamo de calculadoras científicas y normales</p>
+                                            <p class="card-text"></p>
 
                                         </div>
                                     </div>
@@ -92,7 +92,7 @@ function Servicios() {
                                     <div class="card">
                                         <div class="card-body">
                                             <h4 class="card-title">Préstamo de Revistas</h4><img src={iconoServicio} className="colegioLibro" />
-                                            <p class="card-text">Préstamo de revistas informativas</p>
+                                            <p class="card-text"></p>
 
                                         </div>
                                     </div>
@@ -133,8 +133,8 @@ function Servicios() {
                                     <div class="card">
                                     
                                         <div class="card-body">
-                                            <h4 class="card-title">Computadoras</h4> <img src={iconoServicio2} className="colegioLibro" />
-                                            <p class="card-text">Préstamo de computadoras</p>
+                                            <h4 class="card-title">Préstamo de computadoras</h4> <img src={iconoServicio2} className="colegioLibro" />
+                                            <p class="card-text"></p>
 
                                         </div>
 
@@ -144,7 +144,7 @@ function Servicios() {
                                     <div class="card">
                                         <div class="card-body">
                                             <h4 class="card-title">Préstamo de Videos</h4> <img src={iconoServicio2} className="colegioLibro" />
-                                            <p  class="card-text p-servicio">Préstamo de videos informativos</p>
+                                            <p  class="card-text p-servicio"></p>
 
                                         </div>
                                     </div>
@@ -152,8 +152,8 @@ function Servicios() {
                                 <div class="col-md-4 mb-3">
                                     <div class="card">
                                         <div class="card-body">
-                                            <h4 class="card-title">Material Didáctico</h4> <img src={iconoServicio2} className="colegioLibro" />
-                                            <p class="card-text">Préstamo de material Didáctico</p>
+                                            <h4 class="card-title">Préstamo de Material Didáctico</h4> <img src={iconoServicio2} className="colegioLibro" />
+                                            <p class="card-text"></p>
 
                                         </div>
                                     </div>
@@ -167,8 +167,8 @@ function Servicios() {
                                 <div class="col-md-4 mb-3">
                                     <div class="card">
                                         <div class="card-body">
-                                            <h4 class="card-title">Computadoras</h4><img src={iconoServicio2} className="colegioLibro" />
-                                            <p class="card-text">Préstamo de computadoras</p>
+                                            <h4 class="card-title">Préstamo de revistas</h4><img src={iconoServicio2} className="colegioLibro" />
+                                            <p class="card-text"></p>
 
                                         </div>
 
@@ -177,8 +177,8 @@ function Servicios() {
                                 <div class="col-md-4 mb-3">
                                     <div class="card">
                                         <div class="card-body">
-                                            <h4 class="card-title">Juegos</h4><img src={iconoServicio2} className="colegioLibro" />
-                                            <p class="card-text">Préstamo de juegos de mesa</p>
+                                            <h4 class="card-title">Préstamo de Juegos</h4><img src={iconoServicio2} className="colegioLibro" />
+                                            <p class="card-text"></p>
 
                                         </div>
                                     </div>
@@ -186,8 +186,8 @@ function Servicios() {
                                 <div class="col-md-4 mb-3">
                                     <div class="card">
                                         <div class="card-body">
-                                            <h4 class="card-title">Calculadoras</h4><img src={iconoServicio2} className="colegioLibro" />
-                                            <p class="card-text">Préstamo de revistas informativas</p>
+                                            <h4 class="card-title">Préstamo de Calculadoras</h4><img src={iconoServicio2} className="colegioLibro" />
+                                            <p class="card-text"></p>
 
                                         </div>
                                     </div>
