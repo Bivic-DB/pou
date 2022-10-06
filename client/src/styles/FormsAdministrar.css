@@ -82,3 +82,26 @@ margin-right: 450px;
 .container{
     margin-top: -40px;
 }
+
+@media screen and (max-width: 748px){
+    .h2AgregarServicios{
+        text-align: left;
+    
+    }
+
+    #formsh1 {
+        margin-top: 127px;
+        margin-bottom: 0px;
+        width: 100%;
+        margin-right: 40px;
+       
+    }
+
+    .btn-offcanvas{
+        margin-top: 20px;
+        float: right;
+    }
+    
+    
+   
+}
