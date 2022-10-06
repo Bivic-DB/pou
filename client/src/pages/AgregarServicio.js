@@ -17,9 +17,16 @@ function Agregarserv() {
      let autoincrement = 0;
      const data = [{ value: 1, label: "Biblioteca Colegio"}, {value: 2, label: "Biblioteca Escuela"}, {value: 3, label: "Seleccionar Ubicación"}];
      const [selectedValue, setSelectedValue] = useState(3);
-
+     let Servicio = [];
      const handleChangeS = e => {
         setSelectedValue(e.value);
+    };
+    
+    const handleChangeSe = e => {
+        setSelectedValue(e.value);
+    };
+    const BuscarServicio = (id, informacion, lugar) => {
+        Servicio = [id, informacion, lugar];
     };
 
     const handleSubmit = (e) => {
@@ -70,7 +77,7 @@ function Agregarserv() {
                 title:'El servicio se ha registrado correctamente',
                 icon: 'success',
             }).then(function() {
-                navigate('/');
+                navigate('/Servicios');
             });
         })
         
@@ -78,7 +85,35 @@ function Agregarserv() {
         
     };
 
-    const eliminaUsuario = (id) =>{
+    const ActualizarServicios = (id) => {
+        Swal.fire({
+            title: '¿Estas seguro de actualizar este servicio?',
+            text: "La información actualizada no se podrá recuperar",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Actualizar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                console.log(selectedValue);
+                Axios.put('https://bivic-db-deploy.herokuapp.com/ModificarServicio', {
+                    Nid: id,
+                    NRol: selectedValue,
+                })
+
+                Swal.fire(
+                    'Actualizado',
+                    'El Servicio a sido actualizado correctamente',
+                    'success'
+                );
+                    window.location.reload();
+                
+            }
+        })
+    };
+
+    const eliminaServicio = (id) =>{
         Swal.fire({
             title: '¿Estas seguro?',
             text: "No podrás revertir este cambio",
@@ -90,19 +125,18 @@ function Agregarserv() {
             confirmButtonText: 'Sí, eliminar'
         }).then((result) =>{
             if(result.isConfirmed){
-                Axios.delete(`https://bivic-db-deploy.herokuapp.com/UsuariosEliminar/${id}`).then((response)=>{
-                    setListaServicios(ListaServicios.filter((val) => {
+                console.log(id);
+                Axios.delete(`https://bivic-db-deploy.herokuapp.com/ServiciosEliminar/${id}`).then((response) => {
+                    ListaServicios(ListaServicios.filter((val) => {
                         return val.id != id
-                    }))
-                    window.location.reload();
-                
-                })
+                    }));
+                });
                 Swal.fire(
                     'Eliminado',
                     'Servicio elimado de manera correcta',
-                    'success'
+                    'success',
                 );
-                
+                window.location.reload();
             }
         })
     };
@@ -118,7 +152,7 @@ function Agregarserv() {
                 <div class="offcanvas-body">
                     <div className='container'>
                         <form action='' className='form_comentarios2 d-flex  flex-wrap'>
-                        <div className="form-floating mb-3-registro">
+                        <div className="form-floating mb-3">
                         <input
                             type="text"
                             className="form-control"
@@ -138,6 +172,7 @@ function Agregarserv() {
                             placeholder = "Seleccionar"
                             value={data.find(obj => obj.value === selectedValue)}
                             options={data}
+                            className="Select-Servicio"
                             onChange={handleChangeS}
                         />
                     </div>
@@ -177,9 +212,8 @@ function Agregarserv() {
                                     <td key={autoincrement++}>{val.idSERVICIOS}</td>
                                     <td key={autoincrement++}>{val.informacion}</td>
                                     <td key={autoincrement++}>{val.lugarU}</td>
-                                    <td key={autoincrement++}>{val.rol}</td>
-                                    {/* <td key={autoincrement++}><a className='btn btn-outline-primary' data-bs-toggle="offcanvas" data-bs-target="#offcanvasPlantilla" aria-controls='offcanvasPlantilla' role="button" onClick={() => {BuscarUsuario(val.correo)}}>Modificar</a></td> */}
-                                    <td key={autoincrement++}><button className='btn btn-danger' onClick={() => {eliminaUsuario(val.correo)}}>Eliminar</button></td>
+                                    <td key={autoincrement++}><a className='btn btn-outline-primary' data-bs-toggle="offcanvas" data-bs-target="#offcanvasPlantilla" aria-controls='offcanvasPlantilla' role="button" onClick={() => {BuscarServicio(val.idSERVICIOS, val.informacion, val.lugarU)}}>Modificar</a></td>
+                                    <td key={autoincrement++}><button className='btn btn-danger' onClick={() => {eliminaServicio(val.idSERVICIOS)}}>Eliminar</button></td>
                                 </tr>
                             )
                         })}
@@ -188,6 +222,37 @@ function Agregarserv() {
                     </tbody>
                 </table>
             </div>
+            
+            {/* OffCanvas Space */}
+            <div className='offcanvas offcanvas-start' tabIndex="-1" id="offcanvasPlantilla">
+                    {/* Título del apartado */}
+                    <div className='offcanvas-header'>
+                        <h5 className='offcanvas-title' id="ModificarServicio">Modificar Servicio</h5>
+                        <button className='btn-close' data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div className='offcanvas-body'>
+                        <div className='container-sm'>
+                            <div className='form-floating mb-3'>
+                                <input type="text" className='form-control' id="nombre" placeholder='123' value={Servicio[1]} disabled></input>
+                                <label htmlFor="nombre">Información </label>
+                            </div>
+                            
+                            <div className='form-floating'>
+                            <Select
+                                name="selectInfo"
+                                placeholder = "Seleccionar"
+                                value={data.find(obj => obj.value === selectedValue)}
+                                options={data}
+                                className="Select-Servicio"
+                                onChange={handleChangeS}
+                        />
+                            </div>
+                            <br></br>
+                            <button className='btn btn-outline-primary' onClick={() => { ActualizarServicios(Servicio[0]) }}>Actualizar Servicio</button>
+                        </div>
+                    </div>
+                </div>
+
         </div>
 
 
