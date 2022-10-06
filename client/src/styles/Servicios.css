@@ -52,8 +52,8 @@
   color: white;
 }
 .btn-primary{
-  background-color: #ffffff;
-  border-color: #ffffff;
+  background-color: transparent;
+  border-color: transparent;
 }
 .btn-primary:hover{
   background-color: #5A5DE2;
@@ -105,9 +105,8 @@
 
     
   }
-  .carousel-escuela{
-    margin-top: 0px;
-  }
+  
+
 
   .btns {
     transform: translateY(150px);
