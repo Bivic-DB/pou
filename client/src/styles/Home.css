@@ -522,6 +522,9 @@ body{
 
         width: 100%;
     }
+    .nameEmail{
+    font-size: 13px;
+    }
 
     /*.nameEmail {
     }*/

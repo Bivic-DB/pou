@@ -23,7 +23,7 @@ function Servicios() {
 
     return (
 
-        <div>
+        <div className='container-servicios'>
             <section class="pt-5 pb-5 section-servicios">
                 <div class="container">
                     <div class="row">

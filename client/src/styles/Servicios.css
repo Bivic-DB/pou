@@ -90,6 +90,7 @@
   margin-top: 8%;
 }
 
+
 @media(max-width:720px) {
   .cont_imp {
     transform: translateY(75px);
@@ -114,5 +115,12 @@
     width: 300px;
     margin: 0 auto;
     margin-bottom: 250px;
+  }
+  .container-servicios{
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-right: auto;
+    margin-left: auto;
   }
 }
