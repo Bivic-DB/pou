@@ -23,10 +23,8 @@ const SigninForm = () => {
         }).then((response) => {
             console.log(response);
             if (response.data.message) {
-                setloginStatus(response.data.message);
             }
             else {
-                setloginStatus("Usuario: " + response.data[0].nombre);
                 Swal.fire({
                     icon: 'success',
                     title: 'Se ha ingresado correctamente',

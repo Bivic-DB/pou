@@ -15,9 +15,10 @@ function Agregarserv() {
      const [isSubmit, setIsSubmit] = useState(false);
      const navigate = useNavigate();
      let autoincrement = 0;
+     let Servicio ;
      const data = [{ value: 1, label: "Biblioteca Colegio"}, {value: 2, label: "Biblioteca Escuela"}, {value: 3, label: "Seleccionar Ubicación"}];
      const [selectedValue, setSelectedValue] = useState(3);
-     let Servicio = [];
+     const [NewInfo, setNewInfo] = useState("");
      const handleChangeS = e => {
         setSelectedValue(e.value);
     };
@@ -25,8 +26,8 @@ function Agregarserv() {
     const handleChangeSe = e => {
         setSelectedValue(e.value);
     };
-    const BuscarServicio = (id, informacion, lugar) => {
-        Servicio = [id, informacion, lugar];
+    const BuscarServicio = (id) => {
+        let Servicio = id;
     };
 
     const handleSubmit = (e) => {
@@ -97,17 +98,21 @@ function Agregarserv() {
         }).then((result) => {
             if (result.isConfirmed) {
                 console.log(selectedValue);
+                console.log(id)
+                console.timeLog(NewInfo);
                 Axios.put('https://bivic-db-deploy.herokuapp.com/ModificarServicio', {
-                    Nid: id,
-                    NRol: selectedValue,
+                    ID: id,
+                    LUGAR: selectedValue,
+                    INFO: NewInfo,
                 })
 
                 Swal.fire(
                     'Actualizado',
                     'El Servicio a sido actualizado correctamente',
                     'success'
-                );
+                ).then(function() {
                     window.location.reload();
+                });
                 
             }
         })
@@ -235,7 +240,9 @@ function Agregarserv() {
                     <div className='offcanvas-body'>
                         <div className='container-sm'>
                             <div className='form-floating mb-3'>
-                                <input type="text" className='form-control' id="nombre" placeholder='123' value={Servicio[1]} disabled></input>
+                            <input type="text" className='form-control' id="nombre" placeholder='123' onChange={
+                                    (e) => { setNewInfo(e.target.value);}
+                                }></input>
                                 <label htmlFor="nombre">Información </label>
                             </div>
                             
@@ -250,7 +257,7 @@ function Agregarserv() {
                         />
                             </div>
                             <br></br>
-                            <button className='btn btn-outline-primary' onClick={() => { ActualizarServicios(Servicio[0]) }}>Actualizar Servicio</button>
+                            <button className='btn btn-outline-primary' onClick={() => { ActualizarServicios(Servicio) }}>Actualizar Servicio</button>
                         </div>
                     </div>
                 </div>

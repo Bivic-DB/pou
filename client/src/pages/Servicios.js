@@ -1,4 +1,4 @@
-import React , { useState, useEffect}from 'react'
+import React, { useState, useEffect } from 'react'
 import '../styles/Servicios.css';
 import derecha from '../assets/chevron-right-solid.svg'
 import izquierda from '../assets/chevron-left-solid.svg'
@@ -7,14 +7,18 @@ import iconoServicio2 from '../assets/Artboard 71.png'
 
 import Axios from 'axios';
 import Swal from 'sweetalert2';
+import { listenerCount } from '../../../bivic-db-deploy/database';
 
 
 
 function Servicios() {
     const [Servicios, setServicios] = useState([]);
+    let autoincrement = 0;
+
     useEffect(() => {
-        Axios.get('https://bivic-db-deploy.herokuapp.com/ListaServicios').then((response) => {
+        Axios.get('https://bivic-db-deploy.herokuapp.com/Enlistado').then((response) => {
             setServicios(response.data);
+            console.log(response.data)
         });
     }, []);
 
@@ -35,84 +39,36 @@ function Servicios() {
                                 <img src={derecha} className="flecha" />
                             </a>
                         </div>
-                        <div class="col-12">
-                            <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+                        <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
 
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <div class="row">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="row">
 
-                                            <div class="col-md-4 mb-3">
-                                                <div class="card">
+                                        
+                                        {Servicios.map((val, key) => {
+                                            if (val.lugarU == 1) {
+                                                return (
+                                                    <div class="col-md-4 mb-3">
+                                                    <div key={autoincrement++} class="card">
 
-                                                    <div class="card-body">
-                                                        <h4 class="card-title">Préstamo de libros</h4> <img src={iconoServicio} className="colegioLibro" />
-                                                        <p class="card-text"></p>
+                                                        <div class="card-body">
+                                                            <h4 class="card-title">{val.informacion}</h4> <img src={iconoServicio} className="colegioLibro" />
+                                                            <p class="card-text"></p>
 
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4 mb-3">
-                                                <div class="card">
-                                                    <div class="card-body">
-                                                        <h4 class="card-title">Préstamo de Material Didáctico</h4> <img src={iconoServicio} className="colegioLibro" />
-                                                        <p class="card-text p-servicio"></p>
+                                                        </div>
 
                                                     </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4 mb-3">
-                                                <div class="card">
-                                                    <div class="card-body">
-                                                        <h4 class="card-title">Préstamo de computadoras</h4> <img src={iconoServicio} className="colegioLibro" />
-                                                        <p class="card-text"></p>
-
                                                     </div>
-                                                </div>
-                                            </div>
+                                                )
+                                            }
 
+                                        })}
                                         </div>
                                     </div>
-                                    <div class="carousel-item">
-                                        <div class="row">
-
-                                            <div class="col-md-4 mb-3">
-                                                <div class="card">
-                                                    <div class="card-body">
-                                                        <h4 class="card-title">Préstamo de Videos</h4><img src={iconoServicio} className="colegioLibro" />
-                                                        <p class="card-text"></p>
-
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4 mb-3">
-                                                <div class="card">
-                                                    <div class="card-body">
-                                                        <h4 class="card-title">Préstamo de calculadoras</h4><img src={iconoServicio} className="colegioLibro" />
-                                                        <p class="card-text"></p>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4 mb-3">
-                                                <div class="card">
-                                                    <div class="card-body">
-                                                        <h4 class="card-title">Préstamo de Revistas</h4><img src={iconoServicio} className="colegioLibro" />
-                                                        <p class="card-text"></p>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
                                 </div>
                             </div>
                         </div>
-                    </div>
                 </div>
             </section>
 
@@ -137,69 +93,22 @@ function Servicios() {
                                     <div class="carousel-item active">
                                         <div class="row">
 
-                                            <div class="col-md-4 mb-3">
-                                                <div class="card">
-
+                                            {Servicios.map((val, key) =>{
+                                                if(val.lugarU == 2){
+                                                    return(
+                                                    <div class="col-md-4 mb-3">
+                                                    <div class="card">
                                                     <div class="card-body">
-                                                        <h4 class="card-title">Préstamo de computadoras</h4> <img src={iconoServicio2} className="colegioLibro" />
-                                                        <p class="card-text"></p>
-
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4 mb-3">
-                                                <div class="card">
-                                                    <div class="card-body">
-                                                        <h4 class="card-title">Préstamo de Videos</h4> <img src={iconoServicio2} className="colegioLibro" />
-                                                        <p class="card-text p-servicio"></p>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4 mb-3">
-                                                <div class="card">
-                                                    <div class="card-body">
-                                                        <h4 class="card-title">Préstamo de Material Didáctico</h4> <img src={iconoServicio2} className="colegioLibro" />
+                                                        <h4 class="card-title">{val.informacion}</h4><img src={iconoServicio2} className="colegioLibro" />
                                                         <p class="card-text"></p>
 
                                                     </div>
                                                 </div>
                                             </div>
-
-                                        </div>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <div class="row">
-
-                                            <div class="col-md-4 mb-3">
-                                                <div class="card">
-                                                    <div class="card-body">
-                                                        <h4 class="card-title">Préstamo de revistas</h4><img src={iconoServicio2} className="colegioLibro" />
-                                                        <p class="card-text"></p>
-
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4 mb-3">
-                                                <div class="card">
-                                                    <div class="card-body">
-                                                        <h4 class="card-title">Préstamo de Juegos</h4><img src={iconoServicio2} className="colegioLibro" />
-                                                        <p class="card-text"></p>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4 mb-3">
-                                                <div class="card">
-                                                    <div class="card-body">
-                                                        <h4 class="card-title">Préstamo de Calculadoras</h4><img src={iconoServicio2} className="colegioLibro" />
-                                                        <p class="card-text"></p>
-
-                                                    </div>
-                                                </div>
-                                            </div>
+                                                )
+                                                }
+                                            })}
+                                            
 
                                         </div>
                                     </div>
@@ -210,10 +119,10 @@ function Servicios() {
                     </div>
                 </div>
             </section>
-            <div className='btns'>
+            {/* <div className='btns'>
                 <button className='btnServicio' id='agregarserv'><a href="/AgregarServicio">Agregar servicio</a></button>
                 <button className='btnServicio' id='adminserv'><a href="/Administrar">Administrar Servicios</a> </button>
-            </div>
+            </div> */}
         </div>
 
 

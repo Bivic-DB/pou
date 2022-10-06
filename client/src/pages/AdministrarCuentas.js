@@ -86,8 +86,9 @@ function AdministrarCuentas() {
                     'Actualizado',
                     'El usuario a sido actualizado correctamente',
                     'success'
-                );
+                ).then(function() {
                     window.location.reload();
+                });
                 
             }
         })
