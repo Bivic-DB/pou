@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import Moment from 'moment';
 import {convertBase64} from '../helpers/Utils.js'
+import {displayImage} from '../helpers/Utils.js'
 
 function AgregarNoticia() {
 
@@ -15,8 +16,10 @@ function AgregarNoticia() {
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
     const navigate = useNavigate();
-
+    let autoincrement = 0;
+    const [ListaNoticias, setListaNoticias] = useState([]);
     let err_quantity = 0;
+    let Noticia;
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -53,14 +56,50 @@ function AgregarNoticia() {
                 icon: 'success',
             }).then(function () {
                 navigate('/');
-                
+
             });
         })
     };
+    const BuscarNoticia = (idNOTICIA, titulo, fechasalida, informacion) => {
+        Noticia = [idNOTICIA, titulo, fechasalida, informacion];
+    };
+        // funcion para eliminar usuarios
+        const eliminaNoticia = (id) => {
+            Swal.fire({
+                title: '¿Estas seguro?',
+                text: "No podrás revertir este cambio",
+                icon: 'warning',
+                showCancelButton: true,
+                CalcelButtonText: 'Cancelar',
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, eliminar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Axios.delete(`https://bivic-db-deploy.herokuapp.com/NoticiaEliminar/${id}`).then((response) => {
+                        setListaNoticias(ListaNoticias.filter((val) => {
+                            return val.id != id
+                        }))
+                        
+                    })
+                    Swal.fire(
+                        'Eliminado',
+                        'Noticia eliminada de manera correcta',
+                        'success'
+                    ).then(function() {
+                        window.location.reload();
+                    })
+    
+                }
+            })
+        };
 
     useEffect(() => {
         if (Object.keys(formErrors).length === 0 && isSubmit) {
         }
+        Axios.get('https://bivic-db-deploy.herokuapp.com/ListaNoticias').then((response) => {
+            setListaNoticias(response.data);
+        });
     }, [formErrors]);
 
     const validate = (values) => {
@@ -97,7 +136,7 @@ function AgregarNoticia() {
     return (
 
         <div>
-            <div className="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+            <div className="offcanvas offcanvas-start" tabIndex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
                 <div className="offcanvas-header">
                     <h3 className="offcanvas-title" id="offcanvasExampleLabel">Agregar Noticia</h3>
                     <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -138,6 +177,7 @@ function AgregarNoticia() {
                                     className="form-control"
                                     id="floatinginfechasalida"
                                     name="fechasalida"
+                                    data-date-format= "YYYY/MM/DD"
                                     onChange={handleChange}
                                     placeholder="123"
                                     value={formValues.fechasalida}
@@ -173,22 +213,25 @@ function AgregarNoticia() {
                             <th scope="col"> Información </th>
                             <th scope="col"> Imagen </th>
                             <th scope="col"> Fecha Salida </th>
-                            <th scope="col"> Modificar </th>
+                            {/* <th scope="col"> Modificar </th> */}
                             <th scope="col"> Eliminar </th>
 
                         </tr>
                     </thead>
                     <tbody>
 
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><a className='btn btn-outline-primary' data-bs-toggle="offcanvas" data-bs-target="#offcanvasPlantilla" aria-controls='offcanvasPlantilla' role="button">Modificar</a></td>
-                            <td><button className='btn btn-danger'>Eliminar</button></td>
-                        </tr>
+                       {ListaNoticias.map((val, key) => {
+                            return (
+                                <tr key={autoincrement++}>
+                                    <td key={autoincrement++}>{val.titulo}</td>
+                                    <td key={autoincrement++}>{val.informacion}</td>
+                                    <td key={autoincrement++}>{val.baseimagen}</td>
+                                    <td key={autoincrement++}>{val.fechasalida}</td>
+                                    {/* <td key={autoincrement++}><a className='btn btn-outline-primary' data-bs-toggle="offcanvas" data-bs-target="#offcanvasPlantilla" aria-controls='offcanvasPlantilla' role="button" onClick={BuscarNoticia(val.idNOTICIA, val.titulo, val.fechasalida, val.informacion)}>Modificar</a></td> */}
+                                    <td key={autoincrement++}><button className='btn btn-danger' onClick={() => { eliminaNoticia(val.idNOTICIA) }}>Eliminar</button></td>
+                                </tr>
+                            )
+                        })}
 
                     </tbody>
                 </table>

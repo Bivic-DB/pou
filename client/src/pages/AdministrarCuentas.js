@@ -51,7 +51,7 @@ function AdministrarCuentas() {
                 })
                 Swal.fire(
                     'Eliminado',
-                    'Usuario elimado de manera correcta',
+                    'Usuario eliminado de manera correcta',
                     'success'
                 );
 
