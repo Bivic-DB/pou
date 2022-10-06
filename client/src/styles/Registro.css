@@ -106,7 +106,17 @@ font-size: 15px;
     color: black;
 }
 @media screen and (max-width: 768px){
-
+    .registrolinkR{
+        margin-top: 24px;
+        margin-bottom: 20px;
+    }
+    .Cont2R{
+        width: 300px;
+        height: 290px;
+        margin: 150px auto;
+        margin-bottom: 300px;
+      
+    }
     .registrolink{   
     font-size: 11px;
     margin-bottom: -18px;
@@ -120,5 +130,7 @@ font-size: 15px;
         margin-left: -35px;
         color: black;
     }
-
+    .imgRR{
+        display: none;
+    }
 }

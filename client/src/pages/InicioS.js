@@ -59,6 +59,7 @@ const SigninForm = () => {
                             (event) => {
                                 setEmaillog(event.target.value)
                             }} />
+                        <p className='space'></p>
                         <label htmlFor="floatingName"> Correo Electronico</label>
                     </div>
                     {/* Input Contraseña */}
@@ -67,6 +68,7 @@ const SigninForm = () => {
                             (event) => {
                                 setPasswordlog(event.target.value)
                             }} />
+                        <p className='space'></p>
                         <label htmlFor="floatingName">Contraseña</label>
                     </div>
                    
