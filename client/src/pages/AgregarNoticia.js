@@ -38,7 +38,7 @@ function AgregarNoticia() {
     const agregarNoticia = (values) => {
 
         var formatDate = Moment().format('YYYY-MM-DD');
-        Axios.post('https://bivic-db-deploy.herokuapp.com/Registro', {
+        Axios.post('https://bivic-db-deploy.herokuapp.com/AgregarNoticia', {
             // Objeto con las propiedades que queremos enviar
             Titulo: values.Titulo,
             fechasalida: values.fechasalida,
@@ -49,10 +49,11 @@ function AgregarNoticia() {
         }).then(() => {
             //setregisterStatus("Usuario Registrado");
             Swal.fire({
-                title: 'El usuario se ha registrado correctamente',
+                title: 'La noticia se ha registrado correctamente',
                 icon: 'success',
             }).then(function () {
-                navigate('/Inicio');
+                navigate('/');
+                
             });
         })
     };
@@ -171,8 +172,7 @@ function AgregarNoticia() {
                             <th scope="col"> Título</th>
                             <th scope="col"> Información </th>
                             <th scope="col"> Imagen </th>
-                            <th scope="col"> Imagenes Extra </th>
-                            <th scope="col"> Fecha </th>
+                            <th scope="col"> Fecha Salida </th>
                             <th scope="col"> Modificar </th>
                             <th scope="col"> Eliminar </th>
 

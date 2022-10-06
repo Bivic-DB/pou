@@ -7,7 +7,6 @@ import iconoServicio2 from '../assets/Artboard 71.png'
 
 import Axios from 'axios';
 import Swal from 'sweetalert2';
-import { listenerCount } from '../../../bivic-db-deploy/database';
 
 
 
@@ -45,30 +44,30 @@ function Servicios() {
                                 <div class="carousel-item active">
                                     <div class="row">
 
-                                        
+
                                         {Servicios.map((val, key) => {
                                             if (val.lugarU == 1) {
                                                 return (
                                                     <div class="col-md-4 mb-3">
-                                                    <div key={autoincrement++} class="card">
+                                                        <div key={autoincrement++} class="card">
 
-                                                        <div class="card-body">
-                                                            <h4 class="card-title">{val.informacion}</h4> <img src={iconoServicio} className="colegioLibro" />
-                                                            <p class="card-text"></p>
+                                                            <div class="card-body">
+                                                                <h4 class="card-title">{val.informacion}</h4> <img src={iconoServicio} className="colegioLibro" />
+                                                                <p class="card-text"></p>
+
+                                                            </div>
 
                                                         </div>
-
-                                                    </div>
                                                     </div>
                                                 )
                                             }
 
                                         })}
-                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
                 </div>
             </section>
 
@@ -93,22 +92,22 @@ function Servicios() {
                                     <div class="carousel-item active">
                                         <div class="row">
 
-                                            {Servicios.map((val, key) =>{
-                                                if(val.lugarU == 2){
-                                                    return(
-                                                    <div class="col-md-4 mb-3">
-                                                    <div class="card">
-                                                    <div class="card-body">
-                                                        <h4 class="card-title">{val.informacion}</h4><img src={iconoServicio2} className="colegioLibro" />
-                                                        <p class="card-text"></p>
+                                            {Servicios.map((val, key) => {
+                                                if (val.lugarU == 2) {
+                                                    return (
+                                                        <div class="col-md-4 mb-3">
+                                                            <div class="card">
+                                                                <div class="card-body">
+                                                                    <h4 class="card-title">{val.informacion}</h4><img src={iconoServicio2} className="colegioLibro" />
+                                                                    <p class="card-text"></p>
 
-                                                    </div>
-                                                </div>
-                                            </div>
-                                                )
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    )
                                                 }
                                             })}
-                                            
+
 
                                         </div>
                                     </div>

@@ -16,7 +16,7 @@ function AdministrarComentario() {
     const navigate = useNavigate();
 
     // Variables
-    let Email = "ac.obando@gmail.com";
+    let Email = "2018164@est.cedesdonbosco.ed.cr";
     let err_quantity = 0;
     let autoincrement = 0;
     
@@ -103,7 +103,7 @@ function AdministrarComentario() {
                 title:'El comentario ha sido añadido',
                 icon: 'success',
             }).then(function() {
-               
+                window.location.reload();
             });
         })
         
