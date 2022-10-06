@@ -5,12 +5,12 @@ import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom'
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import Moment from 'moment';
-
+import {convertBase64} from '../helpers/Utils.js'
 
 function AgregarNoticia() {
 
 
-    const initialValues = { Titulo: "", fechasalida: "", informacion: "" }
+    const initialValues = { Titulo: "", fechasalida: "", informacion: ""}
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
@@ -38,13 +38,13 @@ function AgregarNoticia() {
     const agregarNoticia = (values) => {
 
         var formatDate = Moment().format('YYYY-MM-DD');
-
         Axios.post('https://bivic-db-deploy.herokuapp.com/Registro', {
             // Objeto con las propiedades que queremos enviar
             Titulo: values.Titulo,
             fechasalida: values.fechasalida,
             informacion: values.informacion,
             fechaentrada: formatDate,
+            fotoentrada: String(convertBase64(File))
 
         }).then(() => {
             //setregisterStatus("Usuario Registrado");
@@ -88,7 +88,9 @@ function AgregarNoticia() {
 
     const [File, setFile] = useState();
     const selectedHandler = (e) => {
+        //setFile(convertBase64(e.target.files[0]));
         setFile(e.target.files[0]);
+        //console.log(e.target.files[0])
     }
 
     return (
