@@ -46,7 +46,7 @@ function AgregarNoticia() {
             Titulo: values.Titulo,
             fechasalida: values.fechasalida,
             informacion: values.informacion,
-            fechaentrada: formatDate,
+            fechaentrada: "2022/06/09",
             fotoentrada: String(convertBase64(File))
 
         }).then(() => {
