@@ -458,6 +458,7 @@ body{
     margin-top: 10px;
 }
 
+/* Boton Contacto Estilo*/
 .contactForm .inputBox input,
 .contactForm .inputBox textarea {
 
@@ -478,7 +479,7 @@ body{
     font-size: 16px;
     margin: 10px 0;
     pointer-events: none;
-    transition: 0.5s;
+    transition: 0.2s;
     color: #666;
 }
 
@@ -486,8 +487,8 @@ body{
 .contactForm .inputBox input:valid~span,
 .contactForm .inputBox textarea:focus~span,
 .contactForm .inputBox textarea:valid~span {
-    color: #e91e63;
-    font-size: 12px;
+    color: #5A5DE2;
+    font-size: 14px;
     transform: translateY(-20px);
 
 }
