@@ -1,101 +1,113 @@
-#contM{
+#contM {
     margin: 150px auto;
     width: 70%;
 }
 
-.contS{
+.contS {
     display: flex;
     justify-content: space-between;
     margin-bottom: 60px;
+    align-items: center;
 }
 
-.imguno{
+.imguno {
     height: 40%;
     width: 40%;
-    
+
 }
-.imgdos{
+
+.imgdos {
     height: 30%;
     width: 30%;
-    
+
 }
 
 
 
-.textMM{
-   width: 45%;
-   height: 50%;
-   border-radius: 10px;
-   padding: 30px;
-   background-color: #FFF;
-   box-shadow: 0px 0px 8px 8px #c6c6df34 ;
-   align-content: center;
-   margin: auto;
+.textMM {
+    width: 50%;
+    height: 50%;
+    border-radius: 10px;
+    padding: 30px;
+    background-color: transparent;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    align-content: center;
+    margin: auto;
 }
 
-.text1{
+.text1 {
     text-align: center;
     margin-bottom: 30px;
     font-weight: bold;
     color: #5A5DE2;
 }
 
-.text2{
+.text11 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+    color: #EC955B;
+}
+
+.text2 {
     text-align: justify;
     font-size: 20px;
 }
 
-.ulM{
+.ulM {
     display: flex;
 
 }
 
-ul{
-   margin: auto;
+ul {
+    margin: auto;
 }
 
-li{
+li {
     margin-right: 10px;
     font-size: 20px;
 }
 
-.textu{
+.textu {
     margin-left: 9%;
 }
 
 
 @media screen and (max-width: 768px) {
-   
 
-    .contS{
+
+    .contS {
         display: grid;
-        height: 700px;
         margin-bottom: 0;
+        margin-top: 40px;
     }
- .ulM{
-    display: grid;
 
- }
-    
-.textMM{
-    width: 80%;
-    height: 65%;
-    margin: auto;
- }
+    .ulM {
+        display: grid;
 
- .textu{
-    width: 100%;
-    margin: auto;
-    margin-left: 25%;
- }  
+    }
 
- .imguno, .imgdos{
-    height: 70%;
-    width: 70%;
-    margin: auto;
- }
+    .textMM {
+        width: 80%;
+        height: 350px;
+        margin: auto;
+    }
 
- .imgdos{
-    margin-left: 30%;
- }
+    .textu {
+        width: 100%;
+        margin: auto;
+        margin-left: 13%;
+    }
+
+    .imguno,
+    .imgdos {
+        display: none;
+        height: 70%;
+        width: 70%;
+        margin: auto;
+    }
+
+    .imgdos {
+        margin-left: 30%;
+    }
 }

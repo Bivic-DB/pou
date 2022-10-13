@@ -19,7 +19,7 @@ function Misionvalor(){
        <div className="contS">
        <img  src={imgtres}  className='imguno'></img>
        <div className="textMM">
-           <h2 className="text1">Visión</h2>
+           <h2 className="text11">Visión</h2>
            <p className="text2">Fomentar la interacción de la comunidad de CEDES Don Bosco hacia las bibliotecas dentro de la institución</p>
            </div>
 

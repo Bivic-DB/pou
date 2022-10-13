@@ -4,6 +4,7 @@
   font-family: 'Lato', sans-serif;
 }
 
+/* Botones Administrador */
 #agregarserv {
   width: 250px;
   height: 75px;
@@ -21,6 +22,7 @@
   border: none;
   border-radius: 10px;
 }
+
 .btnServicio {
   color: white;
 }
@@ -40,32 +42,9 @@
   width: 500px;
   margin: 0 auto;
 }
-.col-6{
-  margin-top: 50px;
-}
-.h3-servicios{
-  font-size: 30px;
-}
-.flecha{
-  size: 50px;
-  width: 20px;
-  color: white;
-}
-.btn-primary{
-  background-color: transparent;
-  border-color: transparent;
-}
-.btn-primary:hover{
-  background-color: #5A5DE2;
-  border-color: #5A5DE2;
-}
-.h3-colegio{
-  margin-top: 25px;
-}
-.carousel-escuela{
-  margin-top: -150px;
+/*Fin Botones Administrador */
 
-}
+/*Img Libro Azul*/
 .colegioLibro{
  display: block;
  float: right;
@@ -73,40 +52,37 @@
  height: 10%;
  margin-top: -40px;
 }
-.card-title{
-  margin-top: 20px;
-}
-.card-body{
-  margin-bottom: 20px;
-}
-.p-servicio{
-  margin-bottom: 20px;
+/* Fin Img Libro Azul*/
+
+.container-se{
+  margin: -30px 3rem;
+  max-width: 90%;
 }
 
-.col-md-4{
-  margin-top: 60px;
+.container-s{
+  margin: 10px 3rem;
+  max-width: 90%;
 }
+
+
 .section-servicios{
-  margin-top: 8%;
+  margin-top: 1%;
 }
 
+.card{
+  border-radius: 1rem;
+  border-color: none;
+  border-inline: none;
+
+}
+
+.container-servicios h1{
+  color: #000;
+  margin-top:150px;
+  text-align: center;
+}
 
 @media(max-width:720px) {
-  .cont_imp {
-    transform: translateY(75px);
-    background-color: #91ABEE;
-    width: 90%;
-    height: 200px;
-    margin: 0 auto;
-    border-radius: 20px;
-    padding: 30px;
-    color: white;
-    position: relative;
-
-    
-  }
-  
-
 
   .btns {
     transform: translateY(150px);
@@ -122,4 +98,77 @@
     margin-right: auto;
     margin-left: auto;
   }
+}
+
+@media (min-width: 768px) {
+  .section-servicios  .carousel-inner {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    }
+  
+    .section-servicios .carousel-item {
+      margin-right: 0;
+      flex: 0 0 33.333333%;
+      display: block;
+  }
+
+  .section-servicios .carousel-inner{
+    padding: 1em;
+}
+.card-s{
+    margin: 0 .5em;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    border-radius: 20px;
+    border: none;
+}
+.card-s:hover{
+  background-color: #dedede;
+}
+.section-servicios .carousel-control-prev, .carousel-control-next{
+    width: 6vh;
+    height: 6vh;
+    border-radius: 50%;
+    top: 50%;
+    margin-left: -20px;
+    margin-right: -40px;
+    transform: translateY(-50%);
+}
+}
+@media (max-width:800px){
+  .card-s{
+    margin: 0 .5em;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    border-radius: 20px;
+    border: none;
+    text-align: center;
+    max-width: 90%;
+    margin-right: auto;
+    background-color: #5A5DE2;
+    color: #fff;
+    margin-left: auto;
+}
+ .card-s .text-muted{
+  color: #c9c9c9!important;
+ }
+.card-s:hover{
+  background-color: #7e80fe;
+}
+.section-servicios .carousel-inner {
+  
+  padding: 1em;
+}
+.section-servicios img{
+  display: none;
+}
+.section-servicios .carousel-control-prev, .carousel-control-next{
+  width: 6vh;
+  height: 6vh;
+  border-radius: 50%;
+  top: 50%;
+  margin-left: -20px;
+  margin-right: -40px;
+  transform: translateY(-50%);
+}
+
 }
