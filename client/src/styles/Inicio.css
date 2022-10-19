@@ -15,6 +15,7 @@
     text-align: center;
 }
 
+
 .contimg{
     width: 50%;
     background-color: #EC955B;
@@ -52,11 +53,16 @@
 }
 
 .form-control{
-background-color: #63729830;
-width: 100%;
-height: 30px;
-border: none;
+    padding:15px;
+    font-family: 'Lato', sans-serif;
+    line-height: 30px;
+    background-color: #d8d8d8;
+    border: none;
+    border-radius: 20px;
+}
 
+.form-control::placeholder{
+    color: #8081aa;
 }
 
 
@@ -81,7 +87,16 @@ font-size: 15px;
     color: black;
 }
 
+#submit2{
+    transition: 1s;
+}
 
+#submit2:hover{
+    background-color: #91ABEE;
+    color: #FFFFFF;
+    transition: 0,9s;
+    border: none;
+}
 
 @media screen and (max-width: 768px){
     .Cont2{

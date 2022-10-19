@@ -119,35 +119,35 @@ function SignupForm() {
                 <div className='OrgR'>
                     <form>
                     {/* Input Nombre */}
-                    <div className="form-floating mb-3-registro">
+                    <div className="formSs">
                         <input
                             type="text"
                             className="form-control"
                             id="floatingName"
                             name="NameReg"
                             onChange={handleChange}
-                            placeholder="123"
+                            placeholder="Nombre"
                             value={formValues.NameReg}
                         />
                         <p className='errors'>{formErrors.NameReg}</p>
-                        <label htmlFor="floatingName">Nombre</label>
+                        
                     </div>
                     {/* Input Primer Apellido */}
-                    <div className="form-floating mb-3-registro">
+                    <div className="formSs">
                         <input
                             type="text"
                             className="form-control"
                             id="floatingLN1"
                             name="LastNameReg"
                             value={formValues.LastNameReg}
-                            placeholder="123"
+                            placeholder="Primer Apellido"
                             onChange={handleChange}
                         />
                         <p className='errors'>{formErrors.LastNameReg}</p>
-                        <label htmlFor="floatingLN1">Primer Apellido</label>
+                       
                     </div>
                     {/* Input Segundo Apellido */}
-                    <div className="form-floating mb-3-registro">
+                    <div className="formSs">
                    
                         <input
                             type="text"
@@ -155,14 +155,14 @@ function SignupForm() {
                             id="floatingLN2"
                             name="SecLastNameReg"
                             value={formValues.SecLastNameReg}
-                            placeholder="123"
+                            placeholder="Segundo Apellido"
                             onChange={handleChange}/>
                             
                             <p className='errors'>{formErrors.SecLastNameReg}</p>
-                            <label htmlFor="floatingName">Segundo Apellido</label>
+                            
                     </div>
                     {/* Input Correo Electronico */}
-                    <div className="form-floating mb-3-registro">
+                    <div className="formSs">
                     
                         <input
                             type="text"
@@ -170,14 +170,14 @@ function SignupForm() {
                             id="floatingemail"
                             name="EmailReg"
                             value={formValues.EmailReg}
-                            placeholder="123"
+                            placeholder="Correo electrónico"
                             onChange={handleChange}
                         />
                         <p className='errors'>{formErrors.EmailReg}</p>
-                        <label htmlFor="floatingName">Correo Electrónico</label>
+                
                     </div>
                     {/* Input Contraseña */}
-                    <div className="form-floating mb-3-registro">
+                    <div className="formSs">
                     
                         <input
                             type="password"
@@ -185,11 +185,11 @@ function SignupForm() {
                             id="floatingPassword"
                             name="PasswordReg"
                             value={formValues.PasswordReg}
-                            placeholder="123"
+                            placeholder="Contraseña"
                             onChange={handleChange}
                         />
                         <p className='errors'>{formErrors.PasswordReg}</p>
-                        <label htmlFor="floatingName">Contraseña</label>
+                       
                     </div>
 
                     <div>
@@ -197,7 +197,7 @@ function SignupForm() {
                     </div>
 
                     <div>
-                        <button className='submit' onClick={handleSubmit}>Registrar</button>
+                        <button className='submit' id='submit2' onClick={handleSubmit}>Registrar</button>
                         <h4>{registerStatus}</h4>
                     </div>
                     </form>

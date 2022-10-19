@@ -69,7 +69,12 @@
 }
 .form-control{
 	width: 100%;
- 
+    padding:15px;
+    font-family: 'Lato', sans-serif;
+    line-height: 30px;
+    background-color: #d8d8d8;
+    border: none;
+    border-radius: 20px;
 }
 .errors{
     font-size: 13px;
@@ -109,6 +114,16 @@ font-size: 15px;
 #reg2R{
     margin-left: -65px;
     color: black;
+}
+#submit2{
+    transition: 1s;
+}
+
+#submit2:hover{
+    background-color: #91ABEE;
+    color: #FFFFFF;
+    transition: 0,9s;
+    border: none;
 }
 @media screen and (max-width: 768px){
     .registrolinkR{

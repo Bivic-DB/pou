@@ -54,21 +54,21 @@ const SigninForm = () => {
 
                 <div className='Org'>
                     {/* Input Correo */}
-                    <div className="form-floating mb-3-inicio">
-                        <input type="text" className="form-control" id="floatingEmailLogin" placeholder="Example@example.com" name="Email" onChange={
+                    <div className="formSs">
+                        <input type="text" className="form-control"  id="floatingEmailLogin" placeholder="Correo Electrónico" name="Email" onChange={
                             (event) => {
                                 setEmaillog(event.target.value)
                             }} />
-                        <label htmlFor="floatingName"> Correo Electronico</label>
+              
                     </div>
                     <br></br>
                     {/* Input Contraseña */}
-                    <div className="form-floating mb-3-inicio">
-                        <input type="password" className="form-control" id="floatingPassWordLogin" placeholder="Example@example.com" name="Email" onChange={
+                    <div className="formSs">
+                        <input type="password" className="form-control" id="floatingPassWordLogin" placeholder="Contraseña" name="Email" onChange={
                             (event) => {
                                 setPasswordlog(event.target.value)
                             }} />
-                        <label htmlFor="floatingName">Contraseña</label>
+                      
                     </div>
                    <br></br>
                     <div>
@@ -77,7 +77,7 @@ const SigninForm = () => {
                 
                     <div>
                         <p>{loginStatus}</p>
-                        <button onClick={IniciarSes} className='submit'>Iniciar</button>
+                        <button onClick={IniciarSes} className='submit' id='submit2'>Iniciar</button>
                         
                     </div>
                 </div>

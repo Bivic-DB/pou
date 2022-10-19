@@ -48,6 +48,8 @@ body{
     margin-left: 14%;
 }
 
+
+
 @media (max-width: 1300px) {
     .imgcarrusel {
         width: 350px;
@@ -112,9 +114,15 @@ body{
 }
 
 .Header-home {
-
+    border-radius: 15px;
     background: #EC955B;
-    
+    margin: auto;
+    width: 90%;
+}
+
+.Home{
+    margin-top: 130px;
+  
 }
 
 .row-header {
@@ -129,7 +137,7 @@ body{
     font-size: 30px;
     line-height: 40px;
     margin: 25px 0;
-    margin-top: 8rem;
+    margin-top: 4rem;
 
 }
 
@@ -179,7 +187,7 @@ body{
     max-width: 100%;
     padding: 5rem 0 0 0;
     width: auto;
-    margin: 2rem auto;
+    margin: 1rem auto;
 }
 
 .container {
@@ -193,7 +201,7 @@ body{
     border-top: 3px solid #000000;
     margin-left: 0;
     margin-right: -15px;
-    margin-top: -26px;
+    margin-top: -15px;
 }
 
 
