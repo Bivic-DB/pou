@@ -20,20 +20,21 @@
 
 }
 .form_comentarios2 input {
-    width: 100%;
+    width: 90%;
     height: 50px;
-    max-width: 100%;
-    min-width: 100%;
+    max-width: 90%;
+    min-width: 90%;
     min-height: 60px;
-    max-height: 360px;
-    padding: 10px;
-    border-radius: 10px;
-    font-family: 'Lato', sans-serif;
+    max-height: 300px;
+    padding: 5px;
     border: none;
-    line-height: 30px;
-    background-color: #91abee30;
+    border-bottom: 2px solid #333;
+    resize: none;
+    outline: none;
     margin-bottom: 20px;
     margin-top: 10px;
+    margin-left: 10px;
+    color: black;
 }
 
 .form_comentarios2 .btn {
@@ -62,16 +63,74 @@
 .btn-offcanvas{
     margin-top: 100px;
     font-family: 'Lato', sans-serif;
-    background: #5A5DE2;
-    font-family: 'Lato', sans-serif;
-    border-radius: 20px;
+        border-radius: 20px;
     border-radius: 500%;
     border: none;
     color: white;
     padding: 10px;
     width: 45px;
+    transition: background 0.5s;
+    background-color: #5A5DE2;
+    text-decoration: none;
 }
 
+.btn-offcanvas:hover{
+    background-color: #91ABEE;
+    color: #5A5DE2;
+    transition: 0,9s;
+    border: none;
+}
+
+.submit{
+    transition: background 0.5s;
+    background-color: #5A5DE2;
+    text-decoration: none;
+}
+
+.submit:hover{
+    background-color: #91ABEE;
+    color: #5A5DE2;
+    transition: 0,9s;
+    border: none;
+}
+
+.btn-outline-primary{
+    transition: background 0.5s;
+    background-color: #5A5DE2;
+    text-decoration: none;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    padding-right: 12px;
+    padding-left: 12px;
+    border-radius: 30px;
+}
+
+.btn-outline-primary:hover{
+    background-color: #91ABEE;
+    color: #5A5DE2;
+    transition: 0,9s;
+    border: none;
+}
+
+.btn-danger{
+    transition: background 0.5s;
+    background-color: #5A5DE2;
+    text-decoration: none;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    padding-right: 12px;
+    padding-left: 12px;
+    border-radius: 30px;
+}
+
+.btn-danger:hover{
+    background-color: #91ABEE;
+    color: #5A5DE2;
+    transition: 0,9s;
+    border: none;
+}
 
 #formsh1{
     margin-top: 140px;

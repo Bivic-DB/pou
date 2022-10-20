@@ -18,7 +18,10 @@ body{
 
 }
 .btn2:hover{
-    background: #36494E;
+    background-color: #91ABEE;
+    color: #5A5DE2;
+    transition: 0,9s;
+    border: none;
 }
 
 .divisor{

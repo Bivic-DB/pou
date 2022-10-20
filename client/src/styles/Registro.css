@@ -5,15 +5,12 @@
     display: flex;
     justify-content: space-between;
     width: 77%;
-    height: 80%;
+    height: 900px;
     margin-left: 10%;
 }
 .FormR{
-    max-width: 700px;
-    min-width: 300px;
-    max-height: 800px;
     width: 50%;
-    height: 60%;
+    height: 63%;
     background-color: #FFFFFF;
     border-bottom-left-radius: 15px;
     border-top-left-radius: 15px;
@@ -28,7 +25,7 @@
     font-size: 2rem;
     margin-bottom: 20px;
     padding-top: 17%;
-    margin-left: 15%;
+    margin-left: 0;
 }
 .OrgR{
     padding: 1px;
@@ -37,7 +34,7 @@
     align-items: center;
     margin: auto;
     text-align: center;
-    margin-left: 17%;
+  
 }
 .mb-3-registro{
     width: 100%!important;
@@ -67,14 +64,16 @@
 .submit:focus {
 	outline: none;
 }
-.form-control{
-	width: 100%;
-    padding:15px;
-    font-family: 'Lato', sans-serif;
-    line-height: 30px;
-    background-color: #d8d8d8;
+.form-controlR{
+   
+    width: 100%;
+    padding: 1.4px ;
+    font-size: 16px;
+    margin: 10px 0;
     border: none;
-    border-radius: 20px;
+    border-bottom: 2px solid #333;
+    resize: none;
+    outline: none;
 }
 .errors{
     font-size: 13px;
@@ -90,6 +89,7 @@
 
 .imgRR{
     width: 50%;
+    height: 63%;
     background-color: #EC955B;
     border-bottom-right-radius: 15px;
     border-top-right-radius: 15px;
@@ -121,7 +121,7 @@ font-size: 15px;
 
 #submit2:hover{
     background-color: #91ABEE;
-    color: #FFFFFF;
+    color: #5A5DE2;;
     transition: 0,9s;
     border: none;
 }
@@ -132,13 +132,15 @@ font-size: 15px;
     }
     #HeaderTitleR{
         margin-left: 0%;
+        text-align: center;
     }
     .Cont2R{
-        width: 300px;
-        height: 290px;
-        margin: 150px auto;
-        margin-bottom: 300px;
-      
+        width: 400px;
+        height: 30%;
+        margin: 120px auto;
+        padding: 10px;
+        background-color: #FFFFFF;
+        border-radius: 7px;
     }
     .registrolink{   
     font-size: 11px;
@@ -156,12 +158,61 @@ font-size: 15px;
     .imgRR{
         display: none;
     }
-    .OrgR{
-        margin-left: 0%;
+
+    .img1R{
+        display: none;
     }
+  
+    .OrgR{
+        margin: 0;
+        text-align: center;
+    }
+
+    
     .FormR{
-       
-        background-color: transparent;
-      
+       margin: auto;
+    }
+
+    .form-controlR{
+        width:70%;
+        padding: 0.4px; 
+    font-size: 16px;
+    margin: 5px 0;
+  
+    }
+}
+
+@media screen and (max-width: 420px){
+    #HeaderTitleR {
+        font-size: 1.5rem;
+    }
+
+    .OrgR{
+        margin: 0;
+        text-align: center;
+    }
+
+    
+    .FormR{
+       margin: auto;
+    }
+
+    .form-controlR{
+        width: 50%;
+        padding: 0.4px; 
+    font-size: 16px;
+    margin: 5px 0;
+  
+    }
+
+    .Cont2R{
+        width: 300px;
+        height: 30%;
+        margin-top: 120px auto;
+        margin-left: 30px auto;
+        margin-right: 30px auto;
+        padding: 10px;
+        background-color: #FFFFFF;
+        border-radius: 7px;
     }
 }

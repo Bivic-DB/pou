@@ -122,7 +122,7 @@ function SignupForm() {
                     <div className="formSs">
                         <input
                             type="text"
-                            className="form-control"
+                            className="form-controlR"
                             id="floatingName"
                             name="NameReg"
                             onChange={handleChange}
@@ -136,7 +136,7 @@ function SignupForm() {
                     <div className="formSs">
                         <input
                             type="text"
-                            className="form-control"
+                            className="form-controlR"
                             id="floatingLN1"
                             name="LastNameReg"
                             value={formValues.LastNameReg}
@@ -151,7 +151,7 @@ function SignupForm() {
                    
                         <input
                             type="text"
-                            className="form-control"
+                            className="form-controlR"
                             id="floatingLN2"
                             name="SecLastNameReg"
                             value={formValues.SecLastNameReg}
@@ -166,7 +166,7 @@ function SignupForm() {
                     
                         <input
                             type="text"
-                            className="form-control"
+                            className="form-controlR"
                             id="floatingemail"
                             name="EmailReg"
                             value={formValues.EmailReg}
@@ -181,7 +181,7 @@ function SignupForm() {
                     
                         <input
                             type="password"
-                            className="form-control"
+                            className="form-controlR"
                             id="floatingPassword"
                             name="PasswordReg"
                             value={formValues.PasswordReg}
