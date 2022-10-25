@@ -114,6 +114,7 @@ function AdministrarComentario() {
     return (
 
         <div>
+<<<<<<< Updated upstream
             <div className="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
                 <div className="offcanvas-header">
                     <h3 className="offcanvas-title" id="offcanvasExampleLabel">Agregar comentario</h3>
@@ -139,10 +140,27 @@ function AdministrarComentario() {
                             <div>
                                 <button className='submit' onClick={handleSubmit} >Agregar</button>
                             </div>
+=======
+            <div className='container'>
+                <div className='row comentarios2 justify-content-center'>
+                    <div className='col-6'>
+                        <h1 className='h1comentarios2'>Administrar Comentarios</h1>
+                        <form action='' className='form_comentarios2 d-flex  flex-wrap'>
+                            <h2 className='h2AgregarServicios'>#N comentario</h2>
+                            <input type={"number"} name="" id='' placeholder='#N comentario'></input>
+                            <h2 className='h2AgregarServicios'>Autor</h2>
+                            <input type={"text"} name="" id='' placeholder='Autor'></input>
+                            <h2 className='h2AgregarServicios'>Fecha</h2>
+                            <input type={"date"} name="" id='' placeholder='Fecha'></input>
+                            <h2 className='h2AgregarServicios'>Texto</h2>
+                            <input type={"text"} name="" id='' placeholder='Texto'></input>
+                            <button className='btn' type='button'>Agregar</button>
+>>>>>>> Stashed changes
                         </form>
                     </div>
                 </div>
             </div>
+<<<<<<< Updated upstream
 
             <div className='container-sm'>
                 <span>
@@ -182,7 +200,10 @@ function AdministrarComentario() {
                     </tbody>
                 </table>
             </div>
+=======
+>>>>>>> Stashed changes
         </div>
+
 
 
     )
