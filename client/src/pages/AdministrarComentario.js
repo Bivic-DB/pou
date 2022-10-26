@@ -7,7 +7,7 @@ import Moment from 'moment';
 
 function AdministrarComentario() {
     
-    // 
+    // Variables 
     const initialValues = { Comentario: "" }
     const [ListaComentarios, setListaComentarios] = useState([]);
     const [formValues, setFormValues] = useState(initialValues);
@@ -15,7 +15,6 @@ function AdministrarComentario() {
     const [isSubmit, setIsSubmit] = useState(false);
     const navigate = useNavigate();
 
-    // Variables
     let Email = "2018164@est.cedesdonbosco.ed.cr";
     let err_quantity = 0;
     let autoincrement = 0;
@@ -61,7 +60,7 @@ function AdministrarComentario() {
 
     const eliminaComentario = (id) =>{
         Swal.fire({
-            title: '¿Estas seguro?',
+            title: '¿Estas seguro de eliminar este comentario?',
             text: "No podrás revertir este cambio",
             icon: 'warning',
             showCancelButton: true,
@@ -75,12 +74,12 @@ function AdministrarComentario() {
                     setListaComentarios(ListaComentarios.filter((val) =>{
                         return val.id != id
                     }))
+                    window.location.reload();
                 });
                 Swal.fire(
                     'Eliminado',
                     'El comentario a sido eliminado',
-                    'success'
-                );
+                    'success');
                 
             }
         })

@@ -112,6 +112,7 @@ function AdministrarCuentas() {
                     </thead>
                     <tbody>
                         {/* Mapeo en la lista de usuarios */}
+                        {console.log(ListaUsuarios)}
                         {ListaUsuarios.map((val, key) => {
                             return (
                                 <tr key={autoincrement++}>
