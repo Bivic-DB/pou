@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
 import React, { useState, useEffect } from 'react';
-=======
-import React from 'react'
->>>>>>> Stashed changes
 import '../styles/FormsAdministrar.css';
 import Axios from 'axios';
 import Swal from 'sweetalert2';
@@ -155,7 +151,6 @@ function Agregarserv() {
     return (
 
         <div>
-<<<<<<< Updated upstream
             <div class="offcanvas offcanvas-start" tabIndex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
                 <div class="offcanvas-header">
                     <h3 class="offcanvas-title" id="offcanvasExampleLabel">Agregar Servicio</h3>
@@ -267,24 +262,6 @@ function Agregarserv() {
                     </div>
                 </div>
 
-=======
-            <div className='container'>
-                <div className='row comentarios2 justify-content-center'>
-                    <div className='col-6'>
-                        <h1 className='h1comentarios2'>Agregar Servicios</h1>
-                        <form action='' className='form_comentarios2 d-flex  flex-wrap'>
-                            <h2 className='h2AgregarServicios'>Nombre del Servicio</h2>
-                            <input type={"text"} name="" id='' placeholder='Nombre del Servicio'></input>
-                            <h2 className='h2AgregarServicios'># de Servicio</h2>
-                            <input type={"number"} name="" id='' placeholder='# de Servicio'></input>
-                            <h2 className='h2AgregarServicios'>Ubicacion del Servicio</h2>
-                            <input type={"text"} name="" id='' placeholder='Ubicacion del Servicio'></input>
-                            <button className='btn' type='button'>Agregar</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
->>>>>>> Stashed changes
         </div>
 
 

@@ -116,19 +116,13 @@ function SignupForm() {
                 <div className='OrgR'>
                     <form>
                     {/* Input Nombre */}
-<<<<<<< Updated upstream
                     <div className="formSs">
-=======
-                    <div className="">
-                        <label htmlFor="floatingName" className='form-label'>Nombre</label>
->>>>>>> Stashed changes
                         <input
                             type="text"
                             className="form-controlR"
                             id="floatingName"
                             name="NameReg"
                             onChange={handleChange}
-<<<<<<< Updated upstream
                             placeholder="Nombre"
                             value={formValues.NameReg}
                         />
@@ -137,22 +131,12 @@ function SignupForm() {
                     </div>
                     {/* Input Primer Apellido */}
                     <div className="formSs">
-=======
-                            value={formValues.NameReg}
-                        />
-                        <p className='errors'>{formErrors.NameReg}</p>
-                    </div>
-                    {/* Input Primer Apellido */}
-                    <div className="">
-                    <label htmlFor="floatingLN1" className='form-label'>Primer Apellido</label>
->>>>>>> Stashed changes
                         <input
                             type="text"
                             className="form-controlR"
                             id="floatingLN1"
                             name="LastNameReg"
                             value={formValues.LastNameReg}
-<<<<<<< Updated upstream
                             placeholder="Primer Apellido"
                             onChange={handleChange}
                         />
@@ -162,22 +146,12 @@ function SignupForm() {
                     {/* Input Segundo Apellido */}
                     <div className="formSs">
                    
-=======
-                            onChange={handleChange}
-                        />
-                        <p className='errors'>{formErrors.LastNameReg}</p>
-                    </div>
-                    {/* Input Segundo Apellido */}
-                    <div className="">
-                    <label htmlFor="floatingLN2" className='form-label'>Segundo Apellido</label>
->>>>>>> Stashed changes
                         <input
                             type="text"
                             className="form-controlR"
                             id="floatingLN2"
                             name="SecLastNameReg"
                             value={formValues.SecLastNameReg}
-<<<<<<< Updated upstream
                             placeholder="Segundo Apellido"
                             onChange={handleChange}/>
                             
@@ -187,23 +161,12 @@ function SignupForm() {
                     {/* Input Correo Electronico */}
                     <div className="formSs">
                     
-=======
-                            onChange={handleChange}/>
-                            
-                            <p className='errors'>{formErrors.SecLastNameReg}</p>
-                        
-                    </div>
-                    {/* Input Correo Electronico */}
-                    <div className="">
-                    <label htmlFor="floatingemail" className='form-label' >Correo Electronico</label>
->>>>>>> Stashed changes
                         <input
                             type="text"
                             className="form-controlR"
                             id="floatingemail"
                             name="EmailReg"
                             value={formValues.EmailReg}
-<<<<<<< Updated upstream
                             placeholder="Correo electrónico"
                             onChange={handleChange}
                         />
@@ -213,32 +176,17 @@ function SignupForm() {
                     {/* Input Contraseña */}
                     <div className="formSs">
                     
-=======
-                            onChange={handleChange}
-                        />
-                        <p className='errors'>{formErrors.EmailReg}</p>
-                    </div>
-                    {/* Input Contraseña */}
-                    <div className="">
-                    <label htmlFor="floatingPassword" className='form-label'>Contraseña</label>
->>>>>>> Stashed changes
                         <input
                             type="password"
                             className="form-controlR"
                             id="floatingPassword"
                             name="PasswordReg"
                             value={formValues.PasswordReg}
-<<<<<<< Updated upstream
                             placeholder="Contraseña"
                             onChange={handleChange}
                         />
                         <p className='errors'>{formErrors.PasswordReg}</p>
                        
-=======
-                            onChange={handleChange}
-                        />
-                        <p className='errors'>{formErrors.PasswordReg}</p>
->>>>>>> Stashed changes
                     </div>
                     <div>
                         <button className='submit' id='submit2' onClick={handleSubmit}>Registrar</button>

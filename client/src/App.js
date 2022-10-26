@@ -12,11 +12,8 @@ import AdministrarNoticia from './pages/AgregarNoticia';
 import AdministrarCuentas from './pages/AdministrarCuentas';
 import Historia from "./pages/Historia";
 import Footer from './components/Footer';
-<<<<<<< Updated upstream
 import Axios from 'axios';
 import MisionValor from './pages/Misionvalor.js';
-=======
->>>>>>> Stashed changes
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {

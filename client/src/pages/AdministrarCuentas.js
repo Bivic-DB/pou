@@ -14,6 +14,7 @@ function AdministrarCuentas() {
     const [NuevoApellido, setNuevoApellido] = useState("");
     const [NuevoSegApellido, setNuevoSegApellido] = useState("");
     const [NuevoRol, setNuevoRol] = useState("");
+    let autoincrement = 0;
 
     const data = [{ value: 1, label: "Administrador"}, {value: 2, label: "Estudiante/Profesor"}, {value: 3, label: "Invitado"}, {value: 4, label: "Seleccionar Rol"}];
     const [selectedValue, setSelectedValue] = useState(4);
@@ -113,7 +114,6 @@ function AdministrarCuentas() {
                         {/* Mapeo en la lista de usuarios */}
                         {ListaUsuarios.map((val, key) => {
                             return (
-<<<<<<< Updated upstream
                                 <tr key={autoincrement++}>
                                     <td key={autoincrement++}>{val.nombre}</td>
                                     <td key={autoincrement++}>{val.apellido} {val.segundoapellido}</td>
@@ -121,15 +121,6 @@ function AdministrarCuentas() {
                                     <td key={autoincrement++}>{val.rol}</td>
                                     <td key={autoincrement++}><a className='btn btn-outline-primary' data-bs-toggle="offcanvas" data-bs-target="#offcanvasPlantilla" aria-controls='offcanvasPlantilla' role="button" onClick={BuscarUsuario(val.correo, val.nombre, val.apellido, val.segundoapellido, val.rol)}>Modificar</a></td>
                                     <td key={autoincrement++}><button className='btn btn-danger' onClick={() => { eliminaUsuario(val.correo) }}>Eliminar</button></td>
-=======
-                                <tr key={"tabla " + val.NOMBRE}>
-                                    <td key={val.NOMBRE}>{val.NOMBRE}</td>
-                                    <td key={val.APELLIDO}>{val.APELLIDO} {val.APELLIDODOS}</td>
-                                    <td key={val.CORREO}>{val.CORREO}</td>
-                                    <td key={val.ROL}>{val.ROL}</td>
-                                    <td key={"Modificar_" + val.CORREO}><a className='btn btn-outline-primary' data-bs-toggle="offcanvas" data-bs-target="#offcanvasPlantilla" aria-controls='offcanvasPlantilla' role="button" onClick={() => {BuscarUsuario(val.CORREO)}}>Modificar</a></td>
-                                    <td key={"Eliminar " + val.CORREO}><button className='btn btn-danger' onClick={() => {eliminaUsuario(val.CORREO)}}>Eliminar</button></td>
->>>>>>> Stashed changes
                                 </tr>
                             )
                         })}
