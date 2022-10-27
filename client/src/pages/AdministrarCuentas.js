@@ -9,7 +9,7 @@ function AdministrarCuentas() {
 
     // Variables para guardar información
     const [ListaUsuarios, setListaUsuarios] = useState([]);
-    let Usuario = [];
+    const [Usuario, setUsuario] = useState([]);
     const [NuevoNombre, setNuevoNombre] = useState("");
     const [NuevoApellido, setNuevoApellido] = useState("");
     const [NuevoSegApellido, setNuevoSegApellido] = useState("");
@@ -60,8 +60,9 @@ function AdministrarCuentas() {
     };
 
     // Busca el usuario para mostrarlo en el offcanvas
-    const BuscarUsuario = (id, nombre, apellido, apellidodos, rol) => {
-        Usuario = [id, nombre, apellido, apellidodos, rol];
+    const BuscarUsuario = (puesto) => {
+        setUsuario(ListaUsuarios[puesto]);
+        console.log(Usuario);
     };
 
     // Cambiar la informacion del usuario
@@ -112,7 +113,6 @@ function AdministrarCuentas() {
                     </thead>
                     <tbody>
                         {/* Mapeo en la lista de usuarios */}
-                        {console.log(ListaUsuarios)}
                         {ListaUsuarios.map((val, key) => {
                             return (
                                 <tr key={autoincrement++}>
@@ -120,7 +120,7 @@ function AdministrarCuentas() {
                                     <td key={autoincrement++}>{val.apellido} {val.segundoapellido}</td>
                                     <td key={autoincrement++}>{val.correo}</td>
                                     <td key={autoincrement++}>{val.rol}</td>
-                                    <td key={autoincrement++}><a className='btn btn-outline-primary' data-bs-toggle="offcanvas" data-bs-target="#offcanvasPlantilla" aria-controls='offcanvasPlantilla' role="button" onClick={BuscarUsuario(val.correo, val.nombre, val.apellido, val.segundoapellido, val.rol)}>Modificar</a></td>
+                                    <td key={autoincrement++}><a className='btn btn-outline-primary' data-bs-toggle="offcanvas" data-bs-target="#offcanvasPlantilla" aria-controls='offcanvasPlantilla' role="button" onClick={() => BuscarUsuario(key)}>Modificar</a></td>
                                     <td key={autoincrement++}><button className='btn btn-danger' onClick={() => { eliminaUsuario(val.correo) }}>Eliminar</button></td>
                                 </tr>
                             )
@@ -137,20 +137,21 @@ function AdministrarCuentas() {
                     </div>
                     <div className='offcanvas-body'>
                         <div className='container-sm'>
+                            
                             <div className='form-floating mb-3'>
-                                <input type="text" className='form-control' id="nombre" placeholder='123' value={Usuario[1]} disabled></input>
+                                <input type="text" className='form-control' id="nombre" placeholder='123' value={Usuario.nombre} disabled></input>
                                 <label htmlFor="nombre">Nombre </label>
                             </div>
                             <div className='form-floating mb-3'>
-                                <input type="text" className='form-control' id="Apellido" placeholder='123' value={Usuario[2]} disabled></input>
+                                <input type="text" className='form-control' id="Apellido" placeholder='123' value={Usuario.apellido} disabled></input>
                                 <label htmlFor="Apellido">Apellido </label>
                             </div>
                             <div className='form-floating mb-3'>
-                                <input type="text" className='form-control' id="apellido2" placeholder='123' value={Usuario[3]} disabled></input>
+                                <input type="text" className='form-control' id="apellido2" placeholder='123' value={Usuario.apellidodos} disabled></input>
                                 <label htmlFor="apellido2">Segundo Apellido</label>
                             </div>
                             <div className='form-floating mb-3'>
-                                <input type="text" className='form-control' id="correo" placeholder='123' value={Usuario[0]} disabled></input>
+                                <input type="text" className='form-control' id="correo" placeholder='123' value={Usuario.correo} disabled></input>
                                 <label htmlFor="correo">Correo </label>
                             </div>
                             <div className='form-floating'>
@@ -163,7 +164,7 @@ function AdministrarCuentas() {
                                 />
                             </div>
                             <br></br>
-                            <button className='btn btn-outline-primary' onClick={() => { ActualizarUsuario(Usuario[0]) }}>Actualizar Usuario</button>
+                            <button className='btn btn-outline-primary' onClick={() => { ActualizarUsuario(Usuario.correo) }}>Actualizar Usuario</button>
                         </div>
                     </div>
                 </div>
