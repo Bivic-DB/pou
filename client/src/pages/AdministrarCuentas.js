@@ -147,7 +147,7 @@ function AdministrarCuentas() {
                                 <label htmlFor="Apellido">Apellido </label>
                             </div>
                             <div className='form-floating mb-3'>
-                                <input type="text" className='form-control' id="apellido2" placeholder='123' value={Usuario.apellidodos} disabled></input>
+                                <input type="text" className='form-control' id="apellido2" placeholder='123' value={Usuario.segundoapellido} disabled></input>
                                 <label htmlFor="apellido2">Segundo Apellido</label>
                             </div>
                             <div className='form-floating mb-3'>
