@@ -60,9 +60,7 @@ function AgregarSabiasQue() {
             });
         })
     };
-    // const BuscarSabiasQ = (idNOTICIA, titulo, fechasalida, informacion) => {
-    //     Noticia = [idNOTICIA, titulo, fechasalida, informacion];
-    // };
+
         // funcion para eliminar usuarios
         const eliminaSabiasQ = (id) => {
             Swal.fire({

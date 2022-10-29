@@ -89,6 +89,8 @@ function AdministrarComentario() {
     const BuscarComentario = (puesto) => {
         setComentario(ListaComentarios[puesto]);
         console.log(Comentario);
+
+
     };
 
     const agregarComentario = (values) => {
@@ -228,12 +230,20 @@ function AdministrarComentario() {
                         <div className='container-sm'>
 
                             <div className='form-floating mb-3'>
-                                <input type="text" className='form-control' id="nombre" placeholder='123' value={Comentario.persona_correo} disabled></input>
-                                <label htmlFor="nombre">Autor </label>
+                                <input type="text" className='form-control' id="Autor" placeholder='123' value={Comentario.persona_correo} disabled></input>
+                                <label htmlFor="Autor">Autor </label>
                             </div>
                             <div className='form-floating mb-3'>
-                                <input type="text" className='form-control' id="Apellido" placeholder='123' value={Comentario.mensaje} ></input>
-                                <label htmlFor="Apellido">Mensaje </label>
+                                <input 
+                                type="text" 
+                                className='form-control' 
+                                id="Mensaje" 
+                                placeholder='123' 
+                                value={Comentario.mensaje} 
+                                name="mensaje" 
+                                
+                                ></input>
+                                <label htmlFor="Mensaje">Mensaje </label>
                             </div>
                             
                             <br></br>
