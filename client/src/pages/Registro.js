@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 import '../styles/Registro.css';
 import Swal from 'sweetalert2';
+import img1R from '../assets/imgrrr.png';
 import {Routes, Route, useNavigate} from 'react-router-dom';
 
 let err_quantity = 0;
@@ -110,6 +111,7 @@ function SignupForm() {
 
     return (
         <div className='Contenedor-Registro'>
+            <div className='Cont2R'>
             <div className='FormR'>
                 <h1 id='HeaderTitleR'>Crear cuenta</h1>
 
@@ -193,7 +195,13 @@ function SignupForm() {
                         <h4>{registerStatus}</h4>
                     </div>
                     </form>
+                    
                 </div>
+              
+            </div>
+            <div className='imgRR'>
+            <img  src={img1R}  className='img1R'></img>
+            </div>
             </div>
         </div>
     );
