@@ -26,6 +26,7 @@ function AdministrarComentario() {
 
         const { name, value } = e.target;
         setFormValues({ ...formValues, [name]: value });
+        console.log(formValues.Mensaje);
     };
 
     const handleSubmit = (e) => {
@@ -89,8 +90,8 @@ function AdministrarComentario() {
     const BuscarComentario = (puesto) => {
         setComentario(ListaComentarios[puesto]);
         console.log(Comentario);
-
-
+        setFormValues({...formValues, ["Mensaje"]: Comentario.mensaje});
+        
     };
 
     const agregarComentario = (values) => {
@@ -131,7 +132,8 @@ function AdministrarComentario() {
         }).then((result) => {
             if (result.isConfirmed) {
                 Axios.put('https://bivic-db-deploy.herokuapp.com/ModificarComentario', {
-                    Nid: id,
+                    Mid: id,
+                    Mmessage: formValues.Mensaje,
                 })
 
                 Swal.fire(
@@ -145,6 +147,8 @@ function AdministrarComentario() {
             }
         })
     };
+
+
 
     return (
 
@@ -230,24 +234,23 @@ function AdministrarComentario() {
                         <div className='container-sm'>
 
                             <div className='form-floating mb-3'>
-                                <input type="text" className='form-control' id="Autor" placeholder='123' value={Comentario.persona_correo} disabled></input>
-                                <label htmlFor="Autor">Autor </label>
+                                <input type="text" className='form-control' id="nombre" placeholder='123' value={Comentario.persona_correo} disabled></input>
+                                <label htmlFor="nombre">Autor </label>
                             </div>
                             <div className='form-floating mb-3'>
-                                <input 
-                                type="text" 
+                                <input type="text" 
                                 className='form-control' 
-                                id="Mensaje" 
+                                id="Apellido" 
+                                name='Mensaje'
                                 placeholder='123' 
-                                value={Comentario.mensaje} 
-                                name="mensaje" 
-                                
+                                value={formValues.Mensaje} 
+                                onChange={handleChange}
                                 ></input>
-                                <label htmlFor="Mensaje">Mensaje </label>
+                                <label htmlFor="Apellido">Mensaje </label>
                             </div>
                             
                             <br></br>
-                            <button className='btn btn-outline-primary' onClick={() => {ActualizarComentario(Comentario.correo)}}>Actualizar Comentario</button>
+                            <button className='btn btn-outline-primary' onClick={() => {ActualizarComentario(Comentario.idCOMENTARIO)}}>Actualizar Comentario</button>
                         </div>
                     </div>
                 </div>

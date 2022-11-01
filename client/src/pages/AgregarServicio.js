@@ -19,17 +19,13 @@ function Agregarserv() {
      const data = [{ value: 1, label: "Biblioteca Colegio"}, {value: 2, label: "Biblioteca Escuela"}, {value: 3, label: "Seleccionar Ubicación"}];
      const [selectedValue, setSelectedValue] = useState(3);
      const [NewInfo, setNewInfo] = useState("");
+
+     const [Servicios, setServicios] = useState([]);
+
      const handleChangeS = e => {
         setSelectedValue(e.value);
     };
     
-    const handleChangeSe = e => {
-        setSelectedValue(e.value);
-    };
-    const BuscarServicio = (id) => {
-        let Servicio = id;
-    };
-
     const handleSubmit = (e) => {
         e.preventDefault();
         setFormErrors(validate(formValues));
@@ -86,36 +82,10 @@ function Agregarserv() {
         
     };
 
-    const ActualizarServicios = (id) => {
-        Swal.fire({
-            title: '¿Estas seguro de actualizar este servicio?',
-            text: "La información actualizada no se podrá recuperar",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Actualizar'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                console.log(selectedValue);
-                console.log(id)
-                console.timeLog(NewInfo);
-                Axios.put('https://bivic-db-deploy.herokuapp.com/ModificarServicio', {
-                    ID: id,
-                    LUGAR: selectedValue,
-                    INFO: NewInfo,
-                })
-
-                Swal.fire(
-                    'Actualizado',
-                    'El Servicio a sido actualizado correctamente',
-                    'success'
-                ).then(function() {
-                    window.location.reload();
-                });
-                
-            }
-        })
+    const BuscarServicio = (puesto) => {
+        setServicios(ListaServicios[puesto]);
+        setFormValues({...formValues, ["Informacion"]: Servicios.informacion});
+        
     };
 
     const eliminaServicio = (id) =>{
@@ -148,9 +118,40 @@ function Agregarserv() {
         })
     };
 
+    // Cambiar la informacion del Servicio
+    const ActualizarServicios = (id) => {
+        Swal.fire({
+            title: '¿Estas seguro de actualizar este servicio?',
+            text: "La información actualizada no se podrá recuperar",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Actualizar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Axios.put('https://bivic-db-deploy.herokuapp.com/ModificarServicio', {
+                    Mid: id,
+                    Minfo: formValues.Informacion,
+                    MSite: selectedValue,
+                })
+
+                Swal.fire(
+                    'Actualizado',
+                    'El comentario a sido actualizado correctamente',
+                    'success'
+                ).then(function() {
+                    window.location.reload();
+                });
+                
+            }
+        })
+    };
+
     return (
 
         <div>
+            {/* Agregar Servicios */}
             <div class="offcanvas offcanvas-start" tabIndex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
                 <div class="offcanvas-header">
                     <h3 class="offcanvas-title" id="offcanvasExampleLabel">Agregar Servicio</h3>
@@ -192,7 +193,7 @@ function Agregarserv() {
                 </div>
             </div>
 
-
+            {/* Tabla para Mostrar Servicios */}
             <div className='container-sm'>
                 <span>
                     <h1 id='formsh1'> Administrador de servicios</h1>
@@ -219,7 +220,7 @@ function Agregarserv() {
                                     <td key={autoincrement++}>{val.idSERVICIOS}</td>
                                     <td key={autoincrement++}>{val.informacion}</td>
                                     <td key={autoincrement++}>{val.lugarU}</td>
-                                    <td key={autoincrement++}><a className='btn btn-outline-primary' data-bs-toggle="offcanvas" data-bs-target="#offcanvasPlantilla" aria-controls='offcanvasPlantilla' role="button" onClick={() => {BuscarServicio(val.idSERVICIOS, val.informacion, val.lugarU)}}>Modificar</a></td>
+                                    <td key={autoincrement++}><a className='btn btn-outline-primary' data-bs-toggle="offcanvas" data-bs-target="#offcanvasPlantilla" aria-controls='offcanvasPlantilla' role="button" onClick={() => BuscarServicio(key)}>Modificar</a></td>
                                     <td key={autoincrement++}><button className='btn btn-danger' onClick={() => {eliminaServicio(val.idSERVICIOS)}}>Eliminar</button></td>
                                 </tr>
                             )
@@ -238,12 +239,26 @@ function Agregarserv() {
                         <button className='btn-close' data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div className='offcanvas-body'>
-                        <div className='container-sm'>
+                    <div className='container-sm'>
+                    <div className='form-floating mb-3'>
+                                <input type="text" 
+                                className='form-control' 
+                                id="idServ" 
+                                name='id'
+                                placeholder='123' 
+                                value={Servicios.idSERVICIOS} 
+                                disabled></input>
+                                <label htmlFor="Apellido">Mensaje </label>
+                            </div>
                             <div className='form-floating mb-3'>
-                            <input type="text" className='form-control' id="nombre" placeholder='123' onChange={
-                                    (e) => { setNewInfo(e.target.value);}
-                                }></input>
-                                <label htmlFor="nombre">Información </label>
+                                <input type="text" 
+                                className='form-control' 
+                                id="Info" 
+                                name='Informacion'
+                                placeholder='123' 
+                                value={formValues.Informacion} 
+                                onChange={handleChange}></input>
+                                <label htmlFor="Apellido">Información </label>
                             </div>
                             
                             <div className='form-floating'>
@@ -254,10 +269,10 @@ function Agregarserv() {
                                 options={data}
                                 className="Select-Servicio"
                                 onChange={handleChangeS}
-                        />
+                            />
                             </div>
                             <br></br>
-                            <button className='btn btn-outline-primary' onClick={() => { ActualizarServicios(Servicio) }}>Actualizar Servicio</button>
+                            <button className='btn btn-outline-primary' onClick={() => { ActualizarServicios(Servicios.idSERVICIOS) }}>Actualizar Servicio</button>
                         </div>
                     </div>
                 </div>

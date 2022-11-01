@@ -14,7 +14,7 @@ function Administrar() {
                             <h2 className='administrarh2'>Administrador de Contenido</h2>
                             <div className='btns2'>
                                 <button className='btnServicio2 btnAdministrar1'> <a href='/AgregarSabiasQue'> Administrar Sabías Qué</a></button>
-                                <button className='btnServicio2 btnAdministrar2' ><a href='/AgregarServicio'>Administrar servicio</a></button>
+                                <button className='btnServicio2 btnAdministrar2' ><a href='/AgregarServicio'>Administrar Servicios</a></button>
                                 <button className='btnServicio2 btnAdministrar2' ><a href='/AdministrarComentario'>Administrar Comentarios</a></button>
                                 <button className='btnServicio2 btnAdministrar1' ><a href='/AgregarNoticia'>Administrar Noticia </a></button>
                             </div>

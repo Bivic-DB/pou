@@ -10,6 +10,7 @@ import {displayImage} from '../helpers/Utils.js'
 
 
 function AgregarSabiasQue() {
+
     const initialValues = { Descripcion: "", InformacionC: "", Link: "", FechaSalida: ""}
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
@@ -34,7 +35,6 @@ function AgregarSabiasQue() {
         } else {
             console.log("Validación Incompleta")
         }
-
     };
 
     const agregarSabiasQ = (values) => {
@@ -124,17 +124,17 @@ function AgregarSabiasQue() {
                     <div className='container'>
                         <form action='' className='form_comentarios2 d-flex  flex-wrap'>
                         <div className="form-floating mb-3-registro">
-                                <input
-                                    type="text"
-                                    className="form-control"
-                                    id="Desc"
-                                    name="Titulo"
-                                    onChange={handleChange}
-                                    placeholder="123"
-                                    value={formValues.Descripcion}
-                                />
-                                <p className='errors'>{formErrors.Descripcion}</p>
-                                <label htmlFor="Desc">Descripción</label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            id="floatingSabiasQ"
+                            name="Descripcion"
+                            onChange={handleChange}
+                            placeholder="123"
+                            value={formValues.Descripcion}
+                        />
+                        <p className='errors'>{formErrors.Descripcion}</p>
+                        <label htmlFor="floatingSabiasQ">Descripcion</label>
                             </div>
                             <div className="form-floating mb-3-registro">
                                 <input
@@ -176,7 +176,7 @@ function AgregarSabiasQue() {
                                 <label htmlFor="InformacionC"> Fecha de Finalización </label>
                             </div>
                             <div>
-                            <button className='submit'>Agregar</button>
+                            <button className='submit' onClick={handleSubmit}>Agregar</button>
                             </div>
                         </form>
                     </div>

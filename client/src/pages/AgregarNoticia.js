@@ -10,7 +10,6 @@ import {displayImage} from '../helpers/Utils.js'
 
 function AgregarNoticia() {
 
-
     const initialValues = { Titulo: "", fechasalida: "", informacion: ""}
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
