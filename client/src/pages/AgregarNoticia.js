@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import Moment from 'moment';
 import {convertBase64} from '../helpers/Utils.js'
+import {test} from '../helpers/Utils.js'
 import {displayImage} from '../helpers/Utils.js'
 
 function AgregarNoticia() {
@@ -13,6 +14,7 @@ function AgregarNoticia() {
     const initialValues = { Titulo: "", fechasalida: "", informacion: ""}
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
+    const [imagebase64, setBase64] = useState("");
     const [isSubmit, setIsSubmit] = useState(false);
     const navigate = useNavigate();
     let autoincrement = 0;
@@ -37,16 +39,23 @@ function AgregarNoticia() {
 
     };
 
+    function readURL(input){
+        var reader = new FileReader();
+        reader.onload=function(e){
+            setBase64(e.target.result);
+        }
+        reader.readAsDataURL(input);
+    }
     const agregarNoticia = (values) => {
-
         var formatDate = Moment().format('YYYY-MM-DD');
+        console.log(imagebase64)
         Axios.post('https://bivic-db-deploy.herokuapp.com/AgregarNoticia', {
             // Objeto con las propiedades que queremos enviar
             Titulo: values.Titulo,
             fechasalida: values.fechasalida,
             informacion: values.informacion,
             fechaentrada: "2022/06/09",
-            fotoentrada: String(convertBase64(File))
+            fotoentrada: imagebase64
 
         }).then(() => {
             //setregisterStatus("Usuario Registrado");
@@ -129,6 +138,7 @@ function AgregarNoticia() {
     const selectedHandler = (e) => {
         //setFile(convertBase64(e.target.files[0]));
         setFile(e.target.files[0]);
+        readURL(e.target.files[0]);
         //console.log(e.target.files[0])
     }
 
@@ -200,7 +210,7 @@ function AgregarNoticia() {
             <div className='container-sm'>
                 <span>
                     <h1 id='formsh1'> Administrador de noticias</h1>
-                    <button class="btn-offcanvas" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                    <button className="btn-offcanvas" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
                         +
                     </button>
                 </span>
@@ -220,22 +230,25 @@ function AgregarNoticia() {
                     <tbody>
 
                        {ListaNoticias.map((val, key) => {
+                            console.log(val.baseimagen);
                             return (
                                 <tr key={autoincrement++}>
                                     <td key={autoincrement++}>{val.titulo}</td>
                                     <td key={autoincrement++}>{val.informacion}</td>
-                                    <td key={autoincrement++}>{val.baseimagen}</td>
+                                    <td key={autoincrement++}><img src={val.baseimagen}></img></td>
                                     <td key={autoincrement++}>{val.fechasalida}</td>
                                     {/* <td key={autoincrement++}><a className='btn btn-outline-primary' data-bs-toggle="offcanvas" data-bs-target="#offcanvasPlantilla" aria-controls='offcanvasPlantilla' role="button" onClick={BuscarNoticia(val.idNOTICIA, val.titulo, val.fechasalida, val.informacion)}>Modificar</a></td> */}
                                     <td key={autoincrement++}><button className='btn btn-danger' onClick={() => { eliminaNoticia(val.idNOTICIA) }}>Eliminar</button></td>
                                 </tr>
                             )
+                            
                         })}
 
                     </tbody>
                 </table>
             </div>
         </div>
+        
 
 
 
