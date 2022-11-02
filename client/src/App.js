@@ -11,6 +11,7 @@ import AdministrarComentarios from './pages/AdministrarComentario';
 import AdministrarNoticia from './pages/AgregarNoticia';
 import AdministrarCuentas from './pages/AdministrarCuentas';
 import Historia from "./pages/Historia";
+import Comentarios from "./pages/comentarios";
 import Footer from './components/Footer';
 import Axios from 'axios';
 import MisionValor from './pages/Misionvalor.js';
@@ -34,6 +35,7 @@ function App() {
           <Route path="/Administrar/Cuentas" exact element={<AdministrarCuentas />} />
           <Route path="/Historia" exact element={<Historia />} />
           <Route path="/Misionvalor" exact element={<MisionValor/>} />
+          <Route path="/Comentarios" exact element={<Comentarios/>} />
         </Routes>
         <Footer />
       </Router>
