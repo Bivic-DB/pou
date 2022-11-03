@@ -2,7 +2,6 @@ import React, { useState, useEffect, Component } from 'react'
 import { Link } from 'react-router-dom'
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import '../styles/Comentarios.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import logo from '../assets/comments-xxl.png';
 import logodos from '../assets/trash.png';
 import logotres from '../assets/edit.png';
@@ -50,7 +49,7 @@ function Comentarios() {
     useEffect(() => {
         if (Object.keys(formErrors).length === 0 && isSubmit) {
         }
-        Axios.get('https://bivic-db-deploy.herokuapp.com/ListaComentarios').then((response) => {
+        Axios.get('http://localhost:3001/ListaComentarios').then((response) => {
             setListaComentarios(response.data);
             
             ListaComentarios.map((val, key) => {
@@ -84,7 +83,7 @@ function Comentarios() {
             confirmButtonText: 'Sí, eliminar'
         }).then((result) => {
             if (result.isConfirmed) {
-                Axios.delete(`https://bivic-db-deploy.herokuapp.com/ComentariosEliminar/${id}`).then((response) => {
+                Axios.delete(`http://localhost:3001/ComentariosEliminar/${id}`).then((response) => {
                     setListaComentarios(ListaComentarios.filter((val) => {
                         return val.id != id
                     }))
@@ -110,7 +109,7 @@ function Comentarios() {
 
         var formatDate = Moment().format('YYYY-MM-DD kk:mm:ss');
 
-        Axios.post('https://bivic-db-deploy.herokuapp.com/Comentario', {
+        Axios.post('http://localhost:3001/Comentario', {
             // Objeto con las propiedades que queremos enviar
 
             Date: formatDate,
@@ -143,7 +142,7 @@ function Comentarios() {
             confirmButtonText: 'Actualizar'
         }).then((result) => {
             if (result.isConfirmed) {
-                Axios.put('https://bivic-db-deploy.herokuapp.com/ModificarComentario', {
+                Axios.put('http://localhost:3001/ModificarComentario', {
                     Mid: id,
                     Mmessage: formValues.Mensaje,
                 })

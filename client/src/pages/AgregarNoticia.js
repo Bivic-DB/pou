@@ -49,12 +49,12 @@ function AgregarNoticia() {
     const agregarNoticia = (values) => {
         var formatDate = Moment().format('YYYY-MM-DD');
         console.log(imagebase64)
-        Axios.post('https://bivic-db-deploy.herokuapp.com/AgregarNoticia', {
+        Axios.post('http://localhost:3001/AgregarNoticia', {
             // Objeto con las propiedades que queremos enviar
             Titulo: values.Titulo,
             fechasalida: values.fechasalida,
             informacion: values.informacion,
-            fechaentrada: "2022/06/09",
+            fechaentrada: "2022-06-09",
             fotoentrada: imagebase64
 
         }).then(() => {
@@ -63,11 +63,13 @@ function AgregarNoticia() {
                 title: 'La noticia se ha registrado correctamente',
                 icon: 'success',
             }).then(function () {
-                navigate('/');
-
+                window.location.reload();
             });
         })
     };
+    console.log(ListaNoticias);
+    console.log(formValues.fechasalida);
+
     const BuscarNoticia = (idNOTICIA, titulo, fechasalida, informacion) => {
         Noticia = [idNOTICIA, titulo, fechasalida, informacion];
     };
@@ -84,7 +86,7 @@ function AgregarNoticia() {
                 confirmButtonText: 'Sí, eliminar'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    Axios.delete(`https://bivic-db-deploy.herokuapp.com/NoticiaEliminar/${id}`).then((response) => {
+                    Axios.delete(`http://localhost:3001/NoticiaEliminar/${id}`).then((response) => {
                         setListaNoticias(ListaNoticias.filter((val) => {
                             return val.id != id
                         }))
@@ -105,7 +107,7 @@ function AgregarNoticia() {
     useEffect(() => {
         if (Object.keys(formErrors).length === 0 && isSubmit) {
         }
-        Axios.get('https://bivic-db-deploy.herokuapp.com/ListaNoticias').then((response) => {
+        Axios.get('http://localhost:3001/ListaNoticias').then((response) => {
             setListaNoticias(response.data);
         });
     }, [formErrors]);
@@ -182,13 +184,12 @@ function AgregarNoticia() {
                             <div className="mb-3-registro">
                                 <h5 className='h4AgregarServicios'>Fecha</h5>
                                 <input
-                                    type="date"
+                                    type="text"
                                     className="form-control"
                                     id="floatinginfechasalida"
                                     name="fechasalida"
-                                    data-date-format= "YYYY/MM/DD"
                                     onChange={handleChange}
-                                    placeholder="123"
+                                    placeholder="YYYY-MM-DD"
                                     value={formValues.fechasalida}
                                 />
                                 <p className='errors'>{formErrors.fechasalida}</p>

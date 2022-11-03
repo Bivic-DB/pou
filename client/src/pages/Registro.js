@@ -86,7 +86,7 @@ function SignupForm() {
             RolReg = "3"
             console.log(RolReg);
         }
-        Axios.post('https://bivic-db-deploy.herokuapp.com/Registro', {
+        Axios.post('http://localhost:3001/Registro', {
             // Objeto con las propiedades que queremos enviar
             Name: values.NameReg,
             LastName: values.LastNameReg,

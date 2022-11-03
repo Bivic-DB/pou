@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 import '../styles/Home.css';
 import img from '../assets/imgheader.png'
 import Mision from '../assets/mision.png'
@@ -6,14 +6,26 @@ import Historia from '../assets/historia.png'
 import Servicios from '../assets/servicios.png'
 import email from '../assets/email.png'
 import pin from '../assets/pin.png'
-import ajedrez from '../assets/Ajedrez.jpg'
+import ajedrez from '../assets/Ajedrez.png'
 import semana from '../assets/libro.png'
 import libreria from '../assets/biblioteca.jpg'
 
-
+import Axios from 'axios';
+import Swal from 'sweetalert2';
 
 import { Link } from 'react-router-dom'
 function Home() {
+
+  const [ListaNoticias, setListaNoticias] = useState([]);
+  let autoincrement = 0;
+  useEffect(() => {
+    Axios.get('http://localhost:3001/ListaNoticias').then((response) => {
+      setListaNoticias(response.data);
+    });
+  },);
+
+  console.log(ListaNoticias);
+
   return (
     <div className='Home'>
 
@@ -65,23 +77,44 @@ function Home() {
       </div>
       <div className='divisor'></div>
 
+      {/* carousel de noticias */}
       <div id="carouselExampleCaptions" className="carousel carousel-dark slide" data-bs-ride="carousel">
         <div className="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          {ListaNoticias.map((val, key) =>{
+            if(autoincrement == 0 ){
+              <button key={autoincrement++} type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
+            }
+            else{
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to={autoincrement} aria-label={autoincrement++}></button>
+            }
+          })}
+
         </div>
-        <div className="carousel-inner">
-          <div className="carousel-item active">
-            <img src={ajedrez} className="d-block w-100 imgcarrusel" alt="..." height="200px"  />
+        <div className="carousel-inner">          
+        <div className="carousel-item active">
+            <img src={ajedrez} className="d-block w-100 imgcarrusel" alt="..." height="400px" />
             <div className="carousel-caption d-none d-md-block">
-              <h5 className='h5carrusel'>Torneo de Ajedrez</h5>
-              <p className='pcarrusel'>La próxima semana tendremos torneos de ajedrez.</p>
-              <Link className='btn2' to="/Noticia"> Conoce Más </Link>
+              <h5 className='h5carrusel'>¿Sabias Qué?</h5>
+              <p className='pcarrusel'>¡Esta próxima semana celebramos Expotec!</p>
+              <a className='btn2' href="https://cedesdonbosco.ed.cr/es/index.php"> Ver más </a>
             </div>
           </div>
+
+          {ListaNoticias.map((val, key) => {
+              return (
+                <div key={autoincrement++} className="carousel-item">
+                  <img src={val.baseimagen} className="d-block w-100 imgcarrusel" alt="..." height="200px"></img>
+                  <div className="carousel-caption d-none d-md-block">
+                    <h5 className='h5carrusel'>{val.titulo}</h5>
+                    <p className='pcarrusel'>{val.informacion}</p>
+                    <p className='btn2'> Recordatorio </p>
+                  </div>
+                </div>
+              )
+          })}
+
           <div className="carousel-item">
-            <img src={semana} className="d-block w-100 imgcarrusel" alt="..." height="200px"  />
+            <img src={semana} className="d-block w-100 imgcarrusel" alt="..." height="200px" />
             <div className="carousel-caption d-none d-md-block">
               <h5 className='h5carrusel'>Semana del Libro</h5>
               <p className='pcarrusel'>Celebra con nosotros la semana del libro.</p>

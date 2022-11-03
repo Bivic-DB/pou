@@ -19,7 +19,7 @@ function Servicios() {
 
 
     useEffect(() => {
-        Axios.get('https://bivic-db-deploy.herokuapp.com/Enlistado').then((response) => {
+        Axios.get('http://localhost:3001/Enlistado').then((response) => {
             setServicios(response.data);
         });
     }, []);

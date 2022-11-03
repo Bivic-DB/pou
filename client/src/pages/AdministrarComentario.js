@@ -43,7 +43,7 @@ function AdministrarComentario() {
     useEffect(() => {
         if (Object.keys(formErrors).length === 0 && isSubmit) {
         }
-        Axios.get('https://bivic-db-deploy.herokuapp.com/ListaComentarios').then((response) => {
+        Axios.get('http://localhost:3001/ListaComentarios').then((response) => {
             setListaComentarios(response.data);
             console.log(response.data);
         });
@@ -72,7 +72,7 @@ function AdministrarComentario() {
             confirmButtonText: 'Sí, eliminar'
         }).then((result) => {
             if (result.isConfirmed) {
-                Axios.delete(`https://bivic-db-deploy.herokuapp.com/ComentariosEliminar/${id}`).then((response) => {
+                Axios.delete(`http://localhost:3001/ComentariosEliminar/${id}`).then((response) => {
                     setListaComentarios(ListaComentarios.filter((val) => {
                         return val.id != id
                     }))
@@ -98,7 +98,7 @@ function AdministrarComentario() {
 
         var formatDate = Moment().format('YYYY-MM-DD kk:mm:ss');
 
-        Axios.post('https://bivic-db-deploy.herokuapp.com/Comentario', {
+        Axios.post('http://localhost:3001/Comentario', {
             // Objeto con las propiedades que queremos enviar
 
             Date: formatDate,
@@ -131,7 +131,7 @@ function AdministrarComentario() {
             confirmButtonText: 'Actualizar'
         }).then((result) => {
             if (result.isConfirmed) {
-                Axios.put('https://bivic-db-deploy.herokuapp.com/ModificarComentario', {
+                Axios.put('http://localhost:3001/ModificarComentario', {
                     Mid: id,
                     Mmessage: formValues.Mensaje,
                 })

@@ -41,7 +41,7 @@ function Agregarserv() {
     useEffect(() => {
         if(Object.keys(formErrors).length === 0 && isSubmit){
         }
-        Axios.get('https://bivic-db-deploy.herokuapp.com/ListaServicios').then((response) => {
+        Axios.get('http://localhost:3001/ListaServicios').then((response) => {
             setListaServicios(response.data);
         });
     }, [formErrors]);
@@ -63,7 +63,7 @@ function Agregarserv() {
 
     const agregarServicio = (values) => {
         
-        Axios.post('https://bivic-db-deploy.herokuapp.com/ServiciosR', {
+        Axios.post('http://localhost:3001/ServiciosR', {
             // Objeto con las propiedades que queremos enviar
             Servicio: values.Servicio,
             Ubicacion: selectedValue,
@@ -101,7 +101,7 @@ function Agregarserv() {
         }).then((result) =>{
             if(result.isConfirmed){
                 console.log(id);
-                Axios.delete(`https://bivic-db-deploy.herokuapp.com/ServiciosEliminar/${id}`).then((response) => {
+                Axios.delete(`http://localhost:3001/ServiciosEliminar/${id}`).then((response) => {
                     ListaServicios(ListaServicios.filter((val) => {
                         return val.id != id
                     }));
@@ -130,7 +130,7 @@ function Agregarserv() {
             confirmButtonText: 'Actualizar'
         }).then((result) => {
             if (result.isConfirmed) {
-                Axios.put('https://bivic-db-deploy.herokuapp.com/ModificarServicio', {
+                Axios.put('http://localhost:3001/ModificarServicio', {
                     Mid: id,
                     Minfo: formValues.Informacion,
                     MSite: selectedValue,

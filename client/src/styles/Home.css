@@ -47,7 +47,7 @@ body{
 
 .imgcarrusel {
     width: 30%!important;
-    height: 370px;
+    height: 400px;
     margin-left: 14%;
 }
 
@@ -64,7 +64,6 @@ body{
 @media (max-width: 1130px) {
     .imgcarrusel {
         width: 32%;
-        height: 5%;
         margin-left: 12%;
     }
 

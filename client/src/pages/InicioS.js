@@ -16,7 +16,7 @@ const SigninForm = () => {
     const navigate = useNavigate();
 
     const IniciarSes = () => {
-        Axios.post('https://bivic-db-deploy.herokuapp.com/Login', {
+        Axios.post('http://localhost:3001/Login', {
             // Objeto con las propiedades que queremos enviar
             Email: Emaillog,
             Password: Passwordlog,
@@ -40,7 +40,7 @@ const SigninForm = () => {
     };
 
     useEffect(()=> {
-        Axios.get('https://bivic-db-deploy.herokuapp.com/Login').then((response) => {
+        Axios.get('http://localhost:3001/Login').then((response) => {
             if (response.data.loggedIn == true){
             }
         })
