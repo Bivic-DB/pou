@@ -16,15 +16,13 @@ import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom'
 function Home() {
 
-  const [ListaNoticias, setListaNoticias] = useState([]);
-  let autoincrement = 0;
-  useEffect(() => {
-    Axios.get('http://localhost:3001/ListaNoticias').then((response) => {
-      setListaNoticias(response.data);
-    });
-  },);
+  Axios.defaults.withCredentials = true;
 
-  console.log(ListaNoticias);
+  useEffect(() => {
+    Axios.get('http://localhost:3001/Login').then((response) => {
+      console.log(response);
+    })
+  }, []);
 
   return (
     <div className='Home'>
@@ -80,15 +78,6 @@ function Home() {
       {/* carousel de noticias */}
       <div id="carouselExampleCaptions" className="carousel carousel-dark slide" data-bs-ride="carousel">
         <div className="carousel-indicators">
-          {ListaNoticias.map((val, key) =>{
-            if(autoincrement == 0 ){
-              <button key={autoincrement++} type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
-            }
-            else{
-              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to={autoincrement} aria-label={autoincrement++}></button>
-            }
-          })}
-
         </div>
         <div className="carousel-inner">          
         <div className="carousel-item active">
@@ -99,19 +88,6 @@ function Home() {
               <a className='btn2' href="https://cedesdonbosco.ed.cr/es/index.php"> Ver más </a>
             </div>
           </div>
-
-          {ListaNoticias.map((val, key) => {
-              return (
-                <div key={autoincrement++} className="carousel-item">
-                  <img src={val.baseimagen} className="d-block w-100 imgcarrusel" alt="..." height="200px"></img>
-                  <div className="carousel-caption d-none d-md-block">
-                    <h5 className='h5carrusel'>{val.titulo}</h5>
-                    <p className='pcarrusel'>{val.informacion}</p>
-                    <p className='btn2'> Recordatorio </p>
-                  </div>
-                </div>
-              )
-          })}
 
           <div className="carousel-item">
             <img src={semana} className="d-block w-100 imgcarrusel" alt="..." height="200px" />
@@ -142,55 +118,6 @@ function Home() {
         </button>
       </div>
       <div className='divisor'></div>
-
-      {/* <div className='container'>
-        <div className='row comentarios justify-content-center'>
-          <div className='col-6'>
-            <h1 className='h1comentarios'>Comentarios</h1>
-            <form action='' className='form_comentarios d-flex justify-content-end flex-wrap'>
-              <input type={"text"} name="" id='' placeholder='Comentario'></input>
-              <button className='btn4' type='button'>Comentar</button>
-            </form>
-
-            <div className='media'>
-              <img src={Mision} width="64" height="64" alt="" />
-              <div className='media-body'>
-                <p className='nombre'>Don Bosco <span>17:36 8/20/2022</span></p>
-                <p className='comentario'>"Me basta que sean jóvenes para amarlos como a hijos" </p>
-                <div className='botones text-right'>
-                  <a href='#'>Borrar</a>
-                </div>
-              </div>
-            </div>
-
-            <div className='media'>
-              <img src={Servicios} width="64" height="64" alt="" />
-              <div className='media-body'>
-                <p className='nombre'>Emilio <span>17:36 8/20/2022</span></p>
-                <p className='comentario'>Faltan 69 días para Expotec</p>
-                <div className='botones text-right'>
-                  <a href='#'>Borrar</a>
-                </div>
-              </div>
-            </div>
-            <div className='media'>
-              <img src={Historia} width="64" height="64" alt="" />
-              <div className='media-body'>
-                <p className='nombre'>Mario <span>17:36 8/20/2022</span></p>
-                <p className='comentario'>Chicos, a trabajar en Factura Electrónica</p>
-                <div className='botones text-right'>
-                  <a href='#'>Borrar</a>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div> */}
-
-
-
-
 
       <div className='divisor'></div>
 

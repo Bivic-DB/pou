@@ -74,7 +74,7 @@ function Agregarserv() {
                 title:'El servicio se ha registrado correctamente',
                 icon: 'success',
             }).then(function() {
-                navigate('/Servicios');
+                window.location.reload();
             });
         })
         
