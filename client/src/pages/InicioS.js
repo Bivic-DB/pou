@@ -40,12 +40,12 @@ const SigninForm = () => {
         })
     };
 
-    useEffect(()=> {
-        Axios.get('http://localhost:3001/Login').then((response) => {
-            if (response.data.loggedIn == true){
-            }
-        })
-    }, []);
+    // useEffect(()=> {
+    //     Axios.get('http://localhost:3001/Login').then((response) => {
+    //         if (response.data.loggedIn == true){
+    //         }
+    //     })
+    // }, []);
 
     return (
         <div className='Contenedor-Inicio'>

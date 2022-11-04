@@ -53,9 +53,11 @@ function Comentarios() {
             setListaComentarios(response.data);
             
             ListaComentarios.map((val, key) => {
-                Fechas.push(moment(val.fecha).utc().format('YYYY-MMM-DD'));
+                let fechacomentario = (moment(val.fecha).utc().format('YYYY-MMM-DD'));
+                console.log(val.fecha);
+                setFechas({...setFechas, [key]: fechacomentario})
+                console.log(Fechas);
             })
-            console.log(Fechas);
 
         });
     }, [formErrors]);
@@ -199,7 +201,7 @@ function Comentarios() {
                                                 {val.mensaje}
                                             </p>
                                             <p className="card-text"><small className="text-muted"><img src={logocinco} className='delete'></img>{val.persona_correo}</small></p>
-                                            <p className="card-text"><small className="text-muted"><img src={logocuatro} className='delete'></img>{Fechas[key]}</small></p>
+                                            <p className="card-text"><small className="text-muted"><img src={logocuatro} className='delete'></img>{val.fecha}</small></p>
                                     <button onClick={() => { eliminaComentario(val.idCOMENTARIO) }} className='btn btn-danger'><img src={logodos} className='delete'></img></button>
                                         </div>
                                     </div>

@@ -5,13 +5,13 @@ import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom'
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import Moment from 'moment';
-import {convertBase64} from '../helpers/Utils.js'
-import {test} from '../helpers/Utils.js'
-import {displayImage} from '../helpers/Utils.js'
+import { convertBase64 } from '../helpers/Utils.js'
+import { test } from '../helpers/Utils.js'
+import { displayImage } from '../helpers/Utils.js'
 
 function AgregarNoticia() {
 
-    const initialValues = { Titulo: "", fechasalida: "", informacion: ""}
+    const initialValues = { Titulo: "", fechasalida: "", informacion: "" }
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
     const [imagebase64, setBase64] = useState("");
@@ -21,6 +21,7 @@ function AgregarNoticia() {
     const [ListaNoticias, setListaNoticias] = useState([]);
     let err_quantity = 0;
     let Noticia;
+    const [Noticias, setNoticias] = useState([]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -39,9 +40,9 @@ function AgregarNoticia() {
 
     };
 
-    function readURL(input){
+    function readURL(input) {
         var reader = new FileReader();
-        reader.onload=function(e){
+        reader.onload = function (e) {
             setBase64(e.target.result);
         }
         reader.readAsDataURL(input);
@@ -69,40 +70,36 @@ function AgregarNoticia() {
     };
     console.log(ListaNoticias);
     console.log(formValues.fechasalida);
+    // funcion para eliminar usuarios
+    const eliminaNoticia = (id) => {
+        Swal.fire({
+            title: '¿Estas seguro?',
+            text: "No podrás revertir este cambio",
+            icon: 'warning',
+            showCancelButton: true,
+            CalcelButtonText: 'Cancelar',
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sí, eliminar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Axios.delete(`http://localhost:3001/NoticiaEliminar/${id}`).then((response) => {
+                    setListaNoticias(ListaNoticias.filter((val) => {
+                        return val.id != id
+                    }))
 
-    const BuscarNoticia = (idNOTICIA, titulo, fechasalida, informacion) => {
-        Noticia = [idNOTICIA, titulo, fechasalida, informacion];
+                })
+                Swal.fire(
+                    'Eliminado',
+                    'Noticia eliminada de manera correcta',
+                    'success'
+                ).then(function () {
+                    window.location.reload();
+                })
+
+            }
+        })
     };
-        // funcion para eliminar usuarios
-        const eliminaNoticia = (id) => {
-            Swal.fire({
-                title: '¿Estas seguro?',
-                text: "No podrás revertir este cambio",
-                icon: 'warning',
-                showCancelButton: true,
-                CalcelButtonText: 'Cancelar',
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Sí, eliminar'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    Axios.delete(`http://localhost:3001/NoticiaEliminar/${id}`).then((response) => {
-                        setListaNoticias(ListaNoticias.filter((val) => {
-                            return val.id != id
-                        }))
-                        
-                    })
-                    Swal.fire(
-                        'Eliminado',
-                        'Noticia eliminada de manera correcta',
-                        'success'
-                    ).then(function() {
-                        window.location.reload();
-                    })
-    
-                }
-            })
-        };
 
     useEffect(() => {
         if (Object.keys(formErrors).length === 0 && isSubmit) {
@@ -143,6 +140,46 @@ function AgregarNoticia() {
         readURL(e.target.files[0]);
         //console.log(e.target.files[0])
     }
+
+    const BuscarNoticia = (puesto) => {
+        setNoticias(ListaNoticias[puesto]);
+        console.log(Noticias);
+        setFormValues({ ...formValues, ["Titulo"]: Noticias.titulo, ["informacion"]: Noticias.informacion , ["fechasalida"]: Noticias.fechasalida});
+
+    };
+
+    // Cambiar la informacion del Comentario
+    const ActualizarNoticia = (id) => {
+        Swal.fire({
+            title: '¿Estas seguro de actualizar esta noticia?',
+            text: "La información actualizada no se podrá recuperar",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Actualizar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Axios.put('http://localhost:3001/ModificarNoticia', {
+                    Mid: id,
+                    MTitulo: formValues.Titulo,
+                    Minformacion: formValues.informacion,
+                    Mfechasalida: formValues.fechasalida,
+                    fotoentrada: imagebase64
+
+                })
+
+                Swal.fire(
+                    'Actualizado',
+                    'La noticia a sido actualizada correctamente',
+                    'success'
+                ).then(function () {
+                    window.location.reload();
+                });
+
+            }
+        })
+    };
 
     return (
 
@@ -223,34 +260,91 @@ function AgregarNoticia() {
                             <th scope="col"> Información </th>
                             <th scope="col"> Imagen </th>
                             <th scope="col"> Fecha Salida </th>
-                            {/* <th scope="col"> Modificar </th> */}
+                            <th scope="col"> Modificar </th>
                             <th scope="col"> Eliminar </th>
 
                         </tr>
                     </thead>
                     <tbody>
 
-                       {ListaNoticias.map((val, key) => {
+                        {ListaNoticias.map((val, key) => {
                             console.log(val.baseimagen);
                             return (
                                 <tr key={autoincrement++}>
                                     <td key={autoincrement++}>{val.titulo}</td>
                                     <td key={autoincrement++}>{val.informacion}</td>
-                                    <td key={autoincrement++}><img src={val.baseimagen}></img></td>
+                                    <td key={autoincrement++}><img src={val.baseimagen} height="200px"></img></td>
                                     <td key={autoincrement++}>{val.fechasalida}</td>
-                                    {/* <td key={autoincrement++}><a className='btn btn-outline-primary' data-bs-toggle="offcanvas" data-bs-target="#offcanvasPlantilla" aria-controls='offcanvasPlantilla' role="button" onClick={BuscarNoticia(val.idNOTICIA, val.titulo, val.fechasalida, val.informacion)}>Modificar</a></td> */}
+                                    <td key={autoincrement++}><a className='btn btn-outline-primary' data-bs-toggle="offcanvas" data-bs-target="#offcanvasPlantilla" aria-controls='offcanvasPlantilla' role="button" onClick={() => BuscarNoticia(key)}>Modificar</a></td>
                                     <td key={autoincrement++}><button className='btn btn-danger' onClick={() => { eliminaNoticia(val.idNOTICIA) }}>Eliminar</button></td>
                                 </tr>
                             )
-                            
+
                         })}
 
                     </tbody>
                 </table>
             </div>
-        </div>
-        
 
+            {/* OffCanvas Space */}
+            <div className='offcanvas offcanvas-start' tabIndex="-1" id="offcanvasPlantilla">
+                {/* Título del apartado */}
+                <div className='offcanvas-header'>
+                    <h5 className='offcanvas-title' id="ModificarUsuario">Modificar Noticia</h5>
+                    <button className='btn-close' data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div className='offcanvas-body'>
+                    <div className='container-sm'>
+
+                        <div className='form-floating mb-3'>
+                            <input type="text" className='form-control' id="nombre" placeholder='123' value={Noticias.idNOTICIA} disabled></input>
+                            <label htmlFor="nombre"># Noticia </label>
+                        </div>
+                        <div className='form-floating mb-3'>
+                            <input type="text"
+                                className='form-control'
+                                id="Titulo"
+                                name='Titulo'
+                                placeholder='123'
+                                value={formValues.Titulo}
+                                onChange={handleChange}
+                            ></input>
+                            <label htmlFor="Titulo">Titulo </label>
+                        </div>
+                        <div className='form-floating mb-3'>
+                            <input type="text"
+                                className='form-control'
+                                id="informacion"
+                                name='informacion'
+                                placeholder='123'
+                                value={formValues.informacion}
+                                onChange={handleChange}
+                            ></input>
+                            <label htmlFor="informacion">Informacion </label>
+                        </div>
+                        <div className='form-floating mb-3'>
+                            <input type="text"
+                                className='form-control'
+                                id="fechasalida"
+                                name='fechasalida'
+                                placeholder='123'
+                                value={formValues.fechasalida}
+                                onChange={handleChange}
+                            ></input>
+                            <label htmlFor="fechasalida">Fecha Salida </label>
+                        </div>
+                        <div className='mb-3-registro'>
+                                <h5 className='h4AgregarServicios'>Imagen</h5>
+                                <input type={"file"} onChange={selectedHandler} name="" id='' placeholder='Imagen en Carrusel'></input>
+                                <p className='errors'>{formErrors.File}</p>
+                            </div>
+                        <br></br>
+                        <button className='btn btn-outline-primary' onClick={() => { ActualizarNoticia(Noticias.idNOTICIA) }}>Actualizar Noticia</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
 
 
     )

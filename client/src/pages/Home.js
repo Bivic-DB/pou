@@ -16,13 +16,26 @@ import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom'
 function Home() {
 
+  const [ListaNoticias, setListaNoticias] = useState([]);
+  const [formErrors, setFormErrors] = useState({});
+
+  const [isSubmit, setIsSubmit] = useState(false);
+  let autoincrement = 0;
+  useEffect(() => {
+    if (Object.keys(formErrors).length === 0 && isSubmit) {
+    }
+    Axios.get('http://localhost:3001/ListaNoticias').then((response) => {
+      setListaNoticias(response.data);
+    });
+  }, [formErrors]);
+  console.log(ListaNoticias);
   Axios.defaults.withCredentials = true;
 
-  useEffect(() => {
-    Axios.get('http://localhost:3001/Login').then((response) => {
-      console.log(response);
-    })
-  }, []);
+  // useEffect(() => {
+  //   Axios.get('http://localhost:3001/Login').then((response) => {
+  //     console.log(response);
+  //   })
+  // }, []);
 
   return (
     <div className='Home'>
@@ -76,47 +89,52 @@ function Home() {
       <div className='divisor'></div>
 
       {/* carousel de noticias */}
-      <div id="carouselExampleCaptions" className="carousel carousel-dark slide" data-bs-ride="carousel">
+
+      <div id="carouselExampleDark" className="carousel carousel-dark slide" data-bs-ride="carousel">
         <div className="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
-        <div className="carousel-inner">          
-        <div className="carousel-item active">
-            <img src={ajedrez} className="d-block w-100 imgcarrusel" alt="..." height="400px" />
-            <div className="carousel-caption d-none d-md-block">
-              <h5 className='h5carrusel'>¿Sabias Qué?</h5>
-              <p className='pcarrusel'>¡Esta próxima semana celebramos Expotec!</p>
-              <a className='btn2' href="https://cedesdonbosco.ed.cr/es/index.php"> Ver más </a>
-            </div>
-          </div>
+        <div className="carousel-inner">
+          {ListaNoticias.map((val, key) => {
+            if (autoincrement == 0) {
+              return (
+                <div key={autoincrement++} className="carousel-item active" data-bs-interval="10000">
+                  <img src={val.baseimagen} className="d-block w-100 imgcarrusel" alt="..." />
+                  <div className="carousel-caption d-none d-md-block">
+                    <h5 className='h5carrusel'>{val.titulo}</h5>
+                    <p className='pcarrusel'>{val.informacion}</p>
+                  </div>
+                </div>
+              )
+            }
+            else {
+              return (
+                <div class="carousel-item" data-bs-interval="2000">
+                  <img src={val.baseimagen} class="d-block w-100 imgcarrusel" alt="..." />
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5 className='h5carrusel'>{val.titulo}</h5>
+                    <p className='pcarrusel'>{val.informacion}</p>
+                  </div>
+                </div>
+              )
+            }
+          })}
 
-          <div className="carousel-item">
-            <img src={semana} className="d-block w-100 imgcarrusel" alt="..." height="200px" />
-            <div className="carousel-caption d-none d-md-block">
-              <h5 className='h5carrusel'>Semana del Libro</h5>
-              <p className='pcarrusel'>Celebra con nosotros la semana del libro.</p>
-              <Link className='btn2' to="/Noticia"> Conoce Más </Link>
 
-            </div>
-          </div>
-          <div className="carousel-item">
-            <img src={libreria} className="d-block w-100 imgcarrusel" alt="..." height="200px" />
-            <div className="carousel-caption d-none d-md-block">
-              <h5 className='h5carrusel'>Visítanos</h5>
-              <p className='pcarrusel'>Visitanos para empaparte de información.</p>
-              <Link className='btn2' to="/Noticia"> Conoce Más </Link>
 
-            </div>
-          </div>
         </div>
-        <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span className="visually-hidden"></span>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
         </button>
-        <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-          <span className="carousel-control-next-icon" aria-hidden="true"></span>
-          <span className="visually-hidden"></span>
+        <button id="nexthome" class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
         </button>
       </div>
+
       <div className='divisor'></div>
 
       <div className='divisor'></div>
