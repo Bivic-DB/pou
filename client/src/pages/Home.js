@@ -13,10 +13,21 @@ import libreria from '../assets/biblioteca.jpg'
 import Axios from 'axios';
 import Swal from 'sweetalert2';
 
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 function Home() {
 
+  const navigate = useNavigate();
+
+  Axios.defaults.withCredentials = true;
+  
+  useEffect(()=> {
+    Axios.get('http://localhost:3001/Login').then((response) => {
+            console.log(response)
+    })
+}, []);
+
   const [ListaNoticias, setListaNoticias] = useState([]);
+  const [ListaSabiasQ, setListaSabiasQ] = useState([]);
   const [formErrors, setFormErrors] = useState({});
 
   const [isSubmit, setIsSubmit] = useState(false);
@@ -28,14 +39,23 @@ function Home() {
       setListaNoticias(response.data);
     });
   }, [formErrors]);
-  console.log(ListaNoticias);
+
+    useEffect(() => {
+        if (Object.keys(formErrors).length === 0 && isSubmit) {
+        }
+        Axios.get('http://localhost:3001/ListaSabiasQ').then((response) => {
+            setListaSabiasQ(response.data);
+        });
+    }, [formErrors]);
+
   Axios.defaults.withCredentials = true;
 
-  // useEffect(() => {
-  //   Axios.get('http://localhost:3001/Login').then((response) => {
-  //     console.log(response);
-  //   })
-  // }, []);
+  const fireAlert = (titulo, informacion, img, salida) =>{
+    Swal.fire({
+      title: titulo,
+      text: informacion +  "Fecha de finalización: " + salida,
+    })
+  }
 
   return (
     <div className='Home'>
@@ -105,13 +125,14 @@ function Home() {
                   <div className="carousel-caption d-none d-md-block">
                     <h5 className='h5carrusel'>{val.titulo}</h5>
                     <p className='pcarrusel'>{val.informacion}</p>
+                    {/* <button className='btn2' onClick={() => { fireAlert(val.titulo, val.informacion, val.baseimagen, val.fechasalida) }}>Ver más</button> */}
                   </div>
                 </div>
               )
             }
             else {
               return (
-                <div class="carousel-item" data-bs-interval="2000">
+                <div class="carousel-item" data-bs-interval="10000">
                   <img src={val.baseimagen} class="d-block w-100 imgcarrusel" alt="..." />
                   <div class="carousel-caption d-none d-md-block">
                     <h5 className='h5carrusel'>{val.titulo}</h5>
@@ -121,17 +142,27 @@ function Home() {
               )
             }
           })}
-
-
-
+          {ListaSabiasQ.map((val, key) => {
+            console.log(ListaSabiasQ)
+            return(
+              <div class="carousel-item" data-bs-interval="10000">
+              <img src={val.baseimagen} class="d-block w-100 imgcarrusel" alt="..." />
+              <div class="carousel-caption d-none d-md-block">
+                <h5 className='h5carrusel'>{val.descripcion}</h5>
+                <p className='pcarrusel'>{val.informacioncomplementaria}</p>
+                <a className='btn2' href={val.link}>Ver Más</a>
+              </div>
+            </div>
+            )
+          })}
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
+        <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span className="visually-hidden">Previous</span>
         </button>
-        <button id="nexthome" class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
+        <button id="nexthome" className="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+          <span className="carousel-control-next-icon" aria-hidden="true"></span>
+          <span className="visually-hidden">Next</span>
         </button>
       </div>
 

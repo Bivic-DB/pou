@@ -24,7 +24,7 @@ function Comentarios() {
     const [isSubmit, setIsSubmit] = useState(false);
     const navigate = useNavigate();
     const [Fechas, setFechas] = useState([]);
-    let Email = "2018164@est.cedesdonbosco.ed.cr";
+    const [email, setEmail] = useState("");
     let err_quantity = 0;
     let autoincrement = 0;
 
@@ -47,19 +47,21 @@ function Comentarios() {
     }
 
     useEffect(() => {
+        Axios.get('http://localhost:3001/Login').then((response) => {
+            if (response.data.loggedIn == false) {
+                navigate('/');
+            } else {
+                setEmail(response.data.user[0].correo);
+                console.log(email);
+            }
+        })
         if (Object.keys(formErrors).length === 0 && isSubmit) {
         }
         Axios.get('http://localhost:3001/ListaComentarios').then((response) => {
             setListaComentarios(response.data);
-            
-            ListaComentarios.map((val, key) => {
-                let fechacomentario = (moment(val.fecha).utc().format('YYYY-MMM-DD'));
-                console.log(val.fecha);
-                setFechas({...setFechas, [key]: fechacomentario})
-                console.log(Fechas);
-            })
 
         });
+
     }, [formErrors]);
 
     const validate = (values) => {
@@ -103,8 +105,8 @@ function Comentarios() {
     const BuscarComentario = (puesto) => {
         setComentario(ListaComentarios[puesto]);
         console.log(Comentario);
-        setFormValues({...formValues, ["Mensaje"]: Comentario.mensaje});
-        
+        setFormValues({ ...formValues, ["Mensaje"]: Comentario.mensaje });
+
     };
 
     const agregarComentario = (values) => {
@@ -115,7 +117,7 @@ function Comentarios() {
             // Objeto con las propiedades que queremos enviar
 
             Date: formatDate,
-            Autor: Email,
+            Autor: email,
             Comentario: values.Comentario,
 
         }).then(() => {
@@ -153,10 +155,10 @@ function Comentarios() {
                     'Actualizado',
                     'El comentario a sido actualizado correctamente',
                     'success'
-                ).then(function() {
+                ).then(function () {
                     window.location.reload();
                 });
-                
+
             }
         })
     };
@@ -189,27 +191,31 @@ function Comentarios() {
                 </div>
 
                 <div id="muestracomentarios">
-                <div className='container-lg'>
-                    <div className='row g-2'>
-                {ListaComentarios.map((val, key) => {
-                            return (
-                                <div className='col-md'>
-                                    <div className='card'>
-                                        <div className='card-body'>
-                                            <h5 className='card-title'>Comentario #{val.idCOMENTARIO}</h5>
-                                            <p className='card-text'>
-                                                {val.mensaje}
-                                            </p>
-                                            <p className="card-text"><small className="text-muted"><img src={logocinco} className='delete'></img>{val.persona_correo}</small></p>
-                                            <p className="card-text"><small className="text-muted"><img src={logocuatro} className='delete'></img>{val.fecha}</small></p>
-                                    <button onClick={() => { eliminaComentario(val.idCOMENTARIO) }} className='btn btn-danger'><img src={logodos} className='delete'></img></button>
+                    <div className='container-lg'>
+                        <div className='row g-2'>
+                            {ListaComentarios.map((val, key) => {
+                                return (
+                                    <div className='col-md'>
+                                        <div className='card'>
+                                            <div className='card-body'>
+                                                <h5 className='card-title'>Comentario #{val.idCOMENTARIO}</h5>
+                                                <p className='card-text'>
+                                                    {val.mensaje}
+                                                </p>
+                                                <p className="card-text"><small className="text-muted"><img src={logocinco} className='delete'></img>{val.persona_correo}</small></p>
+                                                <p className="card-text"><small className="text-muted"><img src={logocuatro} className='delete'></img>{val.fecha}</small></p>
+
+                                                {val.persona_correo == email && <>
+                                                    <button onClick={() => { eliminaComentario(val.idCOMENTARIO) }} className='btn btn-danger'><img src={logodos} className='delete'></img></button>
+
+                                                </>}
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            )
-                        })}
+                                )
+                            })}
                         </div>
-                </div>
+                    </div>
                 </div>
             </div>
 
